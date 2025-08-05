@@ -44,12 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburgerBtn) {
         hamburgerBtn.addEventListener('click', () => {
             mainNav.classList.toggle('active');
+            // This prevents the main page from scrolling when the menu is open
             body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
         });
     }
     
     hasSubmenu.forEach(menuItem => {
         menuItem.addEventListener('click', function(e) {
+            // This logic now only applies when the hamburger menu is visible
             if (window.innerWidth <= 1100) {
                 e.preventDefault();
                 this.parentElement.classList.toggle('open');
