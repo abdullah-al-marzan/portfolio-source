@@ -7,7 +7,7 @@
     --light-color: #ffffff;
     --text-color: #333333;
     --gray-bg: #f4f6f8;
-    --border-color: #444; /* Darker border for black bg */
+    --border-color: #444;
 }
 
 * {
@@ -29,18 +29,17 @@ body {
     padding: 0 20px;
 }
 
-h2.section-title {
-    font-size: 2.2rem;
-    text-align: center;
-    margin-bottom: 50px;
-    font-weight: 600;
-}
+/* CORRECTED #5: Section Title Hover Effect */
 h2.section-title a {
     color: var(--dark-color);
     text-decoration: none;
     display: inline-block;
     position: relative;
     padding-bottom: 5px;
+    transition: color 0.25s ease-out;
+}
+h2.section-title a:hover {
+    color: var(--button-default-blue); /* Turns blue on hover */
 }
 h2.section-title a::after {
     content: '';
@@ -52,7 +51,7 @@ h2.section-title a::after {
     left: 0;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.4s ease-out;
+    transition: transform 0.25s ease-out;
 }
 h2.section-title a:hover::after {
     transform: scaleX(1);
@@ -75,15 +74,15 @@ h2.section-title a:hover::after {
     transform: translateY(-2px);
 }
 
-/* CORRECTED #4: HEADER REDESIGN */
+/* CORRECTED #1 & #2: HEADER REDESIGN */
 #main-header {
     background-color: var(--dark-color);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    box-shadow: none; /* No shadow */
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
-    height: 1.5cm;
+    height: 1.8cm; /* Updated height */
 }
 
 .header-container {
@@ -94,7 +93,7 @@ h2.section-title a:hover::after {
 }
 
 .logo img {
-    height: 1.2cm;
+    height: 1.5cm; /* Adjusted logo size */
     width: auto;
 }
 
@@ -103,44 +102,42 @@ h2.section-title a:hover::after {
     display: flex;
 }
 
+/* CORRECTED #6: Menu Hover Effects */
 .main-nav li a, .has-submenu > a {
     color: var(--light-color);
     text-decoration: none;
     padding: 0 15px;
-    height: 1.5cm;
-    line-height: 1.5cm;
+    height: 1.8cm;
+    line-height: 1.8cm;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
     display: block;
     position: relative;
-    transition: color 0.3s;
+    transition: color 0.25s ease;
 }
-
 .main-nav li a::after, .has-submenu > a::after {
     content: '';
     position: absolute;
     width: 100%;
     height: 2px;
     background-color: var(--light-color);
-    bottom: calc(0.75cm - 15px); /* Adjusted position */
+    bottom: 12px; /* Adjusted position for new height */
     left: 0;
     transform: scaleX(0);
     transform-origin: center;
-    transition: transform 0.4s ease-out;
+    transition: transform 0.25s ease-out; /* Faster animation */
 }
-
 .main-nav li a:hover::after, .has-submenu:hover > a::after {
     transform: scaleX(1);
+}
+.main-nav li a:hover, .has-submenu:hover > a, .main-nav li a.active {
+    color: var(--light-color); /* No color change on hover */
 }
 
 .has-submenu > a { cursor: default; }
 
-.main-nav li a:hover, .main-nav li a.active, .has-submenu:hover > a {
-    color: #a8cfff;
-}
-
-/* CORRECTED #1: VERTICAL SUBMENUS */
+/* CORRECTED #3: VERTICAL SUBMENUS */
 .has-submenu { position: relative; }
 .submenu {
     position: absolute;
@@ -155,9 +152,9 @@ h2.section-title a:hover::after {
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
     z-index: 1001;
-    display: block; /* Ensures the UL itself is a block */
+    display: block;
 }
 .has-submenu:hover .submenu {
     opacity: 1;
@@ -165,7 +162,7 @@ h2.section-title a:hover::after {
     transform: translateY(0);
 }
 .submenu li {
-    display: block; /* Ensures items stack vertically */
+    display: block;
     width: 100%;
 }
 .submenu li a {
@@ -173,13 +170,20 @@ h2.section-title a:hover::after {
     height: auto;
     line-height: 1.5;
     color: var(--light-color);
+    background-color: transparent; /* No background color change */
 }
 .submenu li a:hover {
-    background-color: var(--button-default-blue);
+    background-color: transparent; /* Ensure no background change */
+    color: #a8cfff; /* Optional: slight color change for text */
 }
 .submenu li a::after {
-    display: none;
+    bottom: 5px; /* Adjust underline for submenu items */
+    transition: transform 0.25s ease-out;
 }
+.submenu li a:hover::after {
+    transform: scaleX(1);
+}
+
 
 #hamburger-btn {
     display: none;
@@ -190,8 +194,7 @@ h2.section-title a:hover::after {
     color: var(--light-color);
 }
 
-
-/* CORRECTED #3: SLIDER RATIO */
+/* CORRECTED: SLIDER RATIO */
 .hero-slider {
     position: relative;
     width: 100%;
@@ -199,12 +202,12 @@ h2.section-title a:hover::after {
     background-color: #ccc;
     overflow: hidden;
 }
+
+/* --- OTHER CONTENT & FOOTER STYLES (UNCHANGED) --- */
 .hero-slider .slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease; }
 .hero-slider .slide.active { opacity: 1; }
 .slide-caption { position: absolute; bottom: 5%; left: 5%; background-color: rgba(0,0,0,0.6); color: var(--light-color); padding: 15px 25px; border-radius: 5px; max-width: 80%; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .slide.active .slide-caption { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
-
-/* --- CONTENT SECTIONS --- */
 .content-section { padding: 80px 0; }
 .gray-bg { background-color: var(--gray-bg); }
 .two-column-layout { display: flex; gap: 50px; align-items: flex-start; }
@@ -227,8 +230,6 @@ h2.section-title a:hover::after {
 .video-wrapper video { width: 100%; height: 100%; object-fit: cover; }
 .video-play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; color: rgba(255,255,255,0.8); pointer-events: none; transition: transform 0.3s ease, color 0.3s ease; }
 .video-wrapper:hover .video-play-button { transform: translate(-50%, -50%) scale(1.1); color: #fff; }
-
-/* --- FOOTER --- */
 #main-footer { background-color: var(--dark-color); color: #ccc; padding-top: 60px; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 50px; }
 .footer-col h4 { color: var(--light-color); font-size: 1.1rem; margin-bottom: 20px; }
@@ -242,23 +243,27 @@ h2.section-title a:hover::after {
 #newsletter-message { font-size: 0.9rem; margin-top: 10px; }
 .footer-bottom { text-align: center; padding: 20px 0; border-top: 1px solid var(--border-color); }
 
-/* CORRECTED #2: RESPONSIVE HAMBURGER MENU */
+/* CORRECTED #4 & #7: RESPONSIVE HAMBURGER MENU */
 @media (max-width: 1100px) {
     .main-nav {
         display: none;
         position: absolute;
-        top: 1.5cm;
+        top: 1.8cm;
         left: 0;
         width: 100%;
         background-color: var(--dark-color);
-        max-height: calc(100vh - 1.5cm);
+        max-height: calc(100vh - 1.8cm);
         overflow-y: auto;
         border-top: 1px solid var(--border-color);
     }
     .main-nav.active {
         display: block;
     }
-    .main-nav ul {
+    /* Two-column layout for the main menu list */
+    .main-nav > ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 10px;
         flex-direction: column;
         width: 100%;
     }
@@ -268,19 +273,21 @@ h2.section-title a:hover::after {
         height: auto;
         line-height: 1.5;
     }
-    .main-nav li a:hover, .has-submenu:hover > a {
+    .main-nav li a:hover, .has-submenu > a:hover {
         background-color: var(--button-default-blue);
     }
     .main-nav li a::after, .has-submenu > a::after {
         display: none;
     }
+    /* Submenus are hidden until parent is clicked */
     .submenu {
         position: static;
         width: 100%;
         box-shadow: none;
+        padding: 0;
         padding-left: 20px;
         background-color: #222;
-        display: none; /* Submenus hidden by default */
+        display: none; /* Hidden by default */
         border: none;
         border-radius: 0;
         transform: none;
@@ -288,8 +295,12 @@ h2.section-title a:hover::after {
         visibility: visible;
         transition: none;
     }
+    .submenu li a {
+        border-bottom: none; /* No double borders */
+        border-top: 1px solid #444;
+    }
     .has-submenu.open > .submenu {
-        display: block; /* Show submenu on click */
+        display: block;
     }
     .has-submenu > a::after {
         content: ' \25BC';
@@ -313,4 +324,8 @@ h2.section-title a:hover::after {
         flex-direction: column-reverse;
     }
     h2.section-title { font-size: 1.8rem; }
+    /* Revert to single column for very small screens */
+    .main-nav > ul {
+        grid-template-columns: 1fr;
+    }
 }
