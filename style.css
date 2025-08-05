@@ -1,22 +1,23 @@
 /* General Body Styles */
 body {
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     background-color: #ffffff;
-    color: #333;
-    line-height: 1.6;
+    color: #1f1f1f;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    width: 90%;
-    max-width: 1100px;
+    width: 80%;
+    max-width: 980px; /* Matching common desktop widths */
     margin: 0 auto;
 }
 
 /* Header and Navigation */
 .main-header {
     background-color: #fff;
-    padding: 20px 0;
+    padding: 30px 0;
     border-bottom: 1px solid #e0e0e0;
     position: sticky;
     top: 0;
@@ -30,8 +31,8 @@ body {
 }
 
 .logo {
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: bold;
+    font-size: 22px;
     text-decoration: none;
     color: #000;
 }
@@ -41,75 +42,109 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 25px;
+    gap: 30px; /* Spacing between nav items */
 }
 
 .main-nav a {
     text-decoration: none;
-    color: #555;
-    font-weight: 400;
+    color: #808080; /* Grey color for links */
+    font-weight: normal;
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 
-.main-nav a:hover,
+.main-nav a:hover {
+    color: #3a00e5; /* Highlight color on hover */
+}
+
 .main-nav a.active {
-    color: #007BFF; /* A highlight color */
+    color: #3a00e5; /* Highlight color for the current page */
 }
 
 
-/* Hero Section (Main Content) */
+/* Hero Section - Two Column Layout */
 .hero-section {
-    padding: 60px 0;
+    padding: 80px 0;
 }
 
 .hero-container {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 60px; /* Space between image and text */
 }
 
-.hero-image-wrapper {
-    flex: 1;
-    max-width: 400px;
+/* Column 1: Image */
+.hero-image-column {
+    flex-basis: 40%; /* Image column takes up 40% of the width */
 }
 
-.hero-image-wrapper img {
-    width: 100%;
-    border-radius: 50%; /* Creates the circular image effect */
-    border: 5px solid #f0f0f0;
-}
-
-.hero-text {
-    flex: 2;
-}
-
-.hero-text .greeting {
-    font-size: 20px;
-    color: #777;
-}
-
-.hero-text h1 {
-    font-size: 48px;
-    margin: 10px 0;
-}
-
-.hero-text .bio {
+.image-placeholder {
+    width: 350px;
+    height: 350px;
+    background-color: #f0f0f0;
+    border: 8px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 50%; /* This makes it a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #888;
     font-size: 18px;
-    margin-bottom: 20px;
+}
+/* This is for when you add the real image */
+.hero-image-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 8px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.hero-text .title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #007BFF;
+
+/* Column 2: Text */
+.hero-text-column {
+    flex-basis: 60%; /* Text column takes up 60% of the width */
 }
+
+.hero-text-column .greeting {
+    font-size: 20px;
+    margin: 0;
+}
+
+.hero-text-column h1 {
+    font-size: 42px;
+    margin: 10px 0 20px 0;
+    font-weight: bold;
+}
+
+.hero-text-column .bio {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.links-section .cta-link {
+    border: 1px solid #000;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: #000;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.links-section .cta-link:hover {
+    background-color: #000;
+    color: #fff;
+}
+
 
 /* Footer */
 .main-footer {
-    background-color: #f8f8f8;
-    color: #666;
+    background-color: #f7f7f7;
+    color: #1f1f1f;
     text-align: center;
-    padding: 30px 0;
+    padding: 40px 0;
     border-top: 1px solid #e0e0e0;
 }
 
@@ -118,13 +153,26 @@ body {
 }
 
 .social-links a {
-    /* Simple text links for now, can be replaced with icons */
-    margin: 0 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #1f1f1f;
+    border-radius: 50%;
+    margin: 0 5px;
     text-decoration: none;
-    font-weight: bold;
-    color: #333;
-    font-family: sans-serif; /* A generic font for the social icons */
-    font-size: 20px;
+    color: #1f1f1f;
+    font-weight: normal;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+.copyright {
+    font-size: 14px;
 }
 
 /* Responsive Design for smaller screens */
@@ -133,9 +181,12 @@ body {
         flex-direction: column;
         text-align: center;
     }
-
     .main-header .container {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+    }
+    .image-placeholder {
+        width: 280px;
+        height: 280px;
     }
 }
