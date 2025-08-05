@@ -2,9 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- HERO IMAGE SLIDER ---
     const sliderData = [
-        { image: 'media/slider/image1.jpg', caption: 'Advancing Diagnostics Through Molecular & Computational Biology', link: '#section-2-id' },
-        { image: 'media/slider/image2.jpg', caption: 'Modeling RNA Biology and Multi-Omics Integration', link: '#section-3-id' },
-        { image: 'media/slider/image3.jpg', caption: 'Translating Complex Data into Clinical Insights', link: '#section-4-id' }
+        { image: 'media/home/slider/Research Activities of Abdullah Al Marzan.jpg', caption: 'Research Activities of Abdullah Al Marzan' },
+        { image: 'media/home/slider/Poster Presentation of Abdullah Al Marzan.jpg', caption: 'Poster Presentation' },
+        { image: 'media/home/slider/Biochemical Assay.jpg', caption: 'Biochemical Assay' },
+        { image: 'media/home/slider/Antimicrobial Resistance.png', caption: 'Antimicrobial Resistance Research' },
+        { image: 'media/home/slider/Bacterial growth in Blood Agard Media.jpg', caption: 'Bacterial Growth in Blood Agar Media' },
+        { image: 'media/home/slider/Elisa.jpg', caption: 'ELISA Assay' },
+        { image: 'media/home/slider/Python Plot.jpg', caption: 'Data Analysis with Python' }
     ];
     const sliderContainer = document.getElementById('hero-slider');
     let currentSlide = 0;
@@ -13,14 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderData.forEach((slide, index) => {
             const slideElement = document.createElement('div');
             slideElement.className = 'slide' + (index === 0 ? ' active' : '');
-            slideElement.style.backgroundImage = `url('${slide.image}')`;
-            const slideLink = document.createElement('a');
-            slideLink.href = slide.link;
+            slideElement.style.backgroundImage = `url("${slide.image}")`;
             const captionElement = document.createElement('div');
             captionElement.className = 'slide-caption';
             captionElement.textContent = slide.caption;
-            slideLink.appendChild(captionElement);
-            slideElement.appendChild(slideLink);
+            slideElement.appendChild(captionElement);
             sliderContainer.appendChild(slideElement);
         });
     }
@@ -44,14 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburgerBtn) {
         hamburgerBtn.addEventListener('click', () => {
             mainNav.classList.toggle('active');
-            // This prevents the main page from scrolling when the menu is open
             body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
         });
     }
     
     hasSubmenu.forEach(menuItem => {
         menuItem.addEventListener('click', function(e) {
-            // This logic now only applies when the hamburger menu is visible
             if (window.innerWidth <= 1100) {
                 e.preventDefault();
                 this.parentElement.classList.toggle('open');
@@ -59,22 +58,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- VIDEO PLAYER ---
+    // --- VIDEO PLAYER (YOUTUBE) ---
     const videoWrappers = document.querySelectorAll('.video-wrapper');
     videoWrappers.forEach(wrapper => {
-        const videoSrc = wrapper.getAttribute('data-video-src');
-        if (videoSrc) {
+        const youtubeID = wrapper.getAttribute('data-youtube-id');
+        if (youtubeID) {
             const playButton = document.createElement('div');
             playButton.innerHTML = '<i class="fas fa-play"></i>';
             playButton.className = 'video-play-button';
             wrapper.appendChild(playButton);
+
             wrapper.addEventListener('click', () => {
-                const videoElement = document.createElement('video');
-                videoElement.src = videoSrc;
-                videoElement.controls = true;
-                videoElement.autoplay = true;
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('src', `https://www.youtube.com/embed/${youtubeID}?rel=0&showinfo=0&autoplay=1`);
                 wrapper.innerHTML = '';
-                wrapper.appendChild(videoElement);
+                wrapper.appendChild(iframe);
             }, { once: true });
         }
     });
