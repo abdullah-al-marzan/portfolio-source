@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdullah Al Marzan | Home</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Abdullah Al Marzan | Molecular Biologist</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Abdullah Al Marzan</h1>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="research-biography.html">Research Biography</a>
-      <a href="interests-goals.html">Interests & Goals</a>
-      <div class="dropdown">
-        <button class="dropbtn">Projects</button>
-        <div class="dropdown-content">
-          <a href="projects/ongoing.html">Ongoing</a>
-          <a href="projects/past.html">Past</a>
-        </div>
-      </div>
-      <a href="thesis.html">Thesis</a>
-      <a href="publications.html">Publications</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <main class="container">
-    <section class="intro">
-      <h2>Welcome to My Academic Portfolio</h2>
-      <p>This site presents my research background, publications, ongoing projects, and academic contributions in bioinformatics, molecular biology, and data science.</p>
-    </section>
+    <div class="main-wrapper">
+        <header class="header">
+            <h1><a href="index.html">Abdullah Al Marzan</a></h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="profile-section">
+            <img src="assets/images/profile.jpg" alt="Abdullah Al Marzan" class="profile-image">
+            <h2>Abdullah Al Marzan</h2>
+            <p>Molecular Biologist and Scientific Researcher</p>
+            <a href="#contact" class="contact-button">Contact</a>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h3>Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h4>Project Title 1</h4>
+                    <p>Description of the first project. A summary of the research and key findings.</p>
+                    <a href="#">Learn more ></a>
+                </div>
+                <div class="project-card">
+                    <h4>Project Title 2</h4>
+                    <p>Description of the second project. Highlighting the methodology and impact.</p>
+                    <a href="#">Learn more ></a>
+                </div>
+                <div class="project-card">
+                    <h4>Project Title 3</h4>
+                    <p>Description of the third project. Detailing the results and future implications.</p>
+                    <a href="#">Learn more ></a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2025 by Abdullah Al Marzan. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
