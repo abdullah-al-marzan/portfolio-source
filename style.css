@@ -36,7 +36,6 @@ h2.section-title {
     margin-bottom: 50px;
     font-weight: 600;
 }
-
 h2.section-title a {
     color: var(--dark-color);
     text-decoration: none;
@@ -106,7 +105,11 @@ h2.section-title a:hover::after {
 
 .main-nav ul {
     list-style: none;
-    display: flex;
+    display: flex; /* Makes main menu items horizontal */
+}
+
+.main-nav li {
+    position: relative; /* Crucial for positioning the submenu */
 }
 
 .main-nav li a, .has-submenu > a {
@@ -143,11 +146,10 @@ h2.section-title a:hover::after {
 
 .has-submenu > a { cursor: default; }
 
-/* CORRECTED #3: VERTICAL SUBMENUS */
-.has-submenu { position: relative; }
+/* CORRECTED #1 & #3: VERTICAL SUBMENUS ON DESKTOP */
 .submenu {
     position: absolute;
-    top: 100%;
+    top: 2cm; /* Position below the header */
     left: 0;
     background-color: var(--dark-color);
     border: 1px solid var(--mobile-border-color);
@@ -160,12 +162,14 @@ h2.section-title a:hover::after {
     transform: translateY(10px);
     transition: all 0.25s ease;
     z-index: 1001;
+    display: block;
 }
 .has-submenu:hover .submenu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
+/* This is the key fix: It forces the <li> inside the .submenu to stack vertically */
 .submenu li {
     display: block;
     width: 100%;
@@ -174,18 +178,12 @@ h2.section-title a:hover::after {
     padding: 10px 20px;
     height: auto;
     line-height: 1.5;
-    color: var(--light-color);
-    background-color: transparent;
 }
 .submenu li a:hover {
     background-color: transparent;
 }
 .submenu li a::after {
     bottom: 5px;
-    transition: transform 0.25s ease-out;
-}
-.submenu li a:hover::after {
-    transform: scaleX(1);
 }
 
 #hamburger-btn {
@@ -197,7 +195,7 @@ h2.section-title a:hover::after {
     color: var(--light-color);
 }
 
-/* --- HERO SLIDER & OTHER SECTIONS (UNCHANGED) --- */
+/* --- OTHER SECTIONS (UNCHANGED) --- */
 .hero-slider { position: relative; width: 100%; aspect-ratio: 13.5 / 5; background-color: #ccc; overflow: hidden; }
 .hero-slider .slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease; }
 .hero-slider .slide.active { opacity: 1; }
@@ -246,12 +244,12 @@ h2.section-title a:hover::after {
         top: 2cm;
         left: 0;
         width: 100%;
-        height: calc(100% - 2cm); /* Use 100% instead of 100vh for better compatibility */
+        height: calc(100% - 2cm);
         background-color: var(--light-color); /* White background */
         overflow-y: auto;
     }
     .main-nav.active {
-        display: flex; /* Use flexbox to structure the content */
+        display: flex;
         flex-direction: column;
     }
     .main-nav > ul {
@@ -260,24 +258,19 @@ h2.section-title a:hover::after {
         gap: 0 10px;
         align-content: start;
         padding: 10px;
-        flex-grow: 1; /* Allows the grid to take up available space */
+        flex-grow: 1;
     }
-    /* Mobile Footer Container */
-    .main-nav .mobile-footer {
-        text-align: center;
-        padding: 20px;
-        margin-top: auto; /* Pushes the footer to the bottom */
-        border-top: 1px solid var(--border-color);
-        color: #888;
-        font-size: 0.9rem;
+    /* This rule applies only to the direct list items of the main nav UL, not the submenu LIs */
+    .main-nav > ul > li {
+        border-bottom: 1px solid var(--border-color);
     }
     .main-nav li a, .has-submenu > a {
         padding: 15px;
-        border-bottom: 1px solid var(--border-color);
         height: auto;
         line-height: 1.5;
         width: 100%;
-        color: var(--dark-color); /* Dark text on white background */
+        color: var(--dark-color);
+        border-bottom: none; /* Removed individual border */
     }
     .main-nav li a:hover, .has-submenu > a:hover {
         background-color: var(--gray-bg);
@@ -286,7 +279,7 @@ h2.section-title a:hover::after {
     .main-nav li a::after, .has-submenu > a::after {
         display: none;
     }
-    /* This ensures submenus are hidden until their parent is clicked */
+    /* This is the key fix: Submenus are hidden by default */
     .submenu {
         position: static;
         width: 100%;
@@ -294,26 +287,25 @@ h2.section-title a:hover::after {
         padding: 0;
         padding-left: 15px;
         background-color: transparent;
-        display: none; /* Submenus hidden by default */
+        display: none; /* THIS IS THE MOST IMPORTANT CHANGE */
         border: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: none;
     }
     .submenu li a {
         border: none;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .submenu li a:hover {
-        background-color: #e0e0e0;
     }
     .has-submenu.open > .submenu {
-        display: block;
+        display: block; /* Show on click */
     }
     .has-submenu > a::after {
         content: ' \25BC';
         float: right;
         display: inline-block;
         transition: transform 0.3s;
-        color: var(--dark-color); /* Ensure arrow is visible */
+        color: var(--dark-color);
     }
     .has-submenu.open > a::after {
         transform: rotate(180deg);
@@ -331,7 +323,6 @@ h2.section-title a:hover::after {
         flex-direction: column-reverse;
     }
     h2.section-title { font-size: 1.8rem; }
-    /* Single column menu for very small screens */
     .main-nav > ul {
         grid-template-columns: 1fr;
     }

@@ -41,25 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const hasSubmenu = document.querySelectorAll('.has-submenu > a');
     const body = document.body;
 
-    // CORRECTED #1 & #2: Create footer and append it correctly
-    if (mainNav) {
-        const mobileFooter = document.createElement('div');
-        mobileFooter.className = 'mobile-footer';
-        mobileFooter.innerHTML = '© 2025 Abdullah Al Marzan. All Rights Reserved.';
-        mainNav.appendChild(mobileFooter); // Append to the nav container, not the UL
-    }
-
     if (hamburgerBtn) {
         hamburgerBtn.addEventListener('click', () => {
             mainNav.classList.toggle('active');
-            // This prevents the main page from scrolling when the menu is open
             body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
         });
     }
     
     hasSubmenu.forEach(menuItem => {
         menuItem.addEventListener('click', function(e) {
-            // This logic now only applies when the hamburger menu is visible
             if (window.innerWidth <= 1100) {
                 e.preventDefault();
                 this.parentElement.classList.toggle('open');
