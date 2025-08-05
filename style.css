@@ -114,7 +114,7 @@ h2.section-title a:hover::after {
     text-transform: uppercase;
     display: block;
     position: relative;
-    transition: color 0.25s ease;
+    transition: none; /* Removed transition to stop color change */
 }
 .main-nav li a::after, .has-submenu > a::after {
     content: '';
@@ -154,7 +154,6 @@ h2.section-title a:hover::after {
     transform: translateY(10px);
     transition: all 0.25s ease;
     z-index: 1001;
-    display: block;
 }
 .has-submenu:hover .submenu {
     opacity: 1;
@@ -162,7 +161,7 @@ h2.section-title a:hover::after {
     transform: translateY(0);
 }
 .submenu li {
-    display: block;
+    display: block; /* This is the key fix: Ensures items stack vertically */
     width: 100%;
 }
 .submenu li a {
@@ -173,11 +172,11 @@ h2.section-title a:hover::after {
     background-color: transparent; /* No background color change */
 }
 .submenu li a:hover {
-    background-color: transparent; /* Ensure no background change */
-    color: #a8cfff; /* Optional: slight color change for text */
+    background-color: transparent; /* No background change */
 }
+/* Underline animation for submenu items */
 .submenu li a::after {
-    bottom: 5px; /* Adjust underline for submenu items */
+    bottom: 5px;
     transition: transform 0.25s ease-out;
 }
 .submenu li a:hover::after {
@@ -194,7 +193,7 @@ h2.section-title a:hover::after {
     color: var(--light-color);
 }
 
-/* CORRECTED: SLIDER RATIO */
+/* SLIDER */
 .hero-slider {
     position: relative;
     width: 100%;
@@ -203,7 +202,7 @@ h2.section-title a:hover::after {
     overflow: hidden;
 }
 
-/* --- OTHER CONTENT & FOOTER STYLES (UNCHANGED) --- */
+/* ALL OTHER CONTENT & FOOTER STYLES (UNCHANGED) */
 .hero-slider .slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease; }
 .hero-slider .slide.active { opacity: 1; }
 .slide-caption { position: absolute; bottom: 5%; left: 5%; background-color: rgba(0,0,0,0.6); color: var(--light-color); padding: 15px 25px; border-radius: 5px; max-width: 80%; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
@@ -279,7 +278,6 @@ h2.section-title a:hover::after {
     .main-nav li a::after, .has-submenu > a::after {
         display: none;
     }
-    /* Submenus are hidden until parent is clicked */
     .submenu {
         position: static;
         width: 100%;
@@ -287,7 +285,7 @@ h2.section-title a:hover::after {
         padding: 0;
         padding-left: 20px;
         background-color: #222;
-        display: none; /* Hidden by default */
+        display: none; /* Submenus are hidden by default */
         border: none;
         border-radius: 0;
         transform: none;
@@ -296,8 +294,10 @@ h2.section-title a:hover::after {
         transition: none;
     }
     .submenu li a {
-        border-bottom: none; /* No double borders */
         border-top: 1px solid #444;
+    }
+    .submenu li:first-child a {
+        border-top: none; /* No double border on first item */
     }
     .has-submenu.open > .submenu {
         display: block;
@@ -324,7 +324,6 @@ h2.section-title a:hover::after {
         flex-direction: column-reverse;
     }
     h2.section-title { font-size: 1.8rem; }
-    /* Revert to single column for very small screens */
     .main-nav > ul {
         grid-template-columns: 1fr;
     }
