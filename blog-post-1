@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog: Predicting HIV miRNA Interactions | Abdullah Al Marzan</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="research-biography.html">Research Biography</a>
+    <a href="interests-goals.html">Interests & Goals</a>
+    <a href="projects.html">Projects</a>
+    <a href="thesis.html">Thesis Presentation</a>
+    <a href="publications.html">Publications</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h1>Using Deep Learning to Predict HIV miRNA Interactions</h1>
+    <p><small><strong>Published:</strong> August 1, 2025</small></p>
+
+    <p>In this blog post, I share my journey in developing a deep learning model aimed at identifying miRNA sequences that can effectively bind to the HIV-1 Rev Response Element (RRE). The project combines structural bioinformatics, miRNA-mRNA interaction data, and modern attention-based neural networks.</p>
+
+    <h2>Motivation</h2>
+    <p>Since the RRE plays a crucial role in the export of unspliced viral RNA, blocking this process using designed miRNAs can potentially inhibit HIV replication. My goal is to computationally design optimal miRNA candidates that competitively bind to the RRE, especially the Stem IIB region.</p>
+
+    <h2>Methodology</h2>
+    <ul>
+      <li>Collected RRE sequence data and miRNA interaction datasets</li>
+      <li>Used RNAfold to model secondary structures</li>
+      <li>Extracted features like minimum free energy (ΔG), loop accessibility, and seed match quality</li>
+      <li>Trained an attention-based model using PyTorch</li>
+    </ul>
+
+    <h2>Key Challenges</h2>
+    <p>The biggest challenge is the scarcity of experimentally validated miRNAs that bind to HIV-RRE. To mitigate this, I’m using transfer learning from general miRNA-mRNA datasets and applying domain-specific filters.</p>
+
+    <h2>Next Steps</h2>
+    <p>I plan to benchmark the predicted sequences using RNAhybrid, validate structural interactions in silico, and finally shortlist vaccine candidates for wet lab trials.</p>
+
+    <p>Stay tuned for updates and visualizations of the model’s predictions in future blog posts!</p>
+  </div>
+
+  <footer>
+    &copy; 2025 Abdullah Al Marzan. All rights reserved.
+  </footer>
+</body>
+</html>
