@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- HERO IMAGE SLIDER ---
+    // --- HERO IMAGE SLIDER (Unchanged) ---
     const sliderData = [
         { image: 'media/home/slider/Research Activities of Abdullah Al Marzan.jpg', caption: 'Research Activities of Abdullah Al Marzan' },
         { image: 'media/home/slider/Poster Presentation of Abdullah Al Marzan.jpg', caption: 'Poster Presentation' },
@@ -56,45 +56,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- UPDATED: VIDEO PLAYER (Handles BOTH YouTube and LinkedIn) ---
+    // --- UPDATED: VIDEO PLAYER (Handles full embed URLs) ---
     const videoWrappers = document.querySelectorAll('.video-wrapper');
     videoWrappers.forEach(wrapper => {
-        const youtubeID = wrapper.getAttribute('data-youtube-id');
+        const youtubeSrc = wrapper.getAttribute('data-youtube-embed-src');
         const linkedinSrc = wrapper.getAttribute('data-linkedin-embed-src');
 
-        // Add a play button to all video wrappers
-        const playButton = document.createElement('div');
-        playButton.innerHTML = '<i class="fas fa-play"></i>';
-        playButton.className = 'video-play-button';
-        wrapper.appendChild(playButton);
+        if (youtubeSrc || linkedinSrc) {
+            const playButton = document.createElement('div');
+            playButton.innerHTML = '<i class="fas fa-play"></i>';
+            playButton.className = 'video-play-button';
+            wrapper.appendChild(playButton);
 
-        wrapper.addEventListener('click', () => {
-            let iframe;
+            wrapper.addEventListener('click', () => {
+                let iframe;
 
-            // If it's a YouTube video
-            if (youtubeID) {
-                iframe = document.createElement('iframe');
-                iframe.setAttribute('src', `https://www.youtube.com/embed/${youtubeID}?rel=0&showinfo=0&autoplay=1`);
-                iframe.setAttribute('frameborder', '0');
-                iframe.setAttribute('allowfullscreen', '');
-                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-            }
-            // If it's a LinkedIn video
-            else if (linkedinSrc) {
-                iframe = document.createElement('iframe');
-                iframe.setAttribute('src', linkedinSrc);
-                iframe.setAttribute('height', '399');
-                iframe.setAttribute('width', '504');
-                iframe.setAttribute('frameborder', '0');
-                iframe.setAttribute('allowfullscreen', '');
-                iframe.setAttribute('title', 'Embedded post');
-            }
+                if (youtubeSrc) {
+                    iframe = document.createElement('iframe');
+                    // CORRECTED: Use the full source URL directly
+                    iframe.setAttribute('src', `${youtubeSrc}?autoplay=1`);
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allowfullscreen', '');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                }
+                else if (linkedinSrc) {
+                    iframe = document.createElement('iframe');
+                    iframe.setAttribute('src', linkedinSrc);
+                    iframe.setAttribute('height', '399');
+                    iframe.setAttribute('width', '504');
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allowfullscreen', '');
+                    iframe.setAttribute('title', 'Embedded post');
+                }
 
-            if (iframe) {
-                wrapper.innerHTML = ''; // Clear the wrapper (removes play button)
-                wrapper.appendChild(iframe);
-            }
-        }, { once: true });
+                if (iframe) {
+                    wrapper.innerHTML = '';
+                    wrapper.appendChild(iframe);
+                }
+            }, { once: true });
+        }
     });
 
     // --- NEWSLETTER FORM (Unchanged) ---
