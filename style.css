@@ -1,48 +1,141 @@
+/* General Body Styles */
 body {
-    font-family: sans-serif;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+/* Header and Navigation */
+.main-header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav a {
-    color: white;
+.logo {
+    font-weight: 700;
+    font-size: 24px;
     text-decoration: none;
+    color: #000;
 }
 
-main {
-    padding: 20px;
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
 }
 
-#hero {
+.main-nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #007BFF; /* A highlight color */
+}
+
+
+/* Hero Section (Main Content) */
+.hero-section {
+    padding: 60px 0;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-image-wrapper {
+    flex: 1;
+    max-width: 400px;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    border-radius: 50%; /* Creates the circular image effect */
+    border: 5px solid #f0f0f0;
+}
+
+.hero-text {
+    flex: 2;
+}
+
+.hero-text .greeting {
+    font-size: 20px;
+    color: #777;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.hero-text .bio {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-text .title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #007BFF;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f8f8f8;
+    color: #666;
     text-align: center;
-    padding: 50px 0;
-    background-color: #ddd;
+    padding: 30px 0;
+    border-top: 1px solid #e0e0e0;
 }
 
-#about {
-    text-align: center;
+.social-links {
+    margin-bottom: 15px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
+.social-links a {
+    /* Simple text links for now, can be replaced with icons */
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    font-family: sans-serif; /* A generic font for the social icons */
+    font-size: 20px;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
