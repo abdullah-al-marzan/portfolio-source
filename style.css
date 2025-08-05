@@ -2,12 +2,12 @@
 :root {
     --button-default-blue: #1e5a9c;
     --button-hover-blue: #0d47a1;
-    --primary-color: #ffffff; /* White for highlights on black bg */
-    --dark-color: #000000; /* Black header background */
+    --primary-color: #ffffff;
+    --dark-color: #000000;
     --light-color: #ffffff;
     --text-color: #333333;
     --gray-bg: #f4f6f8;
-    --border-color: #e0e0e0;
+    --border-color: #444; /* Darker border for black bg */
 }
 
 * {
@@ -47,7 +47,7 @@ h2.section-title a::after {
     position: absolute;
     width: 100%;
     height: 3px;
-    background-color: #1e5a9c;
+    background-color: var(--button-default-blue);
     bottom: 0;
     left: 0;
     transform: scaleX(0);
@@ -77,24 +77,24 @@ h2.section-title a:hover::after {
 
 /* CORRECTED #4: HEADER REDESIGN */
 #main-header {
-    background-color: var(--dark-color); /* Black background */
+    background-color: var(--dark-color);
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
-    height: 1.5cm; /* Set height to 1.5cm */
+    height: 1.5cm;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%; /* Ensure container fills the header height */
+    height: 100%;
 }
 
 .logo img {
-    height: 1.2cm; /* Adjust logo size relative to header */
+    height: 1.2cm;
     width: auto;
 }
 
@@ -104,11 +104,11 @@ h2.section-title a:hover::after {
 }
 
 .main-nav li a, .has-submenu > a {
-    color: var(--light-color); /* White text for contrast */
+    color: var(--light-color);
     text-decoration: none;
-    padding: 0 15px; /* Adjust padding for new height */
+    padding: 0 15px;
     height: 1.5cm;
-    line-height: 1.5cm; /* Vertically center text */
+    line-height: 1.5cm;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -122,8 +122,8 @@ h2.section-title a:hover::after {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: var(--light-color); /* White underline */
-    bottom: 10px; /* Adjust underline position */
+    background-color: var(--light-color);
+    bottom: calc(0.75cm - 15px); /* Adjusted position */
     left: 0;
     transform: scaleX(0);
     transform-origin: center;
@@ -137,7 +137,7 @@ h2.section-title a:hover::after {
 .has-submenu > a { cursor: default; }
 
 .main-nav li a:hover, .main-nav li a.active, .has-submenu:hover > a {
-    color: #a8cfff; /* Light blue highlight on hover */
+    color: #a8cfff;
 }
 
 /* CORRECTED #1: VERTICAL SUBMENUS */
@@ -146,17 +146,18 @@ h2.section-title a:hover::after {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--dark-color); /* Match header background */
-    border: 1px solid #444;
+    background-color: var(--dark-color);
+    border: 1px solid var(--border-color);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     border-radius: 0 0 5px 5px;
     padding: 10px 0;
-    width: 220px; /* Slightly wider for better readability */
+    width: 220px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
     transition: all 0.3s ease;
     z-index: 1001;
+    display: block; /* Ensures the UL itself is a block */
 }
 .has-submenu:hover .submenu {
     opacity: 1;
@@ -168,16 +169,16 @@ h2.section-title a:hover::after {
     width: 100%;
 }
 .submenu li a {
-    padding: 10px 20px; /* Reset padding for submenu items */
-    height: auto; /* Reset height */
-    line-height: 1.5; /* Reset line-height */
-    color: var(--light-color); /* White text */
+    padding: 10px 20px;
+    height: auto;
+    line-height: 1.5;
+    color: var(--light-color);
 }
 .submenu li a:hover {
-    background-color: var(--button-default-blue); /* Blue background on hover */
+    background-color: var(--button-default-blue);
 }
 .submenu li a::after {
-    display: none; /* No underline in submenus */
+    display: none;
 }
 
 #hamburger-btn {
@@ -186,7 +187,7 @@ h2.section-title a:hover::after {
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--light-color); /* White hamburger icon */
+    color: var(--light-color);
 }
 
 
@@ -194,18 +195,16 @@ h2.section-title a:hover::after {
 .hero-slider {
     position: relative;
     width: 100%;
-    aspect-ratio: 13.5 / 5; /* Updated ratio */
+    aspect-ratio: 13.5 / 5;
     background-color: #ccc;
     overflow: hidden;
 }
-/* Other styles remain the same... */
-
-/* --- ALL OTHER CONTENT AND FOOTER STYLES --- */
-/* (This section is unchanged from the previous version) */
 .hero-slider .slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease; }
 .hero-slider .slide.active { opacity: 1; }
 .slide-caption { position: absolute; bottom: 5%; left: 5%; background-color: rgba(0,0,0,0.6); color: var(--light-color); padding: 15px 25px; border-radius: 5px; max-width: 80%; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .slide.active .slide-caption { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+
+/* --- CONTENT SECTIONS --- */
 .content-section { padding: 80px 0; }
 .gray-bg { background-color: var(--gray-bg); }
 .two-column-layout { display: flex; gap: 50px; align-items: flex-start; }
@@ -218,16 +217,18 @@ h2.section-title a:hover::after {
 .designations p { margin-bottom: 15px; font-size: 0.95rem; }
 .academic-social-links { padding: 10px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
 .academic-social-links a { font-size: 2.2rem; color: #000; background-color: transparent; transition: color 0.3s, transform 0.3s; }
-.academic-social-links a:hover { color: #1e5a9c; transform: scale(1.1); }
+.academic-social-links a:hover { color: var(--button-default-blue); transform: scale(1.1); }
 .publications-list { list-style: none; }
 .publications-list li { margin-bottom: 15px; padding-left: 20px; position: relative; }
-.publications-list li::before { content: '\f0f6'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 5px; color: #1e5a9c; }
+.publications-list li::before { content: '\f0f6'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 5px; color: var(--button-default-blue); }
 .publications-list li a { color: var(--text-color); text-decoration: none; }
-.publications-list li a:hover { color: #1e5a9c; text-decoration: underline; }
+.publications-list li a:hover { color: var(--button-default-blue); text-decoration: underline; }
 .video-wrapper { position: relative; width: 100%; max-width: 800px; margin: 0 auto; aspect-ratio: 16 / 9; background-color: #000; border-radius: 8px; overflow: hidden; cursor: pointer; }
 .video-wrapper video { width: 100%; height: 100%; object-fit: cover; }
 .video-play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; color: rgba(255,255,255,0.8); pointer-events: none; transition: transform 0.3s ease, color 0.3s ease; }
 .video-wrapper:hover .video-play-button { transform: translate(-50%, -50%) scale(1.1); color: #fff; }
+
+/* --- FOOTER --- */
 #main-footer { background-color: var(--dark-color); color: #ccc; padding-top: 60px; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 50px; }
 .footer-col h4 { color: var(--light-color); font-size: 1.1rem; margin-bottom: 20px; }
@@ -237,23 +238,22 @@ h2.section-title a:hover::after {
 .footer-col address { font-style: normal; }
 #newsletter-form { display: flex; margin-top: 10px; }
 #newsletter-form input { width: 100%; padding: 10px; border: 1px solid #555; background: #333; color: var(--light-color); border-radius: 3px 0 0 3px; }
-#newsletter-form button { padding: 10px 15px; border: none; background: #1e5a9c; color: var(--light-color); cursor: pointer; border-radius: 0 3px 3px 0; }
+#newsletter-form button { padding: 10px 15px; border: none; background: var(--button-default-blue); color: var(--light-color); cursor: pointer; border-radius: 0 3px 3px 0; }
 #newsletter-message { font-size: 0.9rem; margin-top: 10px; }
-.footer-bottom { text-align: center; padding: 20px 0; border-top: 1px solid #444; }
-
+.footer-bottom { text-align: center; padding: 20px 0; border-top: 1px solid var(--border-color); }
 
 /* CORRECTED #2: RESPONSIVE HAMBURGER MENU */
 @media (max-width: 1100px) {
     .main-nav {
         display: none;
         position: absolute;
-        top: 1.5cm; /* Position below the header */
+        top: 1.5cm;
         left: 0;
         width: 100%;
-        background-color: var(--dark-color); /* Match header background */
-        max-height: calc(100vh - 1.5cm); /* Allows menu to scroll */
-        overflow-y: auto; /* Enables scrolling within the menu */
-        border-top: 1px solid #444;
+        background-color: var(--dark-color);
+        max-height: calc(100vh - 1.5cm);
+        overflow-y: auto;
+        border-top: 1px solid var(--border-color);
     }
     .main-nav.active {
         display: block;
@@ -264,7 +264,7 @@ h2.section-title a:hover::after {
     }
     .main-nav li a, .has-submenu > a {
         padding: 15px 20px;
-        border-bottom: 1px solid #444;
+        border-bottom: 1px solid var(--border-color);
         height: auto;
         line-height: 1.5;
     }
@@ -279,16 +279,17 @@ h2.section-title a:hover::after {
         width: 100%;
         box-shadow: none;
         padding-left: 20px;
-        background-color: #222; /* Slightly different bg for nesting */
-        display: none; /* Submenus hidden until parent is clicked */
+        background-color: #222;
+        display: none; /* Submenus hidden by default */
         border: none;
         border-radius: 0;
         transform: none;
         opacity: 1;
         visibility: visible;
+        transition: none;
     }
     .has-submenu.open > .submenu {
-        display: block;
+        display: block; /* Show submenu on click */
     }
     .has-submenu > a::after {
         content: ' \25BC';
