@@ -36,19 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
     buildSlider();
     setInterval(showNextSlide, 5000);
 
-    // --- RESPONSIVE HAMBURGER MENU ---
+    // --- RESPONSIVE HAMBURGER MENU (Unchanged) ---
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mainNav = document.querySelector('.main-nav');
     const hasSubmenu = document.querySelectorAll('.has-submenu > a');
     const body = document.body;
-
     if (hamburgerBtn) {
         hamburgerBtn.addEventListener('click', () => {
             mainNav.classList.toggle('active');
             body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
         });
     }
-    
     hasSubmenu.forEach(menuItem => {
         menuItem.addEventListener('click', function(e) {
             if (window.innerWidth <= 1100) {
@@ -58,29 +56,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- VIDEO PLAYER (YOUTUBE) ---
+    // --- UPDATED: VIDEO PLAYER (Handles BOTH YouTube and LinkedIn) ---
     const videoWrappers = document.querySelectorAll('.video-wrapper');
     videoWrappers.forEach(wrapper => {
         const youtubeID = wrapper.getAttribute('data-youtube-id');
-        if (youtubeID) {
-            const playButton = document.createElement('div');
-            playButton.innerHTML = '<i class="fas fa-play"></i>';
-            playButton.className = 'video-play-button';
-            wrapper.appendChild(playButton);
+        const linkedinSrc = wrapper.getAttribute('data-linkedin-embed-src');
 
-            wrapper.addEventListener('click', () => {
-                const iframe = document.createElement('iframe');
+        // Add a play button to all video wrappers
+        const playButton = document.createElement('div');
+        playButton.innerHTML = '<i class="fas fa-play"></i>';
+        playButton.className = 'video-play-button';
+        wrapper.appendChild(playButton);
+
+        wrapper.addEventListener('click', () => {
+            let iframe;
+
+            // If it's a YouTube video
+            if (youtubeID) {
+                iframe = document.createElement('iframe');
+                iframe.setAttribute('src', `https://www.youtube.com/embed/${youtubeID}?rel=0&showinfo=0&autoplay=1`);
                 iframe.setAttribute('frameborder', '0');
                 iframe.setAttribute('allowfullscreen', '');
                 iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-                iframe.setAttribute('src', `https://www.youtube.com/embed/${youtubeID}?rel=0&showinfo=0&autoplay=1`);
-                wrapper.innerHTML = '';
+            }
+            // If it's a LinkedIn video
+            else if (linkedinSrc) {
+                iframe = document.createElement('iframe');
+                iframe.setAttribute('src', linkedinSrc);
+                iframe.setAttribute('height', '399');
+                iframe.setAttribute('width', '504');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.setAttribute('title', 'Embedded post');
+            }
+
+            if (iframe) {
+                wrapper.innerHTML = ''; // Clear the wrapper (removes play button)
                 wrapper.appendChild(iframe);
-            }, { once: true });
-        }
+            }
+        }, { once: true });
     });
 
-    // --- NEWSLETTER FORM ---
+    // --- NEWSLETTER FORM (Unchanged) ---
     const newsletterForm = document.getElementById('newsletter-form');
     const newsletterMessage = document.getElementById('newsletter-message');
     if (newsletterForm) {
