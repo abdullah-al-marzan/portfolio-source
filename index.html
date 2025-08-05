@@ -3,71 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Al Marzan | Portfolio</title>
+    <title>Abdullah Al Marzan | Homepage</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue,
-    Helvetica,
-    Arial,
-    sans-serif&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <header class="main-header">
+    <div id="top-bar">
         <div class="container">
-            <a href="index.html" class="logo">Abdullah Al Marzan</a>
+            <div class="social-icons-left">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="ai ai-researchgate"></i></a> <a href="#"><i class="ai ai-google-scholar"></i></a> </div>
+            <div class="contact-info-right">
+                <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i> your-email@example.com</a>
+                <a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 234 567 890</a>
+            </div>
+        </div>
+    </div>
+
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Abdullah Al Marzan</a>
+            </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="academics.html">Academics</a></li>
-                    <li><a href="interests.html">Interests</a></li>
-                    <li><a href="goal.html">Goal</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="academics.html">ACADEMICS</a></li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li><a href="skills.html">SKILLS & CERTIFICATES</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
                 </ul>
             </nav>
+            <button id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
     <main>
-        <section class="hero-section">
-            <div class="container hero-container">
-
-                <div class="hero-image-column">
-                    <div class="image-placeholder">
-                        <span>Your Profile Picture Here</span>
-                        </div>
+        <section id="hero-slider">
+            <div class="slide active" style="background-image: url('media/slider/slide1.jpg');">
+                <div class="slide-content">
+                    <h1>Molecular Biologist & Bioinformatician</h1>
                 </div>
-
-                <div class="hero-text-column">
-                    <p class="greeting">Hello</p>
-                    <h1>A Bit About Me</h1>
-                    <p class="bio">
-                        I am a dedicated and enthusiastic molecular biologist with a passion for unraveling the intricate mechanisms of life at the molecular level. My journey in the field of biology has been driven by a relentless curiosity and a desire to contribute to the ever-evolving world of science. I am currently seeking opportunities to apply my skills and knowledge in a challenging research environment.
-                    </p>
-                    <div class="links-section">
-                        <a href="#" class="cta-link">Resume</a>
-                        <a href="#" class="cta-link">Projects</a>
-                    </div>
+            </div>
+            <div class="slide" style="background-image: url('media/slider/slide2.jpg');">
+                <div class="slide-content">
+                    <h1>Exploring Genomics</h1>
                 </div>
-
+            </div>
+            <div class="slide" style="background-image: url('media/slider/slide3.jpg');">
+                 <div class="slide-content">
+                    <h1>From Data to Discovery</h1>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <div class="nav-dot active" data-slide="0"></div>
+                <div class="nav-dot" data-slide="1"></div>
+                <div class="nav-dot" data-slide="2"></div>
             </div>
         </section>
+
+        <section class="content-section">
+            <div class="container two-column-layout">
+                <div class="text-content">
+                    <h2>About Me</h2>
+                    <p>I am a dedicated and enthusiastic molecular biologist with a passion for unraveling the intricate mechanisms of life at the molecular level. My journey in the field of biology has been driven by a relentless curiosity and a desire to contribute to the ever-evolving world of science.</p>
+                </div>
+                <div class="image-content">
+                    <img src="media/home/about-me-cover.jpg" alt="About me cover image">
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section gray-bg">
+            <div class="container">
+                <h2 class="section-title">Graduate Research Project</h2>
+                <div class="two-column-layout">
+                    <div class="image-content">
+                        <img src="media/projects/masters-thesis-cover.jpg" alt="Master's Thesis cover image">
+                    </div>
+                    <div class="text-content">
+                        <h3>Master's Thesis</h3>
+                        <p>Write a detailed description of your master's thesis project here. Explain the goals, methodologies, and key findings of your research. Make it engaging and informative for the reader.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="video-placeholder" data-src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_HERE">
+                        <img src="media/projects/masters-video-thumbnail.jpg" alt="Video thumbnail">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">Phage and Antibiotic Synergy: A Novel Approach... (PROM)</h2>
+                 <div class="two-column-layout">
+                    <div class="text-content">
+                        <h3>Ongoing Project</h3>
+                        <p>Provide a summary of the PROM project. Discuss its significance in combating multidrug-resistant bacteria, the current status, and your specific role within the research team.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                    <div class="image-content">
+                        <img src="media/projects/prom-project-cover.jpg" alt="PROM project cover image">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="video-placeholder" data-src="https://www.youtube.com/embed/ANOTHER_YOUTUBE_VIDEO_ID">
+                         <img src="media/projects/prom-video-thumbnail.jpg" alt="Video thumbnail">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="main-footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/abdullah-al-marzan/" target="_blank" title="LinkedIn">in</a>
-                <a href="#" target="_blank" title="Facebook">f</a>
-                <a href="#" target="_blank" title="Twitter">t</a>
-                <a href="#" target="_blank" title="Instagram">i</a>
+    <footer id="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>About</h4>
+                <p>A passionate researcher dedicated to exploring the frontiers of molecular biology and bioinformatics.</p>
             </div>
-            <p class="copyright">&copy; 2025 by Abdullah Al Marzan. Proudly created.</p>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Your City, Country</p>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> your-email@example.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe to get updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Abdullah Al Marzan. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

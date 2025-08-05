@@ -1,192 +1,365 @@
-/* General Body Styles */
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/* ======================= GENERAL & ROOT STYLES ======================= */
+:root {
+    --primary-color: #3a6ea5; /* A professional blue */
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --grey-bg: #f9f9f9;
+    --text-color: #333;
+    --header-height: 70px;
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
-    background-color: #ffffff;
-    color: #1f1f1f;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
 }
 
 .container {
-    width: 80%;
-    max-width: 980px; /* Matching common desktop widths */
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Header and Navigation */
-.main-header {
-    background-color: #fff;
-    padding: 30px 0;
-    border-bottom: 1px solid #e0e0e0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: 10px;
 }
 
-.main-header .container {
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2c5482;
+}
+
+
+/* ======================= HEADER STYLES ======================= */
+#top-bar {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+#top-bar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 22px;
-    text-decoration: none;
-    color: #000;
-}
-
-.main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px; /* Spacing between nav items */
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #808080; /* Grey color for links */
-    font-weight: normal;
-    font-size: 16px;
+#top-bar a {
+    color: var(--light-color);
+    margin: 0 8px;
     transition: color 0.3s ease;
 }
 
-.main-nav a:hover {
-    color: #3a00e5; /* Highlight color on hover */
+#top-bar a:hover {
+    color: #fff;
 }
 
-.main-nav a.active {
-    color: #3a00e5; /* Highlight color for the current page */
+#top-bar i {
+    margin-right: 5px;
 }
 
-
-/* Hero Section - Two Column Layout */
-.hero-section {
-    padding: 80px 0;
+#main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: var(--header-height);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.hero-container {
+#main-header .container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 60px; /* Space between image and text */
+    height: 100%;
 }
 
-/* Column 1: Image */
-.hero-image-column {
-    flex-basis: 40%; /* Image column takes up 40% of the width */
+#main-header .logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-color);
 }
 
-.image-placeholder {
-    width: 350px;
-    height: 350px;
-    background-color: #f0f0f0;
-    border: 8px solid #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 50%; /* This makes it a circle */
+#main-header .main-nav ul {
+    display: flex;
+}
+
+#main-header .main-nav li {
+    margin-left: 25px;
+}
+
+#main-header .main-nav a {
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#main-header .main-nav a:hover,
+#main-header .main-nav a.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+#mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* ======================= HERO SLIDER ======================= */
+#hero-slider {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+#hero-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: #888;
-    font-size: 18px;
 }
-/* This is for when you add the real image */
-.hero-image-column img {
+
+#hero-slider .slide.active {
+    opacity: 1;
+}
+
+#hero-slider .slide-content {
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+
+#hero-slider .slide-content h1 {
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-dot.active, .nav-dot:hover {
+    background-color: #fff;
+}
+
+
+/* ======================= CONTENT SECTIONS ======================= */
+.content-section {
+    padding: 60px 0;
+}
+
+.content-section.gray-bg {
+    background-color: var(--grey-bg);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.two-column-layout {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.two-column-layout .text-content,
+.two-column-layout .image-content {
+    flex: 1;
+}
+
+.image-content img {
     width: 100%;
     height: auto;
-    border-radius: 50%;
-    border: 8px solid #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-
-/* Column 2: Text */
-.hero-text-column {
-    flex-basis: 60%; /* Text column takes up 60% of the width */
+.text-content h2, .text-content h3 {
+    font-size: 28px;
+    color: var(--dark-color);
 }
 
-.hero-text-column .greeting {
-    font-size: 20px;
-    margin: 0;
+/* ======================= VIDEO SECTION ======================= */
+.video-container {
+    margin-top: 40px;
 }
 
-.hero-text-column h1 {
-    font-size: 42px;
-    margin: 10px 0 20px 0;
-    font-weight: bold;
+.video-placeholder {
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
-.hero-text-column .bio {
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 30px;
+.video-placeholder img {
+    width: 100%;
+    display: block;
 }
 
-.links-section .cta-link {
-    border: 1px solid #000;
-    padding: 10px 25px;
-    text-decoration: none;
-    color: #000;
-    margin-right: 15px;
-    transition: all 0.3s ease;
-}
-
-.links-section .cta-link:hover {
-    background-color: #000;
+.video-placeholder .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    transition: background-color 0.3s ease;
 }
 
-
-/* Footer */
-.main-footer {
-    background-color: #f7f7f7;
-    color: #1f1f1f;
-    text-align: center;
-    padding: 40px 0;
-    border-top: 1px solid #e0e0e0;
+.video-placeholder:hover .play-button {
+    background-color: var(--primary-color);
 }
 
-.social-links {
+.video-player {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+}
+
+.video-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ======================= FOOTER ======================= */
+#main-footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding-top: 50px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
     margin-bottom: 15px;
-}
-
-.social-links a {
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 5px;
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    border: 1px solid #1f1f1f;
-    border-radius: 50%;
-    margin: 0 5px;
-    text-decoration: none;
-    color: #1f1f1f;
-    font-weight: normal;
-    transition: all 0.3s ease;
 }
 
-.social-links a:hover {
-    background-color: #1f1f1f;
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: var(--light-color);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 3px 0 0 3px;
+}
+
+.newsletter-form button {
+    padding: 8px 12px;
+    background: var(--primary-color);
     color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
 }
 
-.copyright {
-    font-size: 14px;
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #444;
 }
 
-/* Responsive Design for smaller screens */
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
+/* ======================= RESPONSIVE DESIGN ======================= */
+@media(max-width: 768px) {
+    #main-header .main-nav { display: none; }
+    #mobile-menu-toggle { display: block; }
+    #top-bar .container { flex-direction: column; gap: 10px; }
+    
+    .two-column-layout { 
+        flex-direction: column; 
     }
-    .main-header .container {
-        flex-direction: column;
-        gap: 20px;
+    
+    /* Reverse column order for the PROM section on mobile */
+    .content-section:not(.gray-bg) .two-column-layout {
+        flex-direction: column-reverse;
     }
-    .image-placeholder {
-        width: 280px;
-        height: 280px;
-    }
+    
+    #hero-slider .slide-content h1 { font-size: 32px; }
 }
