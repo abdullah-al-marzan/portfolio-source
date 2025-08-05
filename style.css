@@ -1,9 +1,7 @@
 /* --- ROOT VARIABLES & GENERAL STYLES --- */
 :root {
-    /* CORRECTED: Button Colors */
-    --button-default-blue: #1e5a9c; /* Normal blue for default state */
-    --button-hover-blue: #0d47a1;   /* Darker blue for hover state */
-
+    --button-default-blue: #1e5a9c;
+    --button-hover-blue: #0d47a1;
     --primary-color: #0d47a1;
     --dark-color: #1a1a1a;
     --light-color: #ffffff;
@@ -31,11 +29,15 @@ body {
     padding: 0 20px;
 }
 
-/* CORRECTED #6: Animated underline on section titles */
+h2.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
 h2.section-title a {
     color: var(--dark-color);
     text-decoration: none;
-    transition: color 0.3s;
     display: inline-block;
     position: relative;
     padding-bottom: 5px;
@@ -56,10 +58,9 @@ h2.section-title a:hover::after {
     transform: scaleX(1);
 }
 
-/* CORRECTED #7: Updated button styling */
 .btn {
     display: inline-block;
-    background-color: var(--button-default-blue); /* Normal blue background */
+    background-color: var(--button-default-blue);
     color: var(--light-color);
     padding: 12px 28px;
     border-radius: 5px;
@@ -70,7 +71,7 @@ h2.section-title a:hover::after {
     transition: background-color 0.3s, transform 0.3s;
 }
 .btn:hover {
-    background-color: var(--button-hover-blue); /* Darker blue on hover */
+    background-color: var(--button-hover-blue);
     transform: translateY(-2px);
 }
 
@@ -91,17 +92,9 @@ h2.section-title a:hover::after {
     height: 80px;
 }
 
-.logo img {
-    height: 60px;
-    width: auto;
-}
+.logo img { height: 60px; width: auto; }
+.main-nav ul { list-style: none; display: flex; }
 
-.main-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-/* CORRECTED #1: Animated underline on menu items */
 .main-nav li a, .has-submenu > a {
     color: var(--text-color);
     text-decoration: none;
@@ -110,17 +103,16 @@ h2.section-title a:hover::after {
     font-size: 0.9rem;
     text-transform: uppercase;
     display: block;
-    position: relative; /* Needed for the pseudo-element */
+    position: relative;
     transition: color 0.3s;
 }
-/* The animated underline */
 .main-nav li a::after, .has-submenu > a::after {
     content: '';
     position: absolute;
     width: 100%;
     height: 2px;
     background-color: var(--primary-color);
-    bottom: 20px; /* Adjust vertical position of underline */
+    bottom: 20px;
     left: 0;
     transform: scaleX(0);
     transform-origin: center;
@@ -130,18 +122,13 @@ h2.section-title a:hover::after {
     transform: scaleX(1);
 }
 
-.has-submenu > a {
-    cursor: default;
-}
+.has-submenu > a { cursor: default; }
 
 .main-nav li a:hover, .main-nav li a.active, .has-submenu:hover > a {
     color: var(--primary-color);
 }
 
-/* CORRECTED #2: Vertical Submenus (already correct, just for confirmation) */
-.has-submenu {
-    position: relative;
-}
+.has-submenu { position: relative; }
 .submenu {
     position: absolute;
     top: 100%;
@@ -163,290 +150,90 @@ h2.section-title a:hover::after {
     transform: translateY(0);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s;
 }
-.submenu li {
-    width: 100%;
-}
-.submenu li a {
-    padding: 10px 20px;
-    width: 100%;
-}
-.submenu li a:hover {
-    background-color: var(--gray-bg);
-}
-.submenu li a::after {
-    display: none; /* Remove underline from submenu items */
-}
+.submenu li { display: block; width: 100%; }
+.submenu li a { padding: 10px 20px; width: 100%; }
+.submenu li a:hover { background-color: var(--gray-bg); }
+.submenu li a::after { display: none; }
 
-#hamburger-btn {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
+#hamburger-btn { display: none; font-size: 1.5rem; background: none; border: none; cursor: pointer; }
 
 /* --- HERO SLIDER --- */
 .hero-slider {
     position: relative;
     width: 100%;
-    /* CORRECTED #3: This sets the exact 13.5:4.5 aspect ratio */
     aspect-ratio: 13.5 / 4.5;
     background-color: #ccc;
     overflow: hidden;
 }
-/* ... Other slider styles remain the same ... */
-
-/* --- ALL OTHER STYLES (Content Sections, Columns, Footer, etc.) --- */
-/* (The rest of the CSS remains unchanged from the previous version) */
-
-.hero-slider .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.5s ease;
-}
-
+.hero-slider .slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease; }
 .hero-slider .slide.active { opacity: 1; }
+.slide-caption { position: absolute; bottom: 5%; left: 5%; background-color: rgba(0,0,0,0.6); color: var(--light-color); padding: 15px 25px; border-radius: 5px; max-width: 80%; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.slide.active .slide-caption { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
 
-.slide-caption {
-    position: absolute;
-    bottom: 5%;
-    left: 5%;
-    background-color: rgba(0,0,0,0.6);
-    color: var(--light-color);
-    padding: 15px 25px;
-    border-radius: 5px;
-    max-width: 80%;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.slide.active .slide-caption {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.5s;
-}
-
+/* --- CONTENT SECTIONS --- */
 .content-section { padding: 80px 0; }
 .gray-bg { background-color: var(--gray-bg); }
-
-.two-column-layout {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
-}
-.column-left, .column-right {
-    flex: 1;
-    min-width: 0;
-}
-
-.column-image {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
+.two-column-layout { display: flex; gap: 50px; align-items: flex-start; }
+.column-left, .column-right { flex: 1; min-width: 0; }
+.column-image { width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 .description { margin-bottom: 20px; }
-
 .profile-card { text-align: center; }
-.profile-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 5px solid var(--light-color);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
+.profile-photo { width: 200px; height: 200px; border-radius: 50%; border: 5px solid var(--light-color); box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 20px; }
 .designations { text-align: left; margin-bottom: 25px; }
 .designations p { margin-bottom: 15px; font-size: 0.95rem; }
 
-.academic-social-links {
-    background-color: var(--light-color);
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
+.academic-social-links { padding: 10px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
 .academic-social-links a {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: #000;
-    background-color: #fff;
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    transition: all 0.3s;
+    background-color: transparent;
+    transition: color 0.3s, transform 0.3s;
 }
 .academic-social-links a:hover {
     color: var(--primary-color);
-    border-color: var(--primary-color);
     transform: scale(1.1);
 }
 
 .publications-list { list-style: none; }
-.publications-list li {
-    margin-bottom: 15px;
-    padding-left: 20px;
-    position: relative;
-}
-.publications-list li::before {
-    content: '\f0f6';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    top: 5px;
-    color: var(--primary-color);
-}
-.publications-list li a { color: var(--text-color); }
+.publications-list li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+.publications-list li::before { content: '\f0f6'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 5px; color: var(--primary-color); }
+.publications-list li a { color: var(--text-color); text-decoration: none; }
 .publications-list li a:hover { color: var(--primary-color); text-decoration: underline; }
 
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    aspect-ratio: 16 / 9;
-    background-color: #000;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-}
-.video-wrapper video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.video-play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    color: rgba(255,255,255,0.8);
-    pointer-events: none;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-.video-wrapper:hover .video-play-button {
-    transform: translate(-50%, -50%) scale(1.1);
-    color: #fff;
-}
-
-#main-footer {
-    background-color: var(--dark-color);
-    color: #ccc;
-    padding-top: 60px;
-}
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    padding-bottom: 50px;
-}
-.footer-col h4 {
-    color: var(--light-color);
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
+/* --- VIDEO & FOOTER SECTIONS --- */
+.video-wrapper { position: relative; width: 100%; max-width: 800px; margin: 0 auto; aspect-ratio: 16 / 9; background-color: #000; border-radius: 8px; overflow: hidden; cursor: pointer; }
+.video-wrapper video { width: 100%; height: 100%; object-fit: cover; }
+.video-play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; color: rgba(255,255,255,0.8); pointer-events: none; transition: transform 0.3s ease, color 0.3s ease; }
+.video-wrapper:hover .video-play-button { transform: translate(-50%, -50%) scale(1.1); color: #fff; }
+#main-footer { background-color: var(--dark-color); color: #ccc; padding-top: 60px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 50px; }
+.footer-col h4 { color: var(--light-color); font-size: 1.1rem; margin-bottom: 20px; }
 .footer-col ul li { margin-bottom: 10px; }
 .footer-col a { color: #ccc; text-decoration: none; transition: color 0.3s; }
 .footer-col a:hover { color: var(--light-color); }
 .footer-col address { font-style: normal; }
 #newsletter-form { display: flex; margin-top: 10px; }
-#newsletter-form input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #555;
-    background: #333;
-    color: var(--light-color);
-    border-radius: 3px 0 0 3px;
-}
-#newsletter-form button {
-    padding: 10px 15px;
-    border: none;
-    background: var(--primary-color);
-    color: var(--light-color);
-    cursor: pointer;
-    border-radius: 0 3px 3px 0;
-}
-#newsletter-message {
-    font-size: 0.9rem;
-    margin-top: 10px;
-}
-.footer-bottom {
-    text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid #444;
-}
+#newsletter-form input { width: 100%; padding: 10px; border: 1px solid #555; background: #333; color: var(--light-color); border-radius: 3px 0 0 3px; }
+#newsletter-form button { padding: 10px 15px; border: none; background: var(--primary-color); color: var(--light-color); cursor: pointer; border-radius: 0 3px 3px 0; }
+#newsletter-message { font-size: 0.9rem; margin-top: 10px; }
+.footer-bottom { text-align: center; padding: 20px 0; border-top: 1px solid #444; }
 
-/* CORRECTED #4: Responsive & Hamburger Logic */
-@media (max-width: 1300px) {
-    .main-nav {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background-color: var(--light-color);
-    }
-    .main-nav.active {
-        display: block;
-    }
-    .main-nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-    .main-nav li a, .has-submenu > a {
-        padding: 15px 20px;
-        border-bottom: 1px solid var(--border-color);
-    }
-    .main-nav li a::after, .has-submenu > a::after {
-        display: none; /* Hide animated underline in mobile menu */
-    }
-    .submenu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        padding-left: 20px;
-        background-color: #fafafa;
-        display: none; /* Submenus hidden by default on mobile */
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-    }
-    .has-submenu.open > .submenu {
-        display: block; /* Show on click */
-    }
-    .has-submenu > a::after {
-        content: ' \25BC'; /* Down arrow indicator */
-        float: right;
-        display: inline-block; /* Make sure it's visible */
-        transition: transform 0.3s;
-    }
-    .has-submenu.open > a::after {
-        transform: rotate(180deg); /* Flip arrow when open */
-    }
-    #hamburger-btn {
-        display: block;
-    }
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1100px) {
+    .main-nav { display: none; position: absolute; top: 80px; left: 0; width: 100%; background-color: var(--light-color); }
+    .main-nav.active { display: block; }
+    .main-nav ul { flex-direction: column; width: 100%; }
+    .main-nav li a, .has-submenu > a { padding: 15px 20px; border-bottom: 1px solid var(--border-color); }
+    .main-nav li a::after, .has-submenu > a::after { display: none; }
+    .submenu { position: static; width: 100%; box-shadow: none; padding-left: 20px; background-color: #fafafa; display: none; opacity: 1; visibility: visible; transform: none; }
+    .has-submenu.open > .submenu { display: block; }
+    .has-submenu > a::after { content: ' \25BC'; float: right; display: inline-block; transition: transform 0.3s; }
+    .has-submenu.open > a::after { transform: rotate(180deg); }
+    #hamburger-btn { display: block; }
 }
 
 @media (max-width: 768px) {
-    .two-column-layout {
-        flex-direction: column;
-    }
-    .two-column-layout.reverse-on-mobile {
-        flex-direction: column-reverse;
-    }
+    .two-column-layout { flex-direction: column; }
+    .two-column-layout.reverse-on-mobile { flex-direction: column-reverse; }
     h2.section-title { font-size: 1.8rem; }
 }
