@@ -6,120 +6,191 @@
     <title>Abdullah Al Marzan | Homepage</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 </head>
 <body>
 
-    <div id="top-bar">
-        <div class="container">
-            <div class="social-icons-left">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="ai ai-researchgate"></i></a> <a href="#"><i class="ai ai-google-scholar"></i></a> </div>
-            <div class="contact-info-right">
-                <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i> your-email@example.com</a>
-                <a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 234 567 890</a>
-            </div>
-        </div>
-    </div>
-
     <header id="main-header">
-        <div class="container">
+        <div class="container header-container">
             <div class="logo">
-                <a href="index.html">Abdullah Al Marzan</a>
+                <a href="index.html"><img src="media/logo.png" alt="Abdullah Al Marzan Logo"></a>
             </div>
+
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="active">HOME</a></li>
-                    <li><a href="academics.html">ACADEMICS</a></li>
-                    <li><a href="projects.html">PROJECTS</a></li>
-                    <li><a href="skills.html">SKILLS & CERTIFICATES</a></li>
-                    <li><a href="blog.html">BLOG</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Biography</a>
+                        <ul class="submenu">
+                            <li><a href="about.html">About Me</a></li>
+                            <li><a href="academics.html">Academics</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">Research</a>
+                        <ul class="submenu">
+                            <li><a href="interests.html">Interests</a></li>
+                            <li><a href="goal.html">Goal</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">Projects</a>
+                         <ul class="submenu">
+                            <li><a href="ongoing.html">Ongoing</a></li>
+                            <li><a href="previous.html">Previous</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="thesis.html">Thesis</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Publications</a>
+                        <ul class="submenu">
+                            <li><a href="articles.html">Article</a></li>
+                            <li><a href="grants.html">Grant</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li class="has-submenu">
+                        <a href="#">More</a>
+                        <ul class="submenu">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
-            <button id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            
+            <button id="hamburger-btn"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
     <main>
-        <section id="hero-slider">
-            <div class="slide active" style="background-image: url('media/slider/slide1.jpg');">
-                <div class="slide-content">
-                    <h1>Molecular Biologist & Bioinformatician</h1>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('media/slider/slide2.jpg');">
-                <div class="slide-content">
-                    <h1>Exploring Genomics</h1>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('media/slider/slide3.jpg');">
-                 <div class="slide-content">
-                    <h1>From Data to Discovery</h1>
-                </div>
-            </div>
-            <div class="slider-nav">
-                <div class="nav-dot active" data-slide="0"></div>
-                <div class="nav-dot" data-slide="1"></div>
-                <div class="nav-dot" data-slide="2"></div>
-            </div>
-        </section>
+
+        <section id="hero-slider" class="hero-slider">
+            </section>
+
 
         <section class="content-section">
-            <div class="container two-column-layout">
-                <div class="text-content">
-                    <h2>About Me</h2>
-                    <p>I am a dedicated and enthusiastic molecular biologist with a passion for unraveling the intricate mechanisms of life at the molecular level. My journey in the field of biology has been driven by a relentless curiosity and a desire to contribute to the ever-evolving world of science.</p>
-                </div>
-                <div class="image-content">
-                    <img src="media/home/about-me-cover.jpg" alt="About me cover image">
+            <div class="container">
+                <h2 class="section-title"><a href="about.html">Abdullah Al Marzan</a></h2>
+                <div class="two-column-layout">
+                    <div class="column-left">
+                        <div class="profile-card">
+                            <img src="media/home/profile-photo.jpg" alt="Abdullah Al Marzan Profile Photo" class="profile-photo">
+                            <div class="designations">
+                                <p><strong>Molecular Biologist</strong><br>Molecular Diagnostics | Viral Genomics<br>Advanced Molecular Lab, PAHMCH<br>Zafrabad, Kishoreganj, Bangladesh</p>
+                                <p><strong>Bioinformatician</strong><br>Deep Learning in Translational Biology<br>Department of Biochemistry and Molecular Biology, Shahjalal University of Science and Technology<br>Sylhet-3114, Bangladesh</p>
+                                <p><strong>Clinical Data Manager</strong><br>Toxicology Society of Bangladesh<br>Dhaka Medical College Hospital<br>Dhaka-1000, Bangladesh</p>
+                            </div>
+                            <div class="academic-social-links">
+                                <a href="#" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+                                <a href="#" title="ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+                                <a href="#" title="Scopus"><i class="ai ai-scopus"></i></a>
+                                <a href="#" title="ORCID"><i class="ai ai-orcid-square"></i></a>
+                                <a href="#" title="GitHub"><i class="fab fa-github-square"></i></a>
+                                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column-right">
+                        <img src="media/home/right-column-image.jpg" alt="Research concept image" class="column-image">
+                        <p class="description">
+                            Greetings! This is Marzan, a Molecular Biologist and Bioinformatician specializing in infectious disease diagnostics, viral genomics, and ML-driven translational biology. My work bridges molecular-level experimentation and computational analysis to develop predictive and actionable diagnostic strategies.<br><br>
+                            Currently, I serve in three parallel research positions: as a Clinical Data Manager at Dhaka Medical College Hospital, a Molecular Researcher at President Abdul Hamid Medical College and Hospital, and a Bioinformatics Researcher at Shahjalal University of Science and Technology. Through these complementary roles, I contribute to next-generation diagnostic innovation, structural modeling, and the integration of multi-omic data.
+                        </p>
+                        <a href="about.html" class="btn">View More</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="content-section gray-bg">
             <div class="container">
-                <h2 class="section-title">Graduate Research Project</h2>
+                <h2 class="section-title"><a href="interests.html">Research Interest</a></h2>
                 <div class="two-column-layout">
-                    <div class="image-content">
-                        <img src="media/projects/masters-thesis-cover.jpg" alt="Master's Thesis cover image">
+                    <div class="column-left">
+                        <img src="media/home/research-interest.jpg" alt="RNA Biology Visualization" class="column-image">
                     </div>
-                    <div class="text-content">
-                        <h3>Master's Thesis</h3>
-                        <p>Write a detailed description of your master's thesis project here. Explain the goals, methodologies, and key findings of your research. Make it engaging and informative for the reader.</p>
-                        <a href="#" class="btn">View Project</a>
+                    <div class="column-right">
+                        <p class="description">
+                            My research focuses on the intersection of RNA biology, molecular diagnostics, and machine learning in genomic medicine. I am particularly interested in modeling miRNA–mRNA interactions by integrating RNA secondary structure, thermodynamic features, and sequence-based targeting rules to uncover regulatory mechanisms involved in cancer, immune modulation, and therapeutic response.<br><br>  
+                            In parallel, I explore multi-omics integration and molecular dynamics simulation to discover functional biomarkers and design intelligent diagnostic systems. By combining deep learning with biological interpretability, my goal is to create scalable, AI-powered platforms for early disease detection and precision healthcare.
+                        </p>
+                        <a href="interests.html" class="btn">Details</a>
                     </div>
                 </div>
-                <div class="video-container">
-                    <div class="video-placeholder" data-src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_HERE">
-                        <img src="media/projects/masters-video-thumbnail.jpg" alt="Video thumbnail">
-                        <div class="play-button"><i class="fas fa-play"></i></div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+             <div class="container">
+                <h2 class="section-title"><a href="ongoing.html">Research Projects</a></h2>
+                <div class="two-column-layout reverse-on-mobile">
+                    <div class="column-left">
+                         <p class="description">
+                            As a molecular biologist and bioinformatician working across both clinical and computational research, I have actively contributed to a range of interdisciplinary projects spanning infectious disease diagnostics, transcriptomics, RNA therapeutics, environmental virology, and AI-driven precision medicine. My project portfolio reflects a balance between wet-lab execution and advanced computational modeling—supported by collaborations in academia, government, and clinical trial networks.<br><br>
+                            Each project detailed below highlights not only the core scientific question but also my specific role in hypothesis development, data analysis, molecular assays, coding, and manuscript preparation. Several of these initiatives have led to peer-reviewed publications in high-impact journals and have directly informed my long-term research vision.
+                        </p>
+                        <a href="ongoing.html" class="btn">View All Projects...</a>
+                    </div>
+                    <div class="column-right">
+                        <img src="media/home/research-projects.jpg" alt="Interdisciplinary project collage" class="column-image">
                     </div>
                 </div>
             </div>
         </section>
 
+        <section class="content-section gray-bg">
+             <div class="container">
+                <h2 class="section-title"><a href="thesis.html">Graduate Research Project</a></h2>
+                <div class="video-wrapper" data-video-src="videos/Thesis Presentation.mp4">
+                    </div>
+            </div>
+        </section>
+        
         <section class="content-section">
             <div class="container">
-                <h2 class="section-title">Phage and Antibiotic Synergy: A Novel Approach... (PROM)</h2>
-                 <div class="two-column-layout">
-                    <div class="text-content">
-                        <h3>Ongoing Project</h3>
-                        <p>Provide a summary of the PROM project. Discuss its significance in combating multidrug-resistant bacteria, the current status, and your specific role within the research team.</p>
-                        <a href="#" class="btn">View Project</a>
+                <h2 class="section-title"><a href="articles.html">Publications and Grants</a></h2>
+                <div class="two-column-layout">
+                    <div class="column-left">
+                        <img src="media/home/publications.jpg" alt="Academic journals" class="column-image">
                     </div>
-                    <div class="image-content">
-                        <img src="media/projects/prom-project-cover.jpg" alt="PROM project cover image">
-                    </div>
-                </div>
-                <div class="video-container">
-                    <div class="video-placeholder" data-src="https://www.youtube.com/embed/ANOTHER_YOUTUBE_VIDEO_ID">
-                         <img src="media/projects/prom-video-thumbnail.jpg" alt="Video thumbnail">
-                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    <div class="column-right">
+                        <ul class="publications-list">
+                            <li><a href="https://doi.org/10.1016/j.abst.2023.10.001" target="_blank">A. A. Marzan et al., ‘Probing biological network in concurrent carcinomas and Type-2 diabetes for potential biomarker screening: An advanced computational paradigm’, <em>Advances in Biomarker Sciences and Technology</em>, vol. 5, Oct. 2023.</a></li>
+                            <li><a href="https://doi.org/10.3389/fphar.2023.1090717" target="_blank">Md. A. Islam et al., ‘Variant-specific deleterious mutations in the SARS-CoV-2 genome reveal immune responses and potentials for prophylactic vaccine development’, <em>Front Pharmacol</em>, vol. 14, Feb. 2023.</a></li>
+                            <li><a href="https://doi.org/10.1016/j.envpol.2022.119679" target="_blank">M. Jakariya et al., ‘Wastewater-based epidemiological surveillance to monitor the prevalence of SARS-CoV-2 in developing countries with onsite sanitation facilities’, <em>Environmental Pollution</em>, vol. 311, Oct. 2022.</a></li>
+                        </ul>
+                        <a href="articles.html" class="btn">View all Publications</a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="content-section gray-bg">
+            <div class="container">
+                <h2 class="section-title"><a href="certifications.html">Skills and Competencies</a></h2>
+                <div class="two-column-layout reverse-on-mobile">
+                    <div class="column-left">
+                         <p class="description">
+                           My expertise bridges wet-lab experimentation with computational precision, enabling me to extract biological meaning from complex datasets and translate them into actionable research insights.<br>
+                           From viral genome analysis and biomarker discovery to deep learning applications for RNA sequence targeting, I’ve developed robust skills in both molecular biology techniques (qRT-PCR, ELISA, biomarker profiling) and computational pipelines (RNAfold, AutoDock, RNA-seq, GROMACS).<br><br>
+                           I hold professional certifications in Python, R programming, and advanced data science tools, allowing me to build predictive models for miRNA–mRNA interactions, mutation impact profiling, and transcriptomic diagnostics.
+                        </p>
+                        <a href="certifications.html" class="btn">View All Certificates</a>
+                    </div>
+                    <div class="column-right">
+                       <img src="media/home/skills.jpg" alt="Data science and lab work" class="column-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+             <div class="container">
+                <h2 class="section-title"><a href="ongoing.html">PROM Project</a></h2>
+                <div class="video-wrapper" data-video-src="videos/PROM Project.mp4">
+                    </div>
             </div>
         </section>
 
@@ -128,35 +199,41 @@
     <footer id="main-footer">
         <div class="container footer-grid">
             <div class="footer-col">
-                <h4>About</h4>
-                <p>A passionate researcher dedicated to exploring the frontiers of molecular biology and bioinformatics.</p>
-            </div>
-            <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="academics.html">Academics</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">Biography</a></li>
+                    <li><a href="interests.html">Research</a></li>
+                    <li><a href="ongoing.html">Projects</a></li>
+                    <li><a href="thesis.html">Thesis</a></li>
+                    <li><a href="articles.html">Publications</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Contact Info</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Your City, Country</p>
-                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
-                <p><i class="fas fa-envelope"></i> your-email@example.com</p>
+                <h4>Contact</h4>
+                <address>
+                    Toxicology Society of Bangladesh,<br>
+                    Department of Medicine,<br>
+                    Academic Block,<br>
+                    Dhaka Medical College Hospital.<br>
+                    Dhaka-1000, Dhaka,Bangladesh
+                </address>
+                <p><a href="mailto:marzansust16@gmail.com">marzansust16@gmail.com</a></p>
+                <p><a href="tel:+8801843325135">+8801843325135</a></p>
+                <p><a href="tel:+8801749287028">+8801749287028</a></p>
             </div>
             <div class="footer-col">
                 <h4>Newsletter</h4>
-                <p>Subscribe to get updates.</p>
-                <form class="newsletter-form">
+                <p>Subscribe for updates.</p>
+                 <form id="newsletter-form">
                     <input type="email" placeholder="Your Email" required>
                     <button type="submit">Subscribe</button>
                 </form>
+                <p id="newsletter-message"></p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Abdullah Al Marzan. All Rights Reserved.</p>
+            <p>© 2025 Abdullah Al Marzan. All Rights Reserved.</p>
         </div>
     </footer>
 
