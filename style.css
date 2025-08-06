@@ -230,7 +230,11 @@ h2.section-title a:hover::after {
 /* --- CONTENT SECTIONS --- */
 .content-section { padding: 80px 0; }
 .gray-bg { background-color: var(--gray-bg); }
-.two-column-layout { display: flex; gap: 50px; align-items: flex-start; }
+.two-column-layout {
+    display: flex;
+    gap: 50px;
+    align-items: center; /* This is the key property to vertically center the items */
+}
 .column-left, .column-right { flex: 1; min-width: 0; }
 
 /* CORRECTED #1: Image Hover Effect */
@@ -444,6 +448,14 @@ h2.section-title a:hover::after {
 }
 
 @media (max-width: 768px) {
+    /* CORRECTED #2: Slider height on mobile */
+    .hero-slider {
+        height: 60vh; /* Sets the slider to 60% of the mobile screen height */
+        aspect-ratio: auto; /* Overrides the desktop aspect ratio */
+    }
+    .video-wrapper {
+        aspect-ratio: 18 / 5; /* Sets your desired video ratio for mobile */
+    }
     .two-column-layout {
         flex-direction: column;
     }
@@ -453,5 +465,43 @@ h2.section-title a:hover::after {
     h2.section-title { font-size: 1.8rem; }
     .main-nav > ul {
         grid-template-columns: 1fr;
+    }
+    /* CORRECTED #3: Icons in single line on mobile */
+    .academic-social-links {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+    .academic-social-links a {
+        font-size: 1.8rem;
+    }
+    .footer-social-links {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+    .footer-social-links a {
+        font-size: 1.5rem;
+    }
+    .academic-social-links, .footer-social-links {
+        flex-wrap: nowrap;      /* Prevents the icons from wrapping to the next line */
+        overflow-x: auto;       /* Allows horizontal scrolling if needed */
+        justify-content: flex-start; /* Aligns icons to the left */
+        -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS devices */
+        scrollbar-width: none;  /* Hides the scrollbar on Firefox */
+    }
+
+    /* Hides the scrollbar on Chrome/Safari */
+    .academic-social-links::-webkit-scrollbar, .footer-social-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Optional: Adjust icon size on mobile for better spacing */
+    .academic-social-links a {
+        font-size: 1.8rem; 
+    }
+
+    .footer-social-links a {
+        font-size: 1.5rem;
     }
 }
