@@ -122,7 +122,7 @@
     .interests-cover {
         /* CORRECTED: This sets the new background image specifically for mobile */
         background-image: url('media/home/Research Interest (Main).jpg');
-        height: 40vh; /* Sets the height to 40% of the mobile screen */
+        height: 30vh; /* Sets the height to 30% of the mobile screen */
         background-attachment: scroll; /* Disables parallax for better mobile performance */
     }
     
