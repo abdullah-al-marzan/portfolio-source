@@ -103,20 +103,15 @@ document.addEventListener('DOMContentLoaded', () => {
     videoWrappers.forEach(wrapper => {
         const youtubeSrc = wrapper.getAttribute('data-youtube-embed-src');
         const linkedinSrc = wrapper.getAttribute('data-linkedin-embed-src');
-
         if (youtubeSrc || linkedinSrc) {
-            if (!wrapper.querySelector('.video-thumbnail')) {
-                const playButton = document.createElement('div');
-                playButton.innerHTML = '<i class="fas fa-play"></i>';
-                playButton.className = 'video-play-button';
+            const playButton = document.createElement('div');
+            playButton.innerHTML = '<i class="fas fa-play"></i>';
+            playButton.className = 'video-play-button';
+            if (wrapper.querySelector('.video-thumbnail')) {
                 wrapper.appendChild(playButton);
             } else {
-                const playButton = document.createElement('div');
-                playButton.innerHTML = '<i class="fas fa-play"></i>';
-                playButton.className = 'video-play-button';
                 wrapper.appendChild(playButton);
             }
-
             wrapper.addEventListener('click', () => {
                 let iframe;
                 if (youtubeSrc) {
@@ -156,13 +151,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- NEW: FLICKER-FIX SCRIPT ---
+    // --- FLICKER-FIX SCRIPT (Your working code) ---
     let resizeTimer;
     window.addEventListener('resize', () => {
         body.classList.add('is-resizing');
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
             body.classList.remove('is-resizing');
-        }, 250);
+        }, 100);
     });
+
+    // --- NEW: SCRIPT TO MAKE BUTTONS IN A GROUP THE SAME WIDTH ---
+    function setEqualButtonWidths() {
+        const buttonGroups = document.querySelectorAll('.button-group');
+        buttonGroups.forEach(group => {
+            const buttons = group.querySelectorAll('.btn');
+            if (buttons.length > 1) { // Only run if there's more than one button
+                let maxWidth = 0;
+                // First, find the widest button
+                buttons.forEach(button => {
+                    button.style.width = 'auto'; // Reset width to measure natural size
+                    if (button.offsetWidth > maxWidth) {
+                        maxWidth = button.offsetWidth;
+                    }
+                });
+                // Then, apply that width to all buttons in the group
+                buttons.forEach(button => {
+                    button.style.width = `${maxWidth}px`;
+                });
+            }
+        });
+    }
+
+    // Run the function on page load and on window resize
+    window.addEventListener('load', setEqualButtonWidths);
+    window.addEventListener('resize', setEqualButtonWidths);
+
 });
