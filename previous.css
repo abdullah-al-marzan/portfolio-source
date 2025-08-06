@@ -73,7 +73,7 @@
 /* CORRECTED #2: Image size and hover effect */
 .image-container {
     position: relative;
-    width: 75%; /* Updated from 60% */
+    width: 85%; /* Updated from 60% */
     margin: 0 auto 25px auto;
     overflow: hidden;
     border-radius: 8px;
