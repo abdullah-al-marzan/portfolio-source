@@ -1,17 +1,19 @@
 /* --- STYLES FOR ABOUT ME PAGE --- */
 
-/* Section 1: Cover Photo */
+/* CORRECTED #1: Cover Photo */
 .about-cover {
-    height: 50vh; /* Same height as the homepage slider */
-    background-image: url('media/home/About Me.jpg'); /* Cover image path */
+    height: calc(100vh - 2cm); /* Full screen height minus the header */
+    background-image: url('media/home/About Me.jpg');
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Creates a nice parallax effect */
+    background-position: center 30%; /* Adjust vertical position if needed */
+    background-attachment: fixed;
 }
 
-/* Section 2: Main Text Content */
+/* CORRECTED #2: Main Text Content Layout */
 .about-container {
-    max-width: 800px; /* Optimal width for reading text */
+    max-width: 80%; /* Leaves 10% margin on each side */
+    margin-left: auto;
+    margin-right: auto;
     text-align: justify;
 }
 
@@ -27,13 +29,13 @@
     line-height: 1.8;
 }
 
-/* Section 3: Buttons */
+/* CORRECTED #4, #5, #6: Button Section */
 .button-section {
     text-align: center;
 }
 
 .button-group {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .button-group h3 {
@@ -43,14 +45,40 @@
 }
 
 .button-group .btn {
-    display: block; /* Makes buttons stack vertically */
-    margin: 0 auto 15px auto; /* Center the buttons */
+    display: block;
+    margin: 0 auto 15px auto; /* No extra space */
     max-width: 500px;
-    text-align: left;
-    padding-left: 25px;
+    text-align: center; /* Center text */
+    padding: 12px 20px;
+    background-color: #f4f4f4; /* Ash background */
+    color: var(--dark-color); /* Dark text for contrast */
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-group .btn:hover {
+    background-color: #000000; /* Black background on hover */
+    color: var(--light-color); /* White text on hover */
 }
 
 /* Style for the active submenu item */
 .submenu .active-submenu {
     color: #a8cfff; /* Light blue highlight */
+}
+
+/* --- RESPONSIVE STYLES FOR ABOUT PAGE --- */
+@media (max-width: 768px) {
+    /* CORRECTED #1: Mobile Cover Photo */
+    .about-cover {
+        height: 40vh; /* 40% of the mobile screen height */
+    }
+    
+    /* CORRECTED #2: Mobile Text Layout */
+    .about-container {
+        max-width: 90%; /* A little more space on smaller screens */
+    }
+
+    .about-container h1 {
+        font-size: 2rem;
+    }
 }
