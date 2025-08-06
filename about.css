@@ -70,7 +70,7 @@
 }
 
 /* --- RESPONSIVE STYLES FOR ABOUT PAGE --- */
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     /* CORRECTED: This now applies to all mobile devices */
     .about-cover {
         height: auto;
