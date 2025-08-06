@@ -190,7 +190,8 @@ h2.section-title a:hover::after {
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 1010; /* Ensures it's on top */
+    position: relative; /* Added for z-index to work */
+    z-index: 1010; /* Ensures it's on top of the menu */
 }
 
 #hamburger-btn .bar {
@@ -379,31 +380,52 @@ h2.section-title a:hover::after {
 
 .footer-bottom { text-align: center; padding: 20px 0; border-top: 1px solid var(--mobile-border-color); }
 
+/* This class is added by JavaScript during resize to prevent flickering */
+body.is-resizing .main-nav {
+    transition: none !important;
+}
+
 /* --- RESPONSIVE HAMBURGER MENU --- */
 @media (max-width: 1100px) {
-    .main-nav {
+    /* Hides the desktop navigation links */
+    .main-nav > ul {
         display: none;
+    }
+
+    /* This is the container for the slide-out menu */
+    .main-nav {
+        display: block; /* The container must be present */
         position: fixed;
-        top: 2cm;
-        left: 0;
-        width: 100%;
+        top: 2cm; /* Positioned below the header */
+        right: 0;
+        width: 300px;
+        max-width: 80%;
         height: calc(100% - 2cm);
         background-color: var(--light-color);
         overflow-y: auto;
+        z-index: 1005;
+        transform: translateX(100%); /* Start completely off-screen */
+        transition: transform 0.4s ease-in-out;
     }
+    
+    /* When the menu is active, it slides into view */
     .main-nav.active {
-        display: block;
+        transform: translateX(0);
     }
-    .main-nav > ul {
+    
+    /* Re-enables the list for the mobile view */
+    .main-nav.active > ul {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0 10px;
         align-content: start;
         padding: 10px;
     }
+    
     .main-nav > ul > li {
         border-bottom: 1px solid var(--border-color);
     }
+
     .main-nav li a, .has-submenu > a {
         padding: 15px;
         height: auto;
@@ -412,17 +434,21 @@ h2.section-title a:hover::after {
         color: var(--dark-color);
         border-bottom: none;
     }
+
     .main-nav li a.active {
         background-color: var(--button-default-blue);
         color: var(--light-color);
     }
+
     .main-nav li a:hover, .has-submenu > a:hover {
         background-color: var(--gray-bg);
         color: var(--button-default-blue);
     }
+    
     .main-nav li a::after, .has-submenu > a::after {
         display: none;
     }
+
     .submenu {
         position: static;
         width: 100%;
@@ -432,26 +458,26 @@ h2.section-title a:hover::after {
         background-color: transparent;
         display: none;
         border: none;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        transition: none;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
     }
+
     .submenu li a {
         border: none;
         padding-top: 10px;
         padding-bottom: 10px;
     }
+
     .submenu li a:hover {
         background-color: #e0e0e0;
     }
+
     .has-submenu.open > .submenu {
         display: block;
         max-height: 500px;
     }
+
     .has-submenu > a::after {
         content: ' \25BC';
         float: right;
@@ -459,29 +485,14 @@ h2.section-title a:hover::after {
         transition: transform 0.3s;
         color: var(--dark-color);
     }
+
     .has-submenu.open > a::after {
         transform: rotate(180deg);
     }
-    @media (max-width: 1100px) {
-    .main-nav {
-        display: block; /* Must be block for transform to work */
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 300px; /* Or a percentage like 80% */
-        max-width: 80%;
-        height: 100%;
-        background-color: var(--light-color);
-        overflow-y: auto;
-        z-index: 1005;
-        transform: translateX(100%); /* Start off-screen */
-        transition: transform 0.4s ease-in-out; /* Smooth slide animation */
+
+    #hamburger-btn {
+        display: block; /* Makes the button visible */
     }
-    .main-nav.active {
-        transform: translateX(0); /* Slide into view */
-    }
-    /* ... rest of the hamburger menu styles ... */
-}
 }
 
 @media (max-width: 768px) {

@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- HERO IMAGE SLIDER ---
-    // UPDATED with your full list of 21 images
+    // --- HERO IMAGE SLIDER (Your working code) ---
     const sliderData = [
         { image: 'media/home/slider/Anaerobic Culture.jpg', caption: 'Anaerobic Culture' },
         { image: 'media/home/slider/Antimicrobial Resistance.jpg', caption: 'Antimicrobial Resistance Research' },
@@ -76,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- RESPONSIVE HAMBURGER MENU ---
+    // --- RESPONSIVE HAMBURGER MENU (Your working code) ---
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mainNav = document.querySelector('.main-nav');
     const hasSubmenu = document.querySelectorAll('.has-submenu > a');
@@ -84,15 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hamburgerBtn) {
         hamburgerBtn.addEventListener('click', () => {
-            // This toggles the classes for both the icon and the menu panel
             hamburgerBtn.classList.toggle('active');
             mainNav.classList.toggle('active');
-            
-            // This prevents the main page from scrolling when the menu is open
             body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
         });
     }
-        
+    
     hasSubmenu.forEach(menuItem => {
         menuItem.addEventListener('click', function(e) {
             if (window.innerWidth <= 1100) {
@@ -102,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- VIDEO PLAYER (Unchanged and Correct) ---
+    // --- VIDEO PLAYER (Your working code) ---
     const videoWrappers = document.querySelectorAll('.video-wrapper');
     videoWrappers.forEach(wrapper => {
         const youtubeSrc = wrapper.getAttribute('data-youtube-embed-src');
@@ -146,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- NEWSLETTER FORM (Unchanged and Correct) ---
+    // --- NEWSLETTER FORM (Your working code) ---
     const newsletterForm = document.getElementById('newsletter-form');
     const newsletterMessage = document.getElementById('newsletter-message');
     if (newsletterForm) {
@@ -159,4 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
             newsletterForm.reset();
         });
     }
+
+    // --- NEW: FLICKER-FIX SCRIPT ---
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        body.classList.add('is-resizing');
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            body.classList.remove('is-resizing');
+        }, 250);
+    });
 });
