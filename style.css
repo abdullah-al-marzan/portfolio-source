@@ -506,7 +506,7 @@ body.is-resizing .main-nav {
 @media (max-width: 768px) {
     /* CORRECTED #2: Slider height on mobile */
     .hero-slider {
-        height: 30vh; /* Sets the slider to 40% of the mobile screen height */
+        height: 20vh; /* Sets the slider to 40% of the mobile screen height */
         aspect-ratio: auto; /* Overrides the desktop aspect ratio */
     }
     .two-column-layout {
