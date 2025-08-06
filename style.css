@@ -193,11 +193,12 @@ h2.section-title a:hover::after {
     color: var(--light-color);
 }
 
-/* --- HERO SLIDER --- */
+/* CORRECTED #2: Full screen dynamic slider */
 .hero-slider {
     position: relative;
     width: 100%;
-    aspect-ratio: 13.5 / 5;
+    /* This makes the slider fill the vertical screen minus the header height */
+    height: calc(100vh - 2cm); 
     background-color: #ccc;
     overflow: hidden;
 }
@@ -278,7 +279,7 @@ h2.section-title a:hover::after {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    aspect-ratio: 18.2 / 10; /* Updated ratio */
+    aspect-ratio: 18 / 10.1; /* Updated ratio */
     background-color: #000;
     border-radius: 8px;
     overflow: hidden;
@@ -308,15 +309,16 @@ h2.section-title a:hover::after {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3rem;
-    color: rgba(255,255,255,0.8);
+    font-size: 3.5rem;
+    /* CORRECTED: Changed color to red */
+    color: rgba(255, 0, 0, 0.8); 
     pointer-events: none;
     transition: transform 0.3s ease, color 0.3s ease;
     z-index: 10;
 }
 .video-wrapper:hover .video-play-button {
     transform: translate(-50%, -50%) scale(1.1);
-    color: #fff;
+    color: #ff0000; /* Solid red on hover */
 }
 
 /* --- FOOTER --- */
@@ -342,11 +344,15 @@ h2.section-title a:hover::after {
     font-size: 1.9rem;
     color: #ffffff;
     margin: 0 10px;
-    transition: color 0.3s;
+    display: inline-block; /* This is the crucial missing property */
+    transition: transform 0.3s ease; /* Simplified transition */
 }
+
 .footer-social-links a:hover {
-    color: var(--light-color);
+    color: var(--light-color); /* Keeps the color the same */
+    transform: scale(1.15);  /* Makes the icon slightly bigger */
 }
+
 .footer-bottom { text-align: center; padding: 20px 0; border-top: 1px solid var(--mobile-border-color); }
 
 /* --- RESPONSIVE HAMBURGER MENU --- */
