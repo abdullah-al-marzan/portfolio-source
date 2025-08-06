@@ -1,93 +1,56 @@
 /* --- STYLES FOR ABOUT ME PAGE --- */
 
-/* Style for the header at the top of the page */
-.page-header {
-    background-color: var(--gray-bg);
-    padding: 40px 0;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
+/* Section 1: Cover Photo */
+.about-cover {
+    height: 50vh; /* Same height as the homepage slider */
+    background-image: url('media/home/About Me.jpg'); /* Cover image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a nice parallax effect */
 }
 
-.page-header h1 {
-    font-size: 2.5rem;
+/* Section 2: Main Text Content */
+.about-container {
+    max-width: 800px; /* Optimal width for reading text */
+    text-align: justify;
+}
+
+.about-container h1 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.about-container p {
+    margin-bottom: 1.5em;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Section 3: Buttons */
+.button-section {
+    text-align: center;
+}
+
+.button-group {
+    margin-bottom: 50px;
+}
+
+.button-group h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
     color: var(--dark-color);
 }
 
-/* Layout for the main content area */
-.about-me-content {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
-}
-
-.about-image {
-    flex-basis: 35%;
-    position: sticky; /* Makes the image stay in place as you scroll */
-    top: 100px;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.about-text {
-    flex-basis: 65%;
-}
-
-.about-text h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--button-default-blue);
-    padding-bottom: 10px;
-    display: inline-block;
-}
-
-.about-text h3 {
-    font-size: 1.5rem;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.about-text p {
-    margin-bottom: 1.2em;
-}
-
-.about-text ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.about-text ul li {
+.button-group .btn {
+    display: block; /* Makes buttons stack vertically */
+    margin: 0 auto 15px auto; /* Center the buttons */
+    max-width: 500px;
+    text-align: left;
     padding-left: 25px;
-    position: relative;
-    margin-bottom: 10px;
-}
-
-.about-text ul li::before {
-    content: '\f00c'; /* Font Awesome check icon */
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    top: 5px;
-    color: var(--button-default-blue);
 }
 
 /* Style for the active submenu item */
 .submenu .active-submenu {
-    font-weight: bold;
-    color: var(--button-default-blue);
-}
-
-/* Responsive adjustments for the About Me page */
-@media (max-width: 768px) {
-    .about-me-content {
-        flex-direction: column;
-    }
-    .about-image {
-        position: static; /* Image scrolls normally on mobile */
-        margin-bottom: 30px;
-    }
+    color: #a8cfff; /* Light blue highlight */
 }
