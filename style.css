@@ -450,7 +450,7 @@ h2.section-title a:hover::after {
 @media (max-width: 768px) {
     /* CORRECTED #2: Slider height on mobile */
     .hero-slider {
-        height: 60vh; /* Sets the slider to 60% of the mobile screen height */
+        height: 40vh; /* Sets the slider to 40% of the mobile screen height */
         aspect-ratio: auto; /* Overrides the desktop aspect ratio */
     }
     .video-wrapper {
