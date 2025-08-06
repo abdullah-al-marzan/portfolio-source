@@ -65,18 +65,22 @@ h2.section-title a:hover::after {
 
 .btn {
     display: inline-block;
-    background-color: var(--button-default-blue);
-    color: var(--light-color);
-    padding: 12px 28px;
+    /* CORRECTED: New button style */
+    background-color: var(--light-color); /* White background */
+    color: var(--dark-color);             /* Black text */
+    border: 2px solid var(--dark-color);  /* Black border */
+    padding: 10px 25px;                   /* Reduced length (padding) */
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
     margin-top: 20px;
-    border: none;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
+
 .btn:hover {
-    background-color: var(--button-hover-blue);
+    /* Inverted colors for a premium hover effect */
+    background-color: var(--dark-color); /* Black background */
+    color: var(--light-color);            /* White text */
     transform: translateY(-2px);
 }
 
