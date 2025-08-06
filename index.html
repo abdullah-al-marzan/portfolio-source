@@ -13,48 +13,18 @@
     <header id="main-header">
         <div class="container header-container">
             <div class="logo">
-                <a href="index.html"><img src="media/logo.png" alt="Abdullah Al Marzan Logo"></a>
+                <a href="index.html"><img src="media/home/Logo.svg" alt="Abdullah Al Marzan Logo"></a>
             </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li class="has-submenu">
-                        <a>Biography</a>
-                        <ul class="submenu">
-                            <li><a href="about.html">About Me</a></li>
-                            <li><a href="academics.html">Academics</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-submenu">
-                        <a>Research</a>
-                        <ul class="submenu">
-                            <li><a href="interests.html">Interests</a></li>
-                            <li><a href="goal.html">Goal</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-submenu">
-                        <a>Projects</a>
-                         <ul class="submenu">
-                            <li><a href="ongoing.html">Ongoing</a></li>
-                            <li><a href="previous.html">Previous</a></li>
-                        </ul>
-                    </li>
+                    <li class="has-submenu"><a>Biography</a><ul class="submenu"><li><a href="about.html">About Me</a></li><li><a href="academics.html">Academics</a></li></ul></li>
+                    <li class="has-submenu"><a>Research</a><ul class="submenu"><li><a href="interests.html">Interests</a></li><li><a href="goal.html">Goal</a></li></ul></li>
+                    <li class="has-submenu"><a>Projects</a><ul class="submenu"><li><a href="ongoing.html">Ongoing</a></li><li><a href="previous.html">Previous</a></li></ul></li>
                     <li><a href="thesis.html">Thesis</a></li>
-                    <li class="has-submenu">
-                        <a>Publications</a>
-                        <ul class="submenu">
-                            <li><a href="articles.html">Article</a></li>
-                            <li><a href="grants.html">Grant</a></li>
-                        </ul>
-                    </li>
+                    <li class="has-submenu"><a>Publications</a><ul class="submenu"><li><a href="articles.html">Article</a></li><li><a href="grants.html">Grant</a></li></ul></li>
                     <li><a href="certifications.html">Certifications</a></li>
-                    <li class="has-submenu">
-                        <a>More</a>
-                        <ul class="submenu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </li>
+                    <li class="has-submenu"><a>More</a><ul class="submenu"><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></li>
                 </ul>
             </nav>
             <button id="hamburger-btn"><i class="fas fa-bars"></i></button>
@@ -62,7 +32,10 @@
     </header>
 
     <main>
-        <section id="hero-slider" class="hero-slider"></section>
+        <section id="hero-slider" class="hero-slider">
+            <div id="slider-prev" class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
+            <div id="slider-next" class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
+        </section>
 
         <section class="content-section">
             <div class="container">
@@ -88,7 +61,11 @@
                         </div>
                     </div>
                     <div class="column-right">
-                        <img src="media/home/About Me.jpg" alt="A collage of research activities" class="column-image">
+                        <div class="image-link-wrapper">
+                            <a href="about.html">
+                                <img src="media/home/About Me.jpg" alt="A collage of research activities" class="column-image">
+                            </a>
+                        </div>
                         <p class="description">
                             Greetings! This is Marzan, a Molecular Biologist and Bioinformatician specializing in infectious disease diagnostics, viral genomics, and ML-driven translational biology. My work bridges molecular-level experimentation and computational analysis to develop predictive and actionable diagnostic strategies.<br><br>
                             Currently, I serve in three parallel research positions: as a Clinical Data Manager at Dhaka Medical College Hospital, a Molecular Researcher at President Abdul Hamid Medical College and Hospital, and a Bioinformatics Researcher at Shahjalal University of Science and Technology. Through these complementary roles, I contribute to next-generation diagnostic innovation, structural modeling, and the integration of multi-omic data.
@@ -104,7 +81,11 @@
                 <h2 class="section-title"><a href="interests.html">Research Interest</a></h2>
                 <div class="two-column-layout">
                     <div class="column-left">
-                        <img src="media/home/Research Interest.jpg" alt="RNA Biology Visualization" class="column-image">
+                        <div class="image-link-wrapper">
+                            <a href="interests.html">
+                                <img src="media/home/Research Interest.jpg" alt="RNA Biology Visualization" class="column-image">
+                            </a>
+                        </div>
                     </div>
                     <div class="column-right">
                         <p class="description">
@@ -129,7 +110,11 @@
                         <a href="ongoing.html" class="btn">View All Projects...</a>
                     </div>
                     <div class="column-right">
-                        <img src="media/home/Research Project.jpg" alt="Interdisciplinary project collage" class="column-image">
+                        <div class="image-link-wrapper">
+                            <a href="ongoing.html">
+                                <img src="media/home/Research Project.jpg" alt="Interdisciplinary project collage" class="column-image">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -138,7 +123,8 @@
         <section class="content-section gray-bg">
              <div class="container">
                 <h2 class="section-title"><a href="thesis.html">Graduate Research Project</a></h2>
-                <div class="video-wrapper" data-youtube-embed-src="YOUR_YOUTUBE_EMBED_LINK_HERE">
+                <div class="video-wrapper" data-youtube-embed-src="https://www.youtube.com/embed/IGOBhqddBmM">
+                    <img src="media/home/First Video Thumbnail (Flow Chart of PROM Study).jpg" alt="Flow chart of the PROM study" class="video-thumbnail">
                 </div>
             </div>
         </section>
@@ -148,7 +134,11 @@
                 <h2 class="section-title"><a href="articles.html">Publications and Grants</a></h2>
                 <div class="two-column-layout">
                     <div class="column-left">
-                        <img src="media/home/Publications.jpg" alt="Academic journals" class="column-image">
+                        <div class="image-link-wrapper">
+                            <a href="articles.html">
+                                <img src="media/home/Publications.jpg" alt="Academic journals" class="column-image">
+                            </a>
+                        </div>
                     </div>
                     <div class="column-right">
                         <ul class="publications-list">
@@ -175,7 +165,11 @@
                         <a href="certifications.html" class="btn">View All Certificates</a>
                     </div>
                     <div class="column-right">
-                       <img src="media/home/Certifications.jpg" alt="Data science and lab work" class="column-image">
+                       <div class="image-link-wrapper">
+                           <a href="certifications.html">
+                               <img src="media/home/Certifications.jpg" alt="Data science and lab work" class="column-image">
+                           </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,7 +178,8 @@
         <section class="content-section">
              <div class="container">
                 <h2 class="section-title"><a href="ongoing.html">PROM Project</a></h2>
-                <div class="video-wrapper" data-youtube-embed-src="YOUR_YOUTUBE_EMBED_LINK_HERE_2">
+                <div class="video-wrapper" data-youtube-embed-src="https://www.youtube.com/embed/0QOzndCeBPc">
+                    <img src="media/home/Second Video Thumbnail (Lab Activities of Abdullah Al Marzan).jpg" alt="Lab activities of Abdullah Al Marzan" class="video-thumbnail">
                 </div>
             </div>
         </section>
@@ -225,6 +220,15 @@
                     <button type="submit">Subscribe</button>
                 </form>
                 <p id="newsletter-message"></p>
+                <div class="footer-social-links">
+                    <a href="https://scholar.google.com/citations?hl=en&user=Xvc4eokAAAAJ" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+                    <a href="https://www.researchgate.net/profile/Abdullah-Marzan" target="_blank" title="ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+                    <a href="https://www.scopus.com/authid/detail.uri?authorId=57267619000" target="_blank" title="Scopus"><i class="ai ai-scopus"></i></a>
+                    <a href="https://orcid.org/0000-0002-6235-2277" target="_blank" title="ORCID"><i class="ai ai-orcid-square"></i></a>
+                    <a href="https://github.com/abdullah-al-marzan" target="_blank" title="GitHub"><i class="fab fa-github-square"></i></a>
+                    <a href="https://www.linkedin.com/in/abdullah-al-marzan-896a43187/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/lllarzan" target="_blank" title="X (Twitter)"><i class="fab fa-twitter-square"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">

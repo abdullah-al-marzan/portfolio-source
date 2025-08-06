@@ -36,7 +36,6 @@ h2.section-title {
     margin-bottom: 50px;
     font-weight: 600;
 }
-
 h2.section-title a {
     color: var(--dark-color);
     text-decoration: none;
@@ -194,41 +193,78 @@ h2.section-title a:hover::after {
     color: var(--light-color);
 }
 
-/* --- HERO SLIDER & OTHER SECTIONS --- */
-.hero-slider { position: relative; width: 100%; aspect-ratio: 13.5 / 5; background-color: #ccc; overflow: hidden; }
+/* --- HERO SLIDER --- */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 13.5 / 5;
+    background-color: #ccc;
+    overflow: hidden;
+}
 .hero-slider .slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease; }
 .hero-slider .slide.active { opacity: 1; }
 .slide-caption { position: absolute; bottom: 5%; left: 5%; background-color: rgba(0,0,0,0.6); color: var(--light-color); padding: 15px 25px; border-radius: 5px; max-width: 80%; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .slide.active .slide-caption { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+/* CORRECTED #1: Slider Arrows */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; /* No background */
+    color: white;
+    border: none;
+    font-size: 3rem; /* Bigger size */
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+.slider-arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+.slider-arrow.prev { left: 20px; }
+.slider-arrow.next { right: 20px; }
+
+/* --- CONTENT SECTIONS --- */
 .content-section { padding: 80px 0; }
 .gray-bg { background-color: var(--gray-bg); }
 .two-column-layout { display: flex; gap: 50px; align-items: flex-start; }
 .column-left, .column-right { flex: 1; min-width: 0; }
 
-/* CORRECTED #3: Image hover effect */
+/* CORRECTED #1: Image Hover Effect */
 .image-link-wrapper {
     display: block;
-    overflow: hidden; /* This prevents the enlarged image from overflowing its container */
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden; /* This is the key fix */
+}
+.image-link-wrapper:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 .column-image {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
     border-radius: 8px;
-    transition: transform 0.4s ease; /* Smooth transition for the zoom effect */
-}
-.image-link-wrapper:hover .column-image {
-    transform: scale(1.05); /* Enlarge image slightly on hover */
+    transition: transform 0.4s ease; /* This transition was moved to the wrapper */
 }
 
-.description { margin-bottom: 20px; }
+/* CORRECTED #3: Text Spacing */
+.column-right .description {
+    margin-top: 2.5em; /* Adds a two-line gap */
+}
+
 .profile-card { text-align: center; }
 .profile-photo { width: 200px; height: 200px; border-radius: 50%; border: 5px solid var(--light-color); box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 20px; }
 .designations { text-align: left; margin-bottom: 25px; }
 .designations p { margin-bottom: 15px; font-size: 0.95rem; }
+/* CORRECTED #3: Icon Color */
 .academic-social-links { padding: 10px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
-.academic-social-links a { font-size: 2.2rem; color: #000; background-color: transparent; transition: color 0.3s, transform 0.3s; }
+.academic-social-links a { font-size: 2.2rem; color: #413b3b; /* Dark Grey */ background-color: transparent; transition: color 0.3s, transform 0.3s; }
 .academic-social-links a:hover { color: var(--button-default-blue); transform: scale(1.1); }
 .publications-list { list-style: none; }
 .publications-list li { margin-bottom: 15px; padding-left: 20px; position: relative; }
@@ -236,13 +272,13 @@ h2.section-title a:hover::after {
 .publications-list li a { color: var(--text-color); text-decoration: none; }
 .publications-list li a:hover { color: var(--button-default-blue); text-decoration: underline; }
 
-/* CORRECTED #1 & #4: Video Wrapper Styling */
+/* CORRECTED #2: Video Wrapper Styling */
 .video-wrapper {
     position: relative;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    aspect-ratio: 18.5 / 10; /* Set the exact 18.5:10 aspect ratio */
+    aspect-ratio: 18.2 / 10; /* Updated ratio */
     background-color: #000;
     border-radius: 8px;
     overflow: hidden;
@@ -254,7 +290,7 @@ h2.section-title a:hover::after {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the thumbnail covers the area */
+    object-fit: cover;
     transition: opacity 0.3s ease;
 }
 .video-wrapper:hover .video-thumbnail {
@@ -295,6 +331,22 @@ h2.section-title a:hover::after {
 #newsletter-form input { width: 100%; padding: 10px; border: 1px solid #555; background: #333; color: var(--light-color); border-radius: 3px 0 0 3px; }
 #newsletter-form button { padding: 10px 15px; border: none; background: var(--button-default-blue); color: var(--light-color); cursor: pointer; border-radius: 0 3px 3px 0; }
 #newsletter-message { font-size: 0.9rem; margin-top: 10px; }
+/* CORRECTED #4: Footer Social Links */
+.footer-social-links {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--mobile-border-color);
+    text-align: center;
+}
+.footer-social-links a {
+    font-size: 1.9rem;
+    color: #ffffff;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+.footer-social-links a:hover {
+    color: var(--light-color);
+}
 .footer-bottom { text-align: center; padding: 20px 0; border-top: 1px solid var(--mobile-border-color); }
 
 /* --- RESPONSIVE HAMBURGER MENU --- */
