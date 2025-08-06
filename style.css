@@ -453,9 +453,6 @@ h2.section-title a:hover::after {
         height: 40vh; /* Sets the slider to 40% of the mobile screen height */
         aspect-ratio: auto; /* Overrides the desktop aspect ratio */
     }
-    .video-wrapper {
-        aspect-ratio: 18 / 10; /* Sets your desired video ratio for mobile */
-    }
     .two-column-layout {
         flex-direction: column;
     }
