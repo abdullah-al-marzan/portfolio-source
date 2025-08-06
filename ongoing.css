@@ -1,3 +1,28 @@
+/* Full-screen video section for desktop */
+
+.video-section {
+    position: relative;
+    width: 70vw; /* Fixed width to 70% of the viewport width */
+    height: 80vh; /* Fixed height to 80% of the viewport height */
+    overflow: hidden;
+    margin: 0 auto 20px auto; /* Centers the video horizontally */
+}
+
+.video-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the video element both horizontally and vertically */
+    width: 100%;
+    height: 100%;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* === Ongoing Page Specific Styles === */
 
 .ongoing-intro h1 {
@@ -12,6 +37,8 @@
     max-width: 800px;
     margin: 0 auto 15px auto;
 }
+
+
 
 .project-section .animated-title a {
     font-size: 1.2em;
@@ -151,9 +178,8 @@
     color: #a8cfff !important;
 }
 
-/* CORRECTED: Button Section Styles */
 .button-section {
-    padding: 1px 0;
+    padding: 40px 0;
     text-align: center;
 }
 

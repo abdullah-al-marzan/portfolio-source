@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     imageContainers.forEach(container => {
         container.addEventListener('click', function(event) {
-            // Ensure the click is on the image itself
             if (event.target.classList.contains('project-image')) {
                 const imageSrc = event.target.src;
                 const linkUrl = container.getAttribute('data-link');
