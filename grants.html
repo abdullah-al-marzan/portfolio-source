@@ -3,36 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Grant | Abdullah Al Marzan</title>
+    <title>Grants & Achievements | Abdullah Al Marzan</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="grants.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="academics.html">Academics</a></li>
-                <li><a href="interests.html">Interests</a></li>
-                <li><a href="goal.html">Goal</a></li>
-                <li><a href="ongoing-projects.html">Ongoing Projects</a></li>
-                <li><a href="previous-projects.html">Previous Projects</a></li>
-                <li><a href="thesis.html">Thesis</a></li>
-                <li><a href="published-article.html">Published Article</a></li>
-                <li><a href="research-grant.html">Research Grant</a></li>
-                <li><a href="certificate.html">Certificate</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </nav>
+
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><img src="media/home/Logo.png" alt="Abdullah Al Marzan Logo"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu"><a>Biography</a><ul class="submenu"><li><a href="about.html">About Me</a></li><li><a href="academics.html">Academics</a></li></ul></li>
+                    <li class="has-submenu"><a>Research</a><ul class="submenu"><li><a href="interests.html">Interests</a></li><li><a href="goal.html">Goal</a></li></ul></li>
+                    <li class="has-submenu"><a>Projects</a><ul class="submenu"><li><a href="ongoing.html">Ongoing</a></li><li><a href="previous.html">Previous</a></li></ul></li>
+                    <li><a href="thesis.html">Thesis</a></li>
+                    <li class="has-submenu">
+                        <a class="active">Publications</a>
+                        <ul class="submenu">
+                            <li><a href="articles.html">Article</a></li>
+                            <li><a href="grants.html" class="active-submenu">Grant</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li class="has-submenu"><a>More</a><ul class="submenu"><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h2>Research Grant</h2>
-            </section>
+        <section class="content-section">
+            <div class="container grants-container">
+                
+                <div class="grants-section">
+                    <h1>Research Grants and Relevant Awards</h1>
+                    
+                    <div class="grant-item">
+                        <h3><span>1.</span> The Integrated Health Science Research and Development Fund</h3>
+                        <p><strong>Year:</strong> 2022</p>
+                        <p><strong>Amount:</strong> 25,00,000 BDT</p>
+                        <p><strong>Title of Application:</strong> Determinants of premature rupture of membrane (PROM) in Kishoreganj, Bangladesh: A prospective case-control study</p>
+                    </div>
+
+                    <div class="grant-item">
+                        <h3><span>2.</span> The Ministry of Science and Technology, Bangladesh</h3>
+                        <p><strong>Name of the grant:</strong> National Science and Technology (NST) Fellowships</p>
+                        <p><strong>Year:</strong> 2022</p>
+                        <p><strong>Amount:</strong> 54,000 BDT</p>
+                        <p><strong>Title of Application:</strong> Wastewater-based epidemiological surveillance to monitor the prevalence of rota and dengue in developing countries with onsite sanitation facilities.</p>
+                    </div>
+
+                    <div class="grant-item">
+                        <h3><span>3.</span> WaterAid</h3>
+                        <p><strong>Year:</strong> 2020</p>
+                        <p><strong>Amount:</strong> 40,00,000 BDT</p>
+                        <p><strong>Title of Application:</strong> Wastewater-based surveillance for detecting SARS-CoV-2 in rural and urban setups in the context of developing countries.</p>
+                    </div>
+                </div>
+
+                <div class="achievements-section">
+                    <h1>Achievements Relative to Opportunity</h1>
+                    <p>My research journey has been forged through resilience, driven by curiosity, and strengthened by necessity. Growing up in a financially challenged household in Bangladesh, I became the primary supporter of my education and family from an early stage. While pursuing my undergraduate and master’s degrees in Molecular Biology at Shahjalal University of Science and Technology (SUST), I worked long hours tutoring students, balancing rigorous academics with the responsibility of sustaining my household.</p>
+                    <p>Despite limited institutional support and resource scarcity, I remained committed to my academic goals. I independently sought out MOOCs, workshops, global conferences, and free certification programs to develop skills in genomics, computational biology, and data science. To gain wet-lab experience, I proactively collaborated with departments and external institutions, requesting formal permission to use lab facilities. During the height of the COVID-19 pandemic, I volunteered as a research assistant at a COVID-19 testing lab, where I gained hands-on expertise in molecular diagnostics, qRT-PCR, sample processing, and statistical analysis of viral data. This practical exposure helped refine my technical skills while expanding my real-world understanding of clinical bioscience.</p>
+                    <p>At a time when my father lost his job due to the pandemic’s economic fallout, my responsibilities intensified. While this period affected my final undergraduate academic performance, I rebounded strongly in graduate school, earning an A+ in my Master’s thesis, which focused on developing early, accessible diagnostic strategies for Premature Rupture of Membranes (PROM) in under-resourced settings. I completed a government-funded project on PROM, integrating clinical data, molecular markers, and public health outcomes to propose community-level diagnostic solutions.</p>
+                    <p>Currently, I am engaged in three active research positions that collectively represent the intersection of clinical biology, wet-lab diagnostics, and AI-powered bioinformatics:</p>
+                    <ul>
+                        <li><strong>Medical Research Officer</strong> at the Advanced Molecular Lab, President Abdul Hamid Medical College and Hospital (Kishoreganj), where I manage clinical molecular diagnostics involving qRT-PCR, ELISA, DNA/RNA screening, and patient-focused research on reproductive health (e.g., cervical cancer screening, HPV vaccination, PROM, and eclampsia detection).</li>
+                        <li><strong>Remote Bioinformatician</strong> at the Department of Biochemistry and Molecular Biology, Shahjalal University of Science and Technology (Sylhet), where I contribute to deep learning applications in miRNA–mRNA binding prediction, RNA secondary structure modeling, and pathway-level biomarker discovery using large-scale transcriptomics data.</li>
+                        <li><strong>Clinical Data Associate</strong> in a Phase III Clinical Trial managed by the Toxicology Society of Bangladesh (Dhaka), where I automate data pipelines, design monitoring dashboards, and analyze trial outcomes using Python, R, SPSS, and SQL.</li>
+                    </ul>
+                    <p>These roles reflect my interdisciplinary commitment—bridging molecular diagnostics, data science, and translational medicine. Whether it’s optimizing deep learning models for RNA structure-function prediction or conducting on-ground diagnostics in underserved regions, I continuously strive to make science actionable and inclusive.</p>
+                    <p>In the face of adversity—financial, institutional, and personal—I have pursued science not just as a career, but as a calling. Every research milestone I have achieved is a direct result of resourcefulness, grit, and an unwavering desire to contribute to global biomedical innovation. As I now pursue PhD opportunities, I bring with me not only technical skills and academic rigor but also lived experience in overcoming constraints, navigating systems, and building meaningful, data-driven solutions for complex health challenges.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section gray-bg">
+            <div class="container button-section">
+                <div class="button-group">
+                    <h3>Explore Further</h3>
+                    <a href="ongoing.html" class="btn">Publication backed by major project.</a>
+                    <a href="academics.html" class="btn">Where my research roots come from.</a>
+                    <a href="blog.html" class="btn">Personal reflections behind select papers.</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 by Abdullah Al Marzan</p>
-    </footer>
+    <footer id="main-footer">
+        </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
