@@ -161,30 +161,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100);
     });
 
-    // --- NEW: SCRIPT TO MAKE BUTTONS IN A GROUP THE SAME WIDTH ---
-    function setEqualButtonWidths() {
-        const buttonGroups = document.querySelectorAll('.button-group');
-        buttonGroups.forEach(group => {
-            const buttons = group.querySelectorAll('.btn');
-            if (buttons.length > 1) { // Only run if there's more than one button
-                let maxWidth = 0;
-                // First, find the widest button
-                buttons.forEach(button => {
-                    button.style.width = 'auto'; // Reset width to measure natural size
-                    if (button.offsetWidth > maxWidth) {
-                        maxWidth = button.offsetWidth;
-                    }
-                });
-                // Then, apply that width to all buttons in the group
-                buttons.forEach(button => {
-                    button.style.width = `${maxWidth}px`;
-                });
-            }
-        });
-    }
-
-    // Run the function on page load and on window resize
-    window.addEventListener('load', setEqualButtonWidths);
-    window.addEventListener('resize', setEqualButtonWidths);
-
 });
