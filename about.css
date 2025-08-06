@@ -46,19 +46,20 @@
 
 .button-group .btn {
     display: block;
-    margin: 0 auto 15px auto; /* No extra space */
-    max-width: 500px;
-    text-align: center; /* Center text */
-    padding: 12px 20px;
-    background-color: #f4f4f4; /* Ash background */
-    color: var(--dark-color); /* Dark text for contrast */
+    margin: 0 auto 15px auto; /* Center the buttons */
+    text-align: center;
+    /* CORRECTED: New button style */
+    background-color: var(--light-color); /* White background */
+    color: var(--dark-color);             /* Black text */
+    border: 2px solid var(--dark-color);  /* Black border */
+    padding: 10px 25px;                   /* Unified padding */
     font-weight: 600;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .button-group .btn:hover {
-    background-color: #000000; /* Black background on hover */
-    color: var(--light-color); /* White text on hover */
+    background-color: var(--dark-color); /* Black background on hover */
+    color: var(--light-color);            /* White text on hover */
 }
 
 /* Style for the active submenu item */

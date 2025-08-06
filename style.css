@@ -63,22 +63,25 @@ h2.section-title a:hover::after {
     transform: scaleX(1);
 }
 
-.button-group .btn {
-    display: block;
-    margin: 0 auto 15px auto; /* Center the buttons */
-    text-align: center;
+.btn {
+    display: inline-block;
     /* CORRECTED: New button style */
     background-color: var(--light-color); /* White background */
     color: var(--dark-color);             /* Black text */
     border: 2px solid var(--dark-color);  /* Black border */
-    padding: 10px 25px;                   /* Unified padding */
+    padding: 10px 25px;                   /* Reduced length (padding) */
+    border-radius: 5px;
+    text-decoration: none;
     font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
-.button-group .btn:hover {
-    background-color: var(--dark-color); /* Black background on hover */
-    color: var(--light-color);            /* White text on hover */
+.btn:hover {
+    /* Inverted colors for a premium hover effect */
+    background-color: var(--dark-color); /* Black background */
+    color: var(--light-color);            /* White text */
+    transform: translateY(-2px);
 }
 
 /* --- HEADER & NAVIGATION --- */
