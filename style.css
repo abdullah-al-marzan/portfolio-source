@@ -454,7 +454,7 @@ h2.section-title a:hover::after {
         aspect-ratio: auto; /* Overrides the desktop aspect ratio */
     }
     .video-wrapper {
-        aspect-ratio: 18 / 5; /* Sets your desired video ratio for mobile */
+        aspect-ratio: 18 / 10; /* Sets your desired video ratio for mobile */
     }
     .two-column-layout {
         flex-direction: column;
