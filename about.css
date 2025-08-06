@@ -70,19 +70,20 @@
 }
 
 /* --- RESPONSIVE STYLES FOR ABOUT PAGE --- */
-@media (max-width: 400px) {
-    /* CORRECTED #1: Mobile Cover Photo */
+@media (max-width: 768px) {
+    /* CORRECTED: This now applies to all mobile devices */
     .about-cover {
-        height: auto; /* 40% of the mobile screen height */
-        aspect-ratio: 16/ 9; /* Maintains a good aspect ratio */
+        height: auto;
+        aspect-ratio: 16 / 9; /* Sets the exact 16:9 ratio */
+        background-attachment: scroll; /* Parallax effect doesn't work well on mobile */
     }
     
-    /* CORRECTED #2: Mobile Text Layout */
     .about-container {
-        max-width: 90%; /* A little more space on smaller screens */
+        max-width: 90%;
     }
 
     .about-container h1 {
         font-size: 2rem;
     }
+}
 }
