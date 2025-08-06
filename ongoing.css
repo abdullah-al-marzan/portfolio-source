@@ -1,0 +1,132 @@
+/* === Ongoing Page Specific Styles === */
+
+/* Full-screen video section */
+.video-section {
+    position: relative;
+    width: 70vw; /* Fixed width to 70% of the viewport width */
+    height: 80vh; /* Fixed height to 80% of the viewport height */
+    overflow: hidden;
+    margin: 0 auto 20px auto; /* Centers the video horizontally */
+}
+
+.video-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the video element both horizontally and vertically */
+    width: 100%;
+    height: 100%;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    /* This ensures the video fills the container and maintains aspect ratio */
+    object-fit: cover; 
+}
+
+/* Intro and project sections */
+.content-section {
+    padding: 40px 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.ongoing-intro h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ongoing-intro p {
+    text-align: justify;
+}
+
+.project-section h2 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Project titles with animation */
+.project-section h2 a {
+    color: black; /* Default color for the link */
+    text-decoration: none; /* Removed the default underline */
+    position: relative;
+    transition: color 0.25s ease-in-out;
+    display: inline-block; /* Essential for the underline to cover multiple lines */
+}
+
+.project-section h2 a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust the distance of the underline from the text */
+    width: 0;
+    height: 3px; /* Made the underline a little bolder */
+    background-color: #004d99; /* The dark blue color for the underline */
+    transition: width 0.25s ease-in-out; /* The animation for the underline */
+}
+
+.project-section h2 a:hover {
+    color: #004d99; /* Dark blue color on hover */
+}
+
+.project-section h2 a:hover::after {
+    width: 100%; /* Expands the underline to full width on hover */
+}
+
+/* Project images */
+.project-image {
+    display: block;
+    width: 60vw; /* Fixed width to 60% of the viewport width */
+    height: auto;
+    margin: 20px auto; /* Centers the image and adds space */
+    border-radius: 8px; /* Optional: adds rounded corners to the image */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+}
+
+.project-details p {
+    margin-bottom: 15px;
+}
+
+/* Alternating background color for sections */
+.gray-bg {
+    background-color: #f9f9f9;
+}
+
+/* Button section styles (as per your corrected CSS) */
+.button-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.button-group h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.button-group .btn {
+    display: block;
+    margin: 0 auto 15px auto;
+    text-align: center;
+    width: 380px; 
+    max-width: 100%;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border: 1px solid var(--dark-color);
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-group .btn:hover {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
