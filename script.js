@@ -1,16 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- HERO IMAGE SLIDER ---
+    // UPDATED with your full list of 21 images
     const sliderData = [
-        { image: 'media/home/slider/Research Activities of Abdullah Al Marzan.jpg', caption: 'Research Activities' },
-        { image: 'media/home/slider/Poster Presentation of Abdullah Al Marzan.jpg', caption: 'Poster Presentation' },
+        { image: 'media/home/slider/Anaerobic Culture.jpg', caption: 'Anaerobic Culture' },
+        { image: 'media/home/slider/Antimicrobial Resistance.jpg', caption: 'Antimicrobial Resistance Research' },
+        { image: 'media/home/slider/Bacterial Culture.jpg', caption: 'Bacterial Culture' },
+        { image: 'media/home/slider/Bacterial growth in Blood Agard Media.jpg', caption: 'Bacterial Growth in Blood Agar Media' },
+        { image: 'media/home/slider/Bacterial Growth in Petri Dish.jpg', caption: 'Bacterial Growth in Petri Dish' },
+        { image: 'media/home/slider/Bacterial Stain 2.jpg', caption: 'Bacterial Staining' },
+        { image: 'media/home/slider/Bacterial Stain 3.jpg', caption: 'Bacterial Staining' },
+        { image: 'media/home/slider/Bacterial Stain 4.jpg', caption: 'Bacterial Staining' },
+        { image: 'media/home/slider/Bacterial Stain Under Microscope.jpg', caption: 'Bacterial Stain Under Microscope' },
         { image: 'media/home/slider/Biochemical Assay.jpg', caption: 'Biochemical Assay' },
-        { image: 'media/home/slider/Antimicrobial Resistance.png', caption: 'Antimicrobial Resistance Research' },
-        { image: 'media/home/slider/Bacterial growth in Blood Agard Media.jpg', caption: 'Bacterial Culture' },
         { image: 'media/home/slider/Elisa.jpg', caption: 'ELISA Assay' },
-        { image: 'media/home/slider/Python Plot.jpg', caption: 'Data Analysis with Python' },
+        { image: 'media/home/slider/esearch Activites of Marzan.jpg', caption: 'Research Activities' },
+        { image: 'media/home/slider/Leminar Airflow.jpg', caption: 'Laminar Airflow Hood' },
         { image: 'media/home/slider/Mutant Protein.jpg', caption: 'Mutant Protein Analysis' },
-        { image: 'media/home/slider/Anaerobic Culture.jpg', caption: 'Anaerobic Culture' }
+        { image: 'media/home/slider/Poster Presentation of Abdullah Al Marzan.jpg', caption: 'Poster Presentation' },
+        { image: 'media/home/slider/Python Plot.jpg', caption: 'Data Analysis with Python' },
+        { image: 'media/home/slider/Research Activities of Abdullah Al Marzan..jpg', caption: 'Research Activities' },
+        { image: 'media/home/slider/Research Activities of Abdullah Al Marzan.jpg', caption: 'Research Activities' },
+        { image: 'media/home/slider/Research Activities.jpg', caption: 'Research Activities' },
+        { image: 'media/home/slider/Research Meeting with University team.jpg', caption: 'Research Meeting with University Team' },
+        { image: 'media/home/slider/Wild Protein.jpg', caption: 'Wild Protein Analysis' }
     ];
     const sliderContainer = document.getElementById('hero-slider');
     let currentSlide = 0;
@@ -31,21 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showSlide(index) {
+        if (!sliderContainer) return;
         const slides = sliderContainer.querySelectorAll('.slide');
         if (slides.length === 0) return;
         slides[currentSlide].classList.remove('active');
-        currentSlide = (index + slides.length) % slides.length; // Loop correctly
+        currentSlide = (index + slides.length) % slides.length;
         slides[currentSlide].classList.add('active');
     }
     
-    // CORRECTED #3: Arrow functionality
     function startSlider() {
-        clearInterval(slideInterval); // Clear previous interval
+        clearInterval(slideInterval);
         slideInterval = setInterval(() => showSlide(currentSlide + 1), 5000);
     }
 
     buildSlider();
-    startSlider(); // Start the automatic sliding
+    startSlider();
 
     const prevButton = document.getElementById('slider-prev');
     const nextButton = document.getElementById('slider-next');
@@ -53,16 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prevButton) {
         prevButton.addEventListener('click', () => {
             showSlide(currentSlide - 1);
-            startSlider(); // Reset the timer
+            startSlider();
         });
     }
     if (nextButton) {
         nextButton.addEventListener('click', () => {
             showSlide(currentSlide + 1);
-            startSlider(); // Reset the timer
+            startSlider();
         });
     }
-
 
     // --- RESPONSIVE HAMBURGER MENU (Unchanged and Correct) ---
     const hamburgerBtn = document.getElementById('hamburger-btn');
@@ -91,14 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkedinSrc = wrapper.getAttribute('data-linkedin-embed-src');
 
         if (youtubeSrc || linkedinSrc) {
-            // Check if there's a thumbnail, if not, add a play button directly
             if (!wrapper.querySelector('.video-thumbnail')) {
                 const playButton = document.createElement('div');
                 playButton.innerHTML = '<i class="fas fa-play"></i>';
                 playButton.className = 'video-play-button';
                 wrapper.appendChild(playButton);
             } else {
-                 // If there IS a thumbnail, just add the play button on top
                 const playButton = document.createElement('div');
                 playButton.innerHTML = '<i class="fas fa-play"></i>';
                 playButton.className = 'video-play-button';
@@ -107,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             wrapper.addEventListener('click', () => {
                 let iframe;
-
                 if (youtubeSrc) {
                     iframe = document.createElement('iframe');
                     iframe.setAttribute('src', `${youtubeSrc}?autoplay=1`);
@@ -123,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     iframe.setAttribute('allowfullscreen', '');
                     iframe.setAttribute('title', 'Embedded post');
                 }
-
                 if (iframe) {
                     wrapper.innerHTML = '';
                     wrapper.appendChild(iframe);
