@@ -76,17 +76,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- RESPONSIVE HAMBURGER MENU (Unchanged and Correct) ---
+    // --- RESPONSIVE HAMBURGER MENU ---
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mainNav = document.querySelector('.main-nav');
     const hasSubmenu = document.querySelectorAll('.has-submenu > a');
     const body = document.body;
+
     if (hamburgerBtn) {
         hamburgerBtn.addEventListener('click', () => {
+            // This toggles the classes for both the icon and the menu panel
+            hamburgerBtn.classList.toggle('active');
             mainNav.classList.toggle('active');
+            
+            // This prevents the main page from scrolling when the menu is open
             body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
         });
     }
+        
     hasSubmenu.forEach(menuItem => {
         menuItem.addEventListener('click', function(e) {
             if (window.innerWidth <= 1100) {
