@@ -2,7 +2,7 @@
 
 /* Section 1: Cover Photo */
 .interests-cover {
-    height: calc(100vh - 2cm); /* Full screen height minus the header */
+    height: 9cm; /* Full screen height minus the header */
     background-image: url('media/home/Research Interest.jpg'); /* Cover image path */
     background-size: cover;
     background-position: center;
@@ -120,7 +120,7 @@
 @media (max-width: 400px) {
     .interests-cover {
         height: auto;
-        aspect-ratio: 16 / 9; /* Sets the exact 16:9 ratio */
+        aspect-ratio: 16 / 4.32; /* Sets the exact 16:9 ratio */
         background-attachment: scroll; /* Parallax effect doesn't work well on mobile */
     }
     
