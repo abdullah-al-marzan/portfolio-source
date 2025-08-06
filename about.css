@@ -70,10 +70,11 @@
 }
 
 /* --- RESPONSIVE STYLES FOR ABOUT PAGE --- */
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     /* CORRECTED #1: Mobile Cover Photo */
     .about-cover {
-        height: 40vh; /* 40% of the mobile screen height */
+        height: 30vh; /* 40% of the mobile screen height */
+        aspect-ratio: auto;
     }
     
     /* CORRECTED #2: Mobile Text Layout */
