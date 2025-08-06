@@ -503,7 +503,7 @@ body.is-resizing .main-nav {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     /* CORRECTED #2: Slider height on mobile */
     .hero-slider {
         height: 20vh; /* Sets the slider to 40% of the mobile screen height */
