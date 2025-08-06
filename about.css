@@ -74,7 +74,7 @@
     /* CORRECTED #1: Mobile Cover Photo */
     .about-cover {
         height: 30vh; /* 40% of the mobile screen height */
-        aspect-ratio: auto;
+        aspect-ratio: 14.5 / 9; /* Maintains a good aspect ratio */
     }
     
     /* CORRECTED #2: Mobile Text Layout */
