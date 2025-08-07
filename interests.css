@@ -3,9 +3,9 @@
 /* Section 1: Cover Photo */
 .interests-cover {
     /* CORRECTED: This makes the height exactly 50% of the browser window's height */
-    height: 35vh;
+    height: 55vh;
     width:auto; 
-    background-image: url('media/home/Research Interest.jpg'); /* Cover image path */
+    background-image: url('media/home/Research Interest (cropped).jpg'); /* Cover image path */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
