@@ -6,12 +6,12 @@
     margin-bottom: 50px;
 }
 
-/* Skill Set Section */
+/* Skill Set Section (Your working code) */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    justify-items: center; /* This ensures items are centered within their grid cell */
+    justify-items: center;
 }
 .skill-card {
     background-color: var(--light-color);
@@ -21,96 +21,201 @@
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%; /* Ensure cards take up full cell width */
+    width: 100%;
 }
 .skill-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-.skill-card i { font-size: 2.5rem; color: var(--button-default-blue); margin-bottom: 15px; }
-.skill-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
-.skill-card ul { list-style: none; padding: 0; text-align: left; }
-.skill-card ul li { padding-left: 20px; position: relative; margin-bottom: 8px; font-size: 0.95rem; }
-.skill-card ul li::before { content: '\2022'; position: absolute; left: 0; color: var(--button-default-blue); font-weight: bold; }
+.skill-card i {
+    font-size: 2.5rem;
+    color: var(--button-default-blue);
+    margin-bottom: 15px;
+}
+.skill-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.skill-card ul li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+.skill-card ul li::before {
+    content: '\2022';
+    position: absolute;
+    left: 0;
+    color: var(--button-default-blue);
+    font-weight: bold;
+}
 
-
-/* --- NEW PREMIUM CERTIFICATE SLIDER --- */
-.premium-slider {
+/* --- NEW PREMIUM CSS-ONLY SLIDER --- */
+.css-slider {
     position: relative;
     width: 100%;
-    max-width: 900px;
+    max-width: 800px;
+    height: 500px; /* You can adjust this height */
     margin: 40px auto;
-    padding: 0 40px;
-}
-
-.slider-viewport {
-    width: 100%;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 8px;
 }
 
-.slider-track {
-    display: flex;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+/* Hide the radio buttons that control the slider */
+.css-slider input[type="radio"] {
+    display: none;
 }
 
-.slide {
-    min-width: 50%;
-    padding: 20px 10px;
-    transform: scale(0.8);
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0.5;
-}
-
-.slide.active {
-    transform: scale(1);
-    opacity: 1;
-}
-
-.slide a {
-    display: block;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.slide.active a {
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-.slide img {
-    width: 100%;
-    display: block;
-}
-
-.premium-slider .slider-arrow {
+.slide-item {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    /* Reusing the general .slider-arrow styles from style.css */
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: transform 0.6s ease, opacity 0.6s ease;
 }
-.premium-slider .slider-arrow.prev { left: 0; }
-.premium-slider .slider-arrow.next { right: 0; }
 
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Shows the full certificate without cropping */
+}
+
+/* This is the magic: Show the slide that corresponds to the checked radio button */
+#slide-1:checked ~ #slide-1 + .slide-item,
+#slide-2:checked ~ #slide-2 + .slide-item,
+#slide-3:checked ~ #slide-3 + .slide-item,
+#slide-4:checked ~ #slide-4 + .slide-item,
+#slide-5:checked ~ #slide-5 + .slide-item,
+#slide-6:checked ~ #slide-6 + .slide-item,
+#slide-7:checked ~ #slide-7 + .slide-item,
+#slide-8:checked ~ #slide-8 + .slide-item,
+#slide-9:checked ~ #slide-9 + .slide-item,
+#slide-10:checked ~ #slide-10 + .slide-item,
+#slide-11:checked ~ #slide-11 + .slide-item,
+#slide-12:checked ~ #slide-12 + .slide-item,
+#slide-13:checked ~ #slide-13 + .slide-item,
+#slide-14:checked ~ #slide-14 + .slide-item,
+#slide-15:checked ~ #slide-15 + .slide-item,
+#slide-16:checked ~ #slide-16 + .slide-item,
+#slide-17:checked ~ #slide-17 + .slide-item,
+#slide-18:checked ~ #slide-18 + .slide-item,
+#slide-19:checked ~ #slide-19 + .slide-item,
+#slide-20:checked ~ #slide-20 + .slide-item,
+#slide-21:checked ~ #slide-21 + .slide-item,
+#slide-22:checked ~ #slide-22 + .slide-item,
+#slide-23:checked ~ #slide-23 + .slide-item,
+#slide-24:checked ~ #slide-24 + .slide-item,
+#slide-25:checked ~ #slide-25 + .slide-item,
+#slide-26:checked ~ #slide-26 + .slide-item,
+#slide-27:checked ~ #slide-27 + .slide-item,
+#slide-28:checked ~ #slide-28 + .slide-item,
+#slide-29:checked ~ #slide-29 + .slide-item,
+#slide-30:checked ~ #slide-30 + .slide-item,
+#slide-31:checked ~ #slide-31 + .slide-item,
+#slide-32:checked ~ #slide-32 + .slide-item,
+#slide-33:checked ~ #slide-33 + .slide-item,
+#slide-34:checked ~ #slide-34 + .slide-item,
+#slide-35:checked ~ #slide-35 + .slide-item,
+#slide-36:checked ~ #slide-36 + .slide-item,
+#slide-37:checked ~ #slide-37 + .slide-item,
+#slide-38:checked ~ #slide-38 + .slide-item,
+#slide-39:checked ~ #slide-39 + .slide-item,
+#slide-40:checked ~ #slide-40 + .slide-item,
+#slide-41:checked ~ #slide-41 + .slide-item,
+#slide-42:checked ~ #slide-42 + .slide-item,
+#slide-43:checked ~ #slide-43 + .slide-item {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+/* Navigation dots at the bottom */
+.slider-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap; /* Allows dots to wrap on small screens */
+    justify-content: center;
+    z-index: 3;
+}
+
+.slider-navigation label {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 3px 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-navigation label:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Highlight the active dot */
+#slide-1:checked ~ .slider-navigation label[for="slide-1"],
+#slide-2:checked ~ .slider-navigation label[for="slide-2"],
+#slide-3:checked ~ .slider-navigation label[for="slide-3"],
+#slide-4:checked ~ .slider-navigation label[for="slide-4"],
+#slide-5:checked ~ .slider-navigation label[for="slide-5"],
+#slide-6:checked ~ .slider-navigation label[for="slide-6"],
+#slide-7:checked ~ .slider-navigation label[for="slide-7"],
+#slide-8:checked ~ .slider-navigation label[for="slide-8"],
+#slide-9:checked ~ .slider-navigation label[for="slide-9"],
+#slide-10:checked ~ .slider-navigation label[for="slide-10"],
+#slide-11:checked ~ .slider-navigation label[for="slide-11"],
+#slide-12:checked ~ .slider-navigation label[for="slide-12"],
+#slide-13:checked ~ .slider-navigation label[for="slide-13"],
+#slide-14:checked ~ .slider-navigation label[for="slide-14"],
+#slide-15:checked ~ .slider-navigation label[for="slide-15"],
+#slide-16:checked ~ .slider-navigation label[for="slide-16"],
+#slide-17:checked ~ .slider-navigation label[for="slide-17"],
+#slide-18:checked ~ .slider-navigation label[for="slide-18"],
+#slide-19:checked ~ .slider-navigation label[for="slide-19"],
+#slide-20:checked ~ .slider-navigation label[for="slide-20"],
+#slide-21:checked ~ .slider-navigation label[for="slide-21"],
+#slide-22:checked ~ .slider-navigation label[for="slide-22"],
+#slide-23:checked ~ .slider-navigation label[for="slide-23"],
+#slide-24:checked ~ .slider-navigation label[for="slide-24"],
+#slide-25:checked ~ .slider-navigation label[for="slide-25"],
+#slide-26:checked ~ .slider-navigation label[for="slide-26"],
+#slide-27:checked ~ .slider-navigation label[for="slide-27"],
+#slide-28:checked ~ .slider-navigation label[for="slide-28"],
+#slide-29:checked ~ .slider-navigation label[for="slide-29"],
+#slide-30:checked ~ .slider-navigation label[for="slide-30"],
+#slide-31:checked ~ .slider-navigation label[for="slide-31"],
+#slide-32:checked ~ .slider-navigation label[for="slide-32"],
+#slide-33:checked ~ .slider-navigation label[for="slide-33"],
+#slide-34:checked ~ .slider-navigation label[for="slide-34"],
+#slide-35:checked ~ .slider-navigation label[for="slide-35"],
+#slide-36:checked ~ .slider-navigation label[for="slide-36"],
+#slide-37:checked ~ .slider-navigation label[for="slide-37"],
+#slide-38:checked ~ .slider-navigation label[for="slide-38"],
+#slide-39:checked ~ .slider-navigation label[for="slide-39"],
+#slide-40:checked ~ .slider-navigation label[for="slide-40"],
+#slide-41:checked ~ .slider-navigation label[for="slide-41"],
+#slide-42:checked ~ .slider-navigation label[for="slide-42"],
+#slide-43:checked ~ .slider-navigation label[for="slide-43"] {
+    background-color: #ffffff;
+}
 
 /* Button Section */
-.button-section {
-    text-align: center;
-}
-.button-group .btn {
-    display: inline-block;
-    margin: 10px;
-}
+.button-section { text-align: center; }
+.button-group .btn { display: inline-block; margin: 10px; }
+.active-submenu { color: #a8cfff !important; }
 
-/* Active Menu Style */
-.active-submenu {
-    color: #a8cfff !important;
-}
-
-/* Responsive adjustments for the page */
-@media (max-width: 768px) {
-    .slide {
-        min-width: 80%; /* Show one main slide on mobile */
+@media(max-width: 768px) {
+    .css-slider {
+        height: 300px; /* Adjust height for smaller screens */
     }
 }
