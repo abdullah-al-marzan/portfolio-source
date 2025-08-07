@@ -11,8 +11,32 @@
 </head>
 <body>
 
-    <header id="main-header">
-        </header>
+<header id="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><img src="media/home/Logo.png" alt="Abdullah Al Marzan Logo"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a class="active">Biography</a>
+                        <ul class="submenu">
+                            <li><a href="about.html" class="active-submenu">About Me</a></li>
+                            <li><a href="academics.html">Academics</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu"><a>Research</a><ul class="submenu"><li><a href="interests.html">Interests</a></li><li><a href="goal.html">Goal</a></li></ul></li>
+                    <li class="has-submenu"><a>Projects</a><ul class="submenu"><li><a href="ongoing.html">Ongoing</a></li><li><a href="previous.html">Previous</a></li></ul></li>
+                    <li><a href="thesis.html">Thesis</a></li>
+                    <li class="has-submenu"><a>Publications</a><ul class="submenu"><li><a href="articles.html">Article</a></li><li><a href="grants.html">Grant</a></li></ul></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li class="has-submenu"><a>More</a><ul class="submenu"><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+        </div>
+    </header>
 
     <main>
         <section class="blog-hero">
@@ -90,7 +114,54 @@
     </main>
 
     <footer id="main-footer">
-        </footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="interests.html">Research Interests</a></li>
+                    <li><a href="ongoing.html">Projects</a></li>
+                    <li><a href="thesis.html">Thesis</a></li>
+                    <li><a href="articles.html">Publications</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <address>
+                    Toxicology Society of Bangladesh,<br>
+                    Department of Medicine,<br>
+                    Academic Block,<br>
+                    Dhaka Medical College Hospital.<br>
+                    Dhaka-1000, Dhaka,Bangladesh
+                </address>
+                <p><a href="mailto:marzansust16@gmail.com">marzansust16@gmail.com</a></p>
+                <p><a href="tel:+8801843325135">+8801843325135</a></p>
+                <p><a href="tel:+8801749287028">+8801749287028</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for updates.</p>
+                 <form id="newsletter-form">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p id="newsletter-message"></p>
+                <div class="footer-social-links">
+                    <a href="https://scholar.google.com/citations?hl=en&user=Xvc4eokAAAAJ" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square"></i></a>
+                    <a href="https://www.researchgate.net/profile/Abdullah-Marzan" target="_blank" title="ResearchGate"><i class="ai ai-researchgate-square"></i></a>
+                    <a href="https://www.scopus.com/authid/detail.uri?authorId=57267619000" target="_blank" title="Scopus"><i class="ai ai-scopus"></i></a>
+                    <a href="https://orcid.org/0000-0002-6235-2277" target="_blank" title="ORCID"><i class="ai ai-orcid-square"></i></a>
+                    <a href="https://github.com/abdullah-al-marzan" target="_blank" title="GitHub"><i class="fab fa-github-square"></i></a>
+                    <a href="https://www.linkedin.com/in/abdullah-al-marzan-896a43187/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/lllarzan" target="_blank" title="X (Twitter)"><i class="fab fa-twitter-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Abdullah Al Marzan. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
     <script src="blog.js"></script>

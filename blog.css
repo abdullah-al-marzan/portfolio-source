@@ -1,23 +1,5 @@
 /* --- ULTRA-PREMIUM STYLES FOR BLOG LISTING PAGE --- */
 
-.hero-cover {
-    /* This sets the height to half of the screen on desktop */
-    height: 50vh;
-    background-image: url('media\page_covers\blog.jpg'); /* Make sure to set your image path */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Optional: for parallax effect */
-}
-
-/* --- Responsive styles for mobile --- */
-@media (max-width: 768px) {
-    .hero-cover {
-        /* This sets the height to 30% of the screen on mobile */
-        height: 30vh;
-        background-attachment: scroll; /* Disables parallax on mobile for better performance */
-    }
-}
-
 /* CORRECTED #1 & #2: Hero Section Visibility and Sizing */
 /* Hero Section */
 .blog-hero {
@@ -37,17 +19,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('media/blog/blog-hero-background.jpg'); /* Make sure you have an image at this path */
+    background-image: url('media/page_covers/blog.jpg'); /* Make sure you have an image at this path */
     background-size: cover;
     background-position: center;
-    filter: brightness(0.4); /* Darkens the image so text is readable */
+    filter: brightness(.5); /* Darkens the image so text is readable */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2; /* Ensures text is on top */
-    color: #000000; /* Forces the text color to be white */
+    color: #ffffff; /* Forces the text color to be white */
     animation: fadeInHeroText 1.5s ease-out forwards;
 }
 
