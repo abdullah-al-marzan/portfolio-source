@@ -237,7 +237,7 @@ h2.section-title a:hover::after {
     top: 50%;
     transform: translateY(-50%);
     background-color: transparent; /* No background */
-    color: white;
+    color: rgb(5, 0, 77);
     border: none;
     font-size: 3rem; /* Bigger size */
     font-weight: bold;
