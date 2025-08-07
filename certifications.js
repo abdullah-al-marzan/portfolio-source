@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- YOUR CERTIFICATE FILENAMES GO HERE ---
     // This list has been updated with all 43 of your files.
     const certificateFiles = [
-        "Career Essentials in Cybersecurity by Microsoft and LinkedIn",
+        "Career Essentials in Cybersecurity by Microsoft and LinkedIn.png",
         "Career Essentials in Data Analysis by Microsoft and LinkedIn",
         "Career Essentials in GitHub Professional Certificate",
         "Career Essentials in Project Management by Microsoft and LinkedIn",
