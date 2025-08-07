@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (grid) {
         // The exact filename you provided
-        const testFilename = "Career Essentials in Cybersecurity by Microsoft and LinkedIn";
+        const testFilename = "Career Essentials in Cybersecurity by Microsoft and LinkedIn.png";
 
         // The correct relative paths for the website
         const imagePath = `media/certifications/image/${testFilename}.png`;
