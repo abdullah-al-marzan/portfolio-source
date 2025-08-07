@@ -11,7 +11,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    justify-items: center;
+    justify-items: center; /* This ensures items are centered within their grid cell */
 }
 .skill-card {
     background-color: var(--light-color);
@@ -21,6 +21,7 @@
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Ensure cards take up full cell width */
 }
 .skill-card:hover {
     transform: translateY(-5px);
@@ -45,10 +46,11 @@
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 .certificate-item a:hover {
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transform: scale(1.03);
 }
 .certificate-item img {
     width: 100%;
