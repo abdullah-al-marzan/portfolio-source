@@ -19,9 +19,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('media/blog/cover.jpg'); /* Make sure you have an image at this path */
+    background-image: url('media/blog/cover (cropped).jpg'); /* Make sure you have an image at this path */
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     filter: brightness(.5); /* Darkens the image so text is readable */
     z-index: 1;
 }
@@ -146,6 +147,18 @@
     }
     .blog-hero {
         height: 40vh; 
+    }
+    .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('media/blog/cover.jpg'); /* Make sure you have an image at this path */
+        background-size: cover;
+        background-position: center;
+        filter: brightness(.5); /* Darkens the image so text is readable */
+        z-index: 1;
     }
     .card-image-link {
         width: 100%;
