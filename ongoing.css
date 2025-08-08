@@ -183,6 +183,11 @@
     text-align: center;
 }
 
+.button-group {
+    max-width: 500px; /* Adjust this value to make the box wider or narrower */
+    margin: 0 auto;   /* This centers the box on the page */
+}
+
 .button-group h3 {
     font-size: 1.8em;
     margin-bottom: 20px;
@@ -262,4 +267,8 @@
     .project-section .animated-title a {
     font-size: 1.25rem; /* Optimized font size for mobile */
     }
+    .button-group {
+        width: 100%; /* Makes the button group container use the full width */
+    }
+
 }
