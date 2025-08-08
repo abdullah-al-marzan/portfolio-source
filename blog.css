@@ -169,9 +169,4 @@
         margin-bottom: 15px;
         line-height: 1.2;
     }
-
-    /* This rule will hide the image and its link on mobile */
-    .blog-card .card-image-link {
-        display: none;
-    }
 }
