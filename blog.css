@@ -157,28 +157,31 @@
     .blog-hero {
         height: 40vh; 
     }
-
     .hero-content h1 {
-        font-size: 1.8rem; /* Adjusted for better readability */
+        font-size: 2.2rem;
     }
     .hero-content p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     /* This rule applies to all blog cards on mobile */
     .blog-card {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically on mobile */
     }
-
-    /* This is the key fix to ensure all images are visible */
-    .card-image-link {
+    
+    /* This is the key fix to order the elements correctly */
+    .blog-card .card-title {
+        order: 1; /* Title comes first */
+        padding: 20px 20px 0 20px; /* Adjust padding */
+    }
+    .blog-card .card-image-link {
+        order: 2; /* Image comes second */
         width: 100%;
         height: 220px;
-        border-radius: 8px 8px 0 0; /* Ensures correct rounding on top */
+        border-radius: 0; /* Remove specific rounding for mobile */
     }
-
-    .card-title {
-        font-size: 1.5rem;
-        line-height: 1.2;
+    .blog-card .card-content {
+        order: 3; /* Excerpt/button comes last */
+        padding: 20px;
     }
 }
