@@ -91,4 +91,15 @@
     .certifications-container h2 {
         font-size: 1.5rem;
     }
+
+    .page-title {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .button-group h3 {
+        font-size: 1.5rem;
+        margin-bottom: 30px; /* This adds space below the title */
+        color: var(--dark-color);
+    }
 }
