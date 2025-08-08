@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- Scroll Animation for Blog Posts ---
-    const posts = document.querySelectorAll('.blog-post-wrapper');
+    // --- Scroll Animation for Blog Cards ---
+    const cards = document.querySelectorAll('.blog-card');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
@@ -11,17 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     entry.target.classList.add('is-visible');
                 }, index * 100);
                 
-                // Stop observing the post once it has been animated
                 observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1 // Trigger the animation when 10% of the post is visible
+        threshold: 0.1
     });
 
-    // Tell the observer to watch each of the blog posts
-    posts.forEach(post => {
-        observer.observe(post);
+    cards.forEach(card => {
+        observer.observe(card);
     });
-
 });
