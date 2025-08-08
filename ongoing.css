@@ -268,7 +268,7 @@
     font-size: 1.25rem; /* Optimized font size for mobile */
     }
     .button-group {
-        width: 90%; /* Makes the button group container use the full width */
+        width: 90%; /* Makes the button group container 90% of the full width */
     }
 
 }
