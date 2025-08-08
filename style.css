@@ -558,3 +558,8 @@ body.is-resizing .main-nav {
         font-size: 1.5rem;
     }
 }
+
+    /* --- GLOBAL TEXT ALIGNMENT --- */
+    p {
+        text-align: justify;
+    }

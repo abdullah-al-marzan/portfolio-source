@@ -34,7 +34,7 @@
 
 .ongoing-intro p {
     text-align: justify;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto 15px auto;
 }
 
@@ -75,7 +75,7 @@
 }
 
 .project-details {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
     text-align: center;
 }
@@ -98,12 +98,12 @@
 
 .image-container {
     position: relative;
-    width: 75%;
+    width: 100%;
     margin: 0 auto 25px auto;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 1px;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgb(255, 255, 255);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 

@@ -203,5 +203,10 @@
         font-size: 1.5rem;
         margin-bottom: 20px;
         color: var(--dark-color);
-}
+    }
+    .timeline-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: var(--dark-color);
+    }
 }
