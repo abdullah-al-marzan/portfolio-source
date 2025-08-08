@@ -9,7 +9,11 @@
     background-position: center;
     background-attachment: fixed;
 }
-
+/* Styles the active sub-page link in the dropdown menu */
+.submenu .active-submenu {
+    color: #a8cfff !important; /* Sky blue highlight */
+    font-weight: bold;
+}
 /* The main content container */
 .content-section {
     padding: 40px 0;
