@@ -11,7 +11,7 @@
 }
 
 .page-title {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 50px;
     color: var(--dark-color);
@@ -186,10 +186,10 @@
     }
 
     .academics-container h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .academics-container h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 }
