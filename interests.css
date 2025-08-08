@@ -5,7 +5,7 @@
     /* CORRECTED: This makes the height exactly 50% of the browser window's height */
     height: 45vh;
     width:auto; 
-    background-image: url('media/home/Research Interest (cropped).jpg'); /* Cover image path */
+    background-image: url('media/interests/Research Interest (cropped).jpg'); /* Cover image path */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -122,7 +122,7 @@
 @media (max-width: 768px) {
     .interests-cover {
         /* CORRECTED: This sets the new background image specifically for mobile */
-        background-image: url('media/home/Research Interest (Main).jpg');
+        background-image: url('media/interests/Research Interest.jpg');
         height: 30vh; /* Sets the height to 30% of the mobile screen */
         background-attachment: scroll; /* Disables parallax for better mobile performance */
     }
