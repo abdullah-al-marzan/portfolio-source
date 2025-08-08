@@ -146,7 +146,7 @@
         flex-direction: column; /* Stack vertically on mobile */
     }
     .blog-hero {
-        height: 66.67vh; 
+        height: 40vh; 
     }
     .card-image-link {
         width: 100%;

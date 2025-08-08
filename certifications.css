@@ -8,7 +8,7 @@
     background-attachment: fixed;
 }
 .page-title {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -85,10 +85,10 @@
     }
 
     .certifications-container h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
-    .acertifications-container h2 {
-        font-size: 1.6rem;
+    .certifications-container h2 {
+        font-size: 1.5rem;
     }
 }
