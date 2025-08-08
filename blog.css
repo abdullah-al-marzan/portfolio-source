@@ -1,56 +1,47 @@
-/* --- BASIC STYLES FOR BLOG PAGE --- */
+/* --- SIMPLE & RELIABLE STYLES FOR BLOG PAGE --- */
 
-.page-header {
-    background-color: var(--gray-bg);
-    padding: 50px 0;
+.page-title {
+    font-size: 2.8rem;
     text-align: center;
-}
-.page-header h1 {
-    font-size: 3rem;
     margin-bottom: 10px;
 }
-.page-header p {
+.page-subtitle {
     font-size: 1.2rem;
+    text-align: center;
     color: #666;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.blog-container {
-    max-width: 800px;
-    margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .blog-post {
-    padding: 40px 0;
+    max-width: 750px; /* Optimal reading width */
+    margin: 0 auto 60px auto; /* Center posts and add space between them */
     border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
 }
-
 .blog-post:last-child {
     border-bottom: none;
 }
 
-.post-image-link img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-}
-
 .post-title {
     font-size: 2rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
-
 .post-title a {
     text-decoration: none;
     color: var(--dark-color);
     transition: color 0.3s ease;
 }
-
 .post-title a:hover {
     color: var(--button-default-blue);
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
 }
 
 .post-excerpt {
