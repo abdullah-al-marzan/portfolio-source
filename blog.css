@@ -19,7 +19,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('media/page_covers/blog.jpg'); /* Make sure you have an image at this path */
+    background-image: url('media/blog/cover.jpg'); /* Make sure you have an image at this path */
     background-size: cover;
     background-position: center;
     filter: brightness(.5); /* Darkens the image so text is readable */

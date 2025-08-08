@@ -1,11 +1,17 @@
 /* --- STYLES FOR CERTIFICATIONS PAGE --- */
-
+.certifications-cover {
+    height: 45vh;
+    width: auto; 
+    background-image: url('media/certifications/image/cover (cropped).jpg'); /* You can change this image path later */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 .page-title {
     font-size: 2.8rem;
     text-align: center;
     margin-bottom: 50px;
 }
-
 /* Skill Set Section */
 .skills-grid {
     display: grid;
@@ -65,3 +71,24 @@
 .button-section { text-align: center; }
 .button-group .btn { display: inline-block; margin: 10px; }
 .active-submenu { color: #a8cfff !important; }
+
+@media (max-width: 768px) {
+    .certifications-cover {
+        /* CORRECTED: This sets the new background image specifically for mobile */
+        background-image: url('media/certifications/image/cover.jpg');
+        height: 50vh; /* Sets the height to 50% of the mobile screen */
+        background-attachment: scroll; /* Disables parallax for better mobile performance */
+    }
+    
+    .certifications-container {
+        max-width: 90%;
+    }
+
+    .certifications-container h1 {
+        font-size: 2rem;
+    }
+
+    .acertifications-container h2 {
+        font-size: 1.6rem;
+    }
+}

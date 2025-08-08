@@ -1,4 +1,14 @@
 /* --- STYLES FOR ACADEMICS PAGE --- */
+/* Section 1: Cover Photo */
+.academics-cover {
+    /* CORRECTED: This makes the height exactly 50% of the browser window's height */
+    height: 45vh;
+    width:auto; 
+    background-image: url('media/academics/cover (cropped).jpg'); /* Cover image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
 .page-title {
     font-size: 2.8rem;
@@ -162,5 +172,24 @@
     }
     .timeline-icon {
         left: 6px;
+    }
+
+    .academics-cover {
+        /* CORRECTED: This sets the new background image specifically for mobile */
+        background-image: url('media/academics/cover.jpg');
+        height: 40vh; /* Sets the height to 30% of the mobile screen */
+        background-attachment: scroll; /* Disables parallax for better mobile performance */
+    }
+    
+    .academics-container {
+        max-width: 90%;
+    }
+
+    .academics-container h1 {
+        font-size: 2rem;
+    }
+
+    .academics-container h2 {
+        font-size: 1.6rem;
     }
 }
