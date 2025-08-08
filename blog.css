@@ -50,6 +50,7 @@
     max-width: 600px;
     margin: 0 auto;
     opacity: 0.9;
+    text-align: center;
 }
 
 /* CORRECTED #1: Blog Layout (Single Column, Image Left & Text Right) */
