@@ -152,4 +152,22 @@
         width: 100%;
         height: 220px;
     }
+    .hero-content h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+}
+
+    .hero-content p {
+        font-size: 1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
 }
