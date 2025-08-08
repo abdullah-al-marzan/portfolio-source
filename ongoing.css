@@ -26,7 +26,7 @@
 /* === Ongoing Page Specific Styles === */
 
 .ongoing-intro h1 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
     text-align: center;
@@ -41,7 +41,7 @@
 
 
 .project-section .animated-title a {
-    font-size: 1.2em;
+    font-size: 2rem; /* Updated desktop font size */
     font-weight: 600;
     color: var(--dark-color);
     margin-top: 40px;
@@ -232,5 +232,34 @@
     .project-image {
         width: 90%; /* Images take up 90% of screen width */
         margin: 20px auto;
+    }
+
+    /* --- RESPONSIVE STYLES FOR INTERESTS PAGE --- */
+    .ongoing-cover {
+        /* CORRECTED: This sets the new background image specifically for mobile */
+        background-image: url('media/interests/cover.jpg');
+        height: 30vh; /* Sets the height to 30% of the mobile screen */
+        background-attachment: scroll; /* Disables parallax for better mobile performance */
+    }
+    
+    .ongoing-container {
+        max-width: 90%;
+    }
+
+    .ongoing-container h1 {
+        font-size: 1.6rem;
+    }
+
+    .ongoing-container h2 {
+        font-size: 1.5rem;
+    }
+    .ongoing-intro h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    }
+    .project-section .animated-title a {
+    font-size: 1rem; /* Optimized font size for mobile */
     }
 }
