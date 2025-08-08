@@ -92,8 +92,7 @@
 .card-image-link img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    object-fit: cover;;
 }
 
 .card-image-link img {
@@ -169,5 +168,10 @@
         font-size: 1.5rem;
         margin-bottom: 15px;
         line-height: 1.2;
+    }
+
+    /* This rule will hide the image and its link on mobile */
+    .blog-card .card-image-link {
+        display: none;
     }
 }
