@@ -1,10 +1,8 @@
 /* --- ULTRA-PREMIUM STYLES FOR BLOG LISTING PAGE --- */
 
-/* CORRECTED #1 & #2: Hero Section Visibility and Sizing */
-/* Hero Section */
 .blog-hero {
     position: relative;
-    height: 50vh; /* This sets the height to half of the DESKTOP screen */
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,38 +10,33 @@
     color: var(--light-color);
     overflow: hidden;
 }
-
 .hero-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('media/blog/cover.jpg'); /* Make sure you have an image at this path */
+    background-image: url('media/blog/blog-hero-background.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(.5); /* Darkens the image so text is readable */
+    filter: brightness(0.4);
     z-index: 1;
 }
-
 .hero-content {
     position: relative;
-    z-index: 2; /* Ensures text is on top */
-    color: #ffffff; /* Forces the text color to be white */
+    z-index: 2;
+    color: #FFFFFF;
     animation: fadeInHeroText 1.5s ease-out forwards;
 }
-
 @keyframes fadeInHeroText {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 10px;
 }
-
 .hero-content p {
     font-size: 1.3rem;
     max-width: 600px;
@@ -51,66 +44,28 @@
     opacity: 0.9;
 }
 
-/* CORRECTED #1: Blog Layout (Single Column, Image Left & Text Right) */
+/* New Single-Column Layout */
 .blog-list {
-    display: flex;
-    flex-direction: column;
-    gap: 60px; /* Space between posts */
+    max-width: 800px; /* Optimal reading width */
+    margin: 0 auto;
 }
 
-.blog-card {
-    background-color: var(--light-color);
-    border-radius: 8px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-    display: flex; /* This is the key change */
-    flex-direction: row; /* Aligns items side-by-side */
-    align-items: center; /* Vertically centers the content */
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+.blog-post-wrapper {
+    margin-bottom: 60px;
+    /* Animation setup */
     opacity: 0;
     transform: translateY(40px);
-    margin-bottom: 80px;
 }
 
-.blog-card.is-visible {
+.blog-post-wrapper.is-visible {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.blog-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-}
-
-.card-image-link {
-    flex: 0 0 40%; /* Image container takes up 40% of the width */
-    align-self: stretch; /* Makes the image height match the text height */
-    border-radius: 8px 0 0 8px; /* Rounds the left corners */
-    overflow: hidden;
-}
-
-.card-image-link img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.card-image-link img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image fills the container without distortion */
-    display: block;
-}
-
-.card-content {
-    flex: 1; /* Text takes the remaining space */
-    padding: 30px;
-}
-
 .card-title {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
     line-height: 1.3;
 }
 .card-title a {
@@ -122,13 +77,35 @@
     color: var(--button-default-blue);
 }
 
+.card-image-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card-image-link:hover {
+    transform: scale(1.03); /* Zoom effect */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+.card-image-link img {
+    width: 100%;
+    display: block;
+}
+
+.blog-card {
+    background-color: var(--light-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+}
 .card-excerpt {
     font-size: 1.1rem;
     line-height: 1.7;
     color: #555;
     margin-bottom: 25px;
 }
-
 .read-more {
     font-weight: 600;
     font-size: 1.1rem;
@@ -140,48 +117,11 @@
     color: #a8cfff !important;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    /* This rule handles the featured card on tablets */
-    .blog-card.featured {
-        flex-direction: column;
-    }
-    .blog-card.featured .card-image-link {
-        width: 100%;
-        height: 300px;
-        border-radius: 8px 8px 0 0;
-    }
-}
-
 @media (max-width: 768px) {
-    .blog-hero {
-        height: 40vh; 
-    }
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
-    .hero-content p {
-        font-size: 1.1rem;
-    }
-
-    /* This rule applies to all blog cards on mobile */
-    .blog-card {
-        flex-direction: column; /* Stack vertically on mobile */
-    }
-    
-    /* This is the key fix to order the elements correctly */
-    .blog-card .card-title {
-        order: 1; /* Title comes first */
-        padding: 20px 20px 0 20px; /* Adjust padding */
-    }
-    .blog-card .card-image-link {
-        order: 2; /* Image comes second */
-        width: 100%;
-        height: 220px;
-        border-radius: 0; /* Remove specific rounding for mobile */
-    }
-    .blog-card .card-content {
-        order: 3; /* Excerpt/button comes last */
-        padding: 20px;
+    .card-title {
+        font-size: 1.8rem;
     }
 }
