@@ -141,7 +141,7 @@
         font-size: 1.6rem;
     }
     .post-figure {
-        width: 100%; /* Image takes full width on mobile */
+        width: 120%; /* Image takes full width on mobile */
     }
     .social-interaction-section {
         flex-direction: column;
