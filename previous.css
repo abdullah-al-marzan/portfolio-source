@@ -229,4 +229,9 @@
     .button-group {
     width: 90%; /* Makes the button group container use 90% of the width */
     }
+    .button-group h3 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        color: #444;
+    }
 }

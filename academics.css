@@ -192,4 +192,16 @@
     .academics-container h2 {
         font-size: 1.5rem;
     }
+
+    .page-title {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-bottom: 50px;
+        color: var(--dark-color);
+    }
+    .button-group h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--dark-color);
+}
 }

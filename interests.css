@@ -149,4 +149,10 @@
     .interests-container h2 {
         font-size: 1.5rem;
     }
+    .button-group h3 {
+        font-size: 1.5rem;
+        margin-bottom: 50px; /* This adds a nice gap below the title */
+        color: var(--dark-color);
+        text-align: center;
+    }
 }

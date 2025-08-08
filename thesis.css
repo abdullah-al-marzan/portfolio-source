@@ -69,3 +69,11 @@
     /* The main style.css handles the .active class, but you can override here if needed */
 }
 
+@media (max-width: 768px) {
+
+    .thesis-container h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}

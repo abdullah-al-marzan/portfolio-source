@@ -61,6 +61,11 @@
     text-align: center;
 }
 
+.button-group {
+    max-width: 500px; /* Adjust this value to make the box wider or narrower */
+    margin: 0 auto;   /* This centers the box on the page */
+}
+
 .button-group h3 {
     font-size: 1.5em;
     margin-bottom: 20px;
@@ -105,5 +110,20 @@
 
     .goal-container h2 {
         font-size: 1.5rem;
+    }
+    .page-title {
+        font-size: 1.6em;
+        font-weight: 700;
+        color: black; /* Changed to black as requested */
+        margin-bottom: 20px;
+        margin-top: 40px; /* Added margin-top to move it down */
+        text-align: center;
+    }
+
+    .content-section h2 {
+        font-size: 1.6em;
+    }
+    .button-group {
+        width: 90%; /* Makes the button group container use 90% of the width */
     }
 }
