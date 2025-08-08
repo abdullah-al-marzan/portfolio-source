@@ -39,8 +39,8 @@
 
 /* CORRECTED #2 & #3: New mega title style */
 .interests-container .mega-title {
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 1.8 rem;
+    margin-bottom: 10px;
     text-align: center;
     font-weight: 700;
     color: var(--dark-color);
@@ -49,7 +49,7 @@
 
 /* All other titles are now centered */
 .interests-container h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-top: 40px;
     margin-bottom: 15px;
     text-align: center;
