@@ -51,6 +51,10 @@
     opacity: 0.9;
 }
 
+.mobile-image {
+    display: none;
+}
+
 /* CORRECTED #1: Blog Layout (Single Column, Image Left & Text Right) */
 .blog-list {
     display: flex;
@@ -169,6 +173,15 @@
         font-size: 1.5rem;
         margin-bottom: 15px;
         line-height: 1.2;
+    }
+
+    .desktop-image {
+        display: none;
+    }
+    
+    /* Show the mobile image */
+    .mobile-image {
+        display: block;
     }
 }
 
