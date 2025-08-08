@@ -141,33 +141,44 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-    .blog-card {
-        flex-direction: column; /* Stack vertically on mobile */
+@media (max-width: 992px) {
+    /* This rule handles the featured card on tablets */
+    .blog-card.featured {
+        flex-direction: column;
     }
+    .blog-card.featured .card-image-link {
+        width: 100%;
+        height: 300px;
+        border-radius: 8px 8px 0 0;
+    }
+}
+
+@media (max-width: 768px) {
     .blog-hero {
         height: 40vh; 
     }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Adjusted for better readability */
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* This rule applies to all blog cards on mobile */
+    .blog-card {
+        flex-direction: column;
+    }
+
+    /* This is the key fix to ensure all images are visible */
     .card-image-link {
         width: 100%;
         height: 220px;
-    }
-    .hero-content h1 {
-        font-size: 1.6rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-}
-
-    .hero-content p {
-        font-size: 1rem;
-        max-width: 600px;
-        margin: 0 auto;
-        opacity: 0.9;
+        border-radius: 8px 8px 0 0; /* Ensures correct rounding on top */
     }
 
     .card-title {
         font-size: 1.5rem;
-        margin-bottom: 15px;
         line-height: 1.2;
     }
 }
