@@ -1,4 +1,4 @@
-/* --- PREMIUM STYLES FOR SINGLE POST PAGE --- */
+/* --- SIMPLE & RELIABLE STYLES FOR SINGLE POST PAGE --- */
 
 .post-container {
     max-width: 800px; /* Optimal reading width */
@@ -21,25 +21,25 @@
 .post-subtitle {
     font-size: 1.2rem;
     color: #666;
+    font-style: italic;
 }
 
-.post-feature-image-link {
-    display: block;
-    margin-bottom: 40px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+.post-figure {
+    margin: 40px 0;
 }
 
-.post-feature-image-link img {
+.post-figure img {
     width: 100%;
-    display: block;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
 }
 
-.post-content h2 {
-    font-size: 2rem;
-    margin-top: 40px;
-    margin-bottom: 15px;
+.post-figure figcaption {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    margin-top: 10px;
+    font-size: 0.9rem;
 }
 
 .post-content p {
@@ -47,42 +47,6 @@
     line-height: 1.8;
     margin-bottom: 1.5em;
     text-align: justify;
-}
-
-.post-content ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 30px 0;
-}
-.post-content ul li {
-    padding-left: 25px;
-    position: relative;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-.post-content ul li::before {
-    content: '\f138'; /* Font Awesome arrow-circle-right */
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    color: var(--button-default-blue);
-}
-
-.post-content figure {
-    margin: 40px 0;
-}
-.post-content figure img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-}
-.post-content figure figcaption {
-    text-align: center;
-    font-style: italic;
-    color: #777;
-    margin-top: 10px;
-    font-size: 0.9rem;
 }
 
 .post-footer {
@@ -96,6 +60,7 @@
     font-weight: 600;
     margin-right: 15px;
 }
+
 .share-buttons a {
     font-size: 1.8rem;
     color: var(--dark-color);
@@ -104,6 +69,7 @@
     transition: color 0.3s, transform 0.3s;
     display: inline-block;
 }
+
 .share-buttons a:hover {
     color: var(--button-default-blue);
     transform: translateY(-3px);
