@@ -93,6 +93,8 @@ h2.section-title a:hover::after {
     z-index: 1000;
     width: 100%;
     height: 2cm;
+    /* This new rule adds the edge padding directly to the header */
+    padding: 0 20px;
 }
 
 .header-container {
@@ -730,10 +732,10 @@ body.is-resizing .main-nav {
         text-align: center; /* Centers the text */
         padding: 0 20px; /* Adds some padding for better readability */             
     }
-    #anim-welcome { font-size: 1.6rem; }
+    #anim-welcome { font-size: 2rem; }
     #anim-favicon img { width: 150px; }
-    #anim-name { font-size: 1.5rem; }
-    #anim-explore { font-size: 1.4rem; letter-spacing: 2px; }
+    #anim-name { font-size: 1.9rem; }
+    #anim-explore { font-size: 1.8rem; letter-spacing: 2px; }
 }
 
 /* The new animation sequence using keyframes */
@@ -768,3 +770,4 @@ body.loaded #main-footer {
     opacity: 1;
     transition: opacity 1s ease;
 }
+
