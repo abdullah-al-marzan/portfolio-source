@@ -722,12 +722,19 @@ body.is-resizing .main-nav {
 #anim-name { font-size: 3.5rem; }
 #anim-explore { font-size: 3.2rem; letter-spacing: 3px; text-transform: uppercase; }
 
-@media (max-width: 1100px) {
-    #anim-welcome { font-size: 1.4rem; }
+@media (max-width: 768px) {
+    #anim-welcome,
+    #anim-name,
+    #anim-explore {
+        width: 100vw; /* Sets the container width to 90% of the screen's width */
+        text-align: center; /* Centers the text */
+        padding: 0 20px; /* Adds some padding for better readability */             
+    }
+    #anim-welcome { font-size: 1.6rem; }
     #anim-favicon img { width: 150px; }
-    #anim-name { font-size: 1.3rem; }
-    #anim-explore { font-size: 1.3rem; letter-spacing: 2px; }
-    aligned-items: center; /* Centers the items vertically */
+    #anim-name { font-size: 1.4rem; }
+    #anim-explore { font-size: 1.4rem; letter-spacing: 2px; }
+    text-align: center; /* Centers the items vertically */
 }
 
 /* The new animation sequence using keyframes */
