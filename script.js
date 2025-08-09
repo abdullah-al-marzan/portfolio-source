@@ -180,19 +180,35 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // --- NEW: Button Click Sound ---
+    // --- NEW: Universal Button Click Sound with Navigation Delay ---
     const clickSound = document.getElementById('click-sound');
-    const buttons = document.querySelectorAll('.btn'); // This targets ALL buttons with the 'btn' class
+    
+    document.body.addEventListener('click', function(event) {
+        const clickedButton = event.target.closest('.btn');
+        
+        // Check if the clicked element (or its parent) is a button with a link
+        if (clickedButton && clickSound && clickedButton.tagName === 'A' && clickedButton.href) {
+            
+            // 1. Prevent the browser from navigating immediately
+            event.preventDefault(); 
+            
+            const destination = clickedButton.href;
 
-    if (clickSound) {
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                clickSound.currentTime = 0; // Rewind to the start
-                clickSound.play();
-            });
-        });
-    }
-
+            // 2. Play the sound
+            clickSound.currentTime = 0;
+            clickSound.play();
+            
+            // 3. Wait for a tiny moment, then navigate to the new page
+            setTimeout(() => {
+                window.location.href = destination;
+            }, 300); // 300 milliseconds is a perfect, short delay
+        }
+        // This handles buttons that don't navigate (like form submits)
+        else if (clickedButton && clickSound) {
+            clickSound.currentTime = 0;
+            clickSound.play();
+        }
+    });
 
 });
 
