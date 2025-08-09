@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 3. Wait for a tiny moment, then navigate to the new page
             setTimeout(() => {
                 window.location.href = destination;
-            }, 300); // 300 milliseconds is a perfect, short delay
+            }, 200); // 300 milliseconds is a perfect, short delay
         }
         // This handles buttons that don't navigate (like form submits)
         else if (clickedButton && clickSound) {
