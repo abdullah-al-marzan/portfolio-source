@@ -777,3 +777,36 @@ body.loaded #main-footer {
     }
 }
 
+/* --- NEW: Global Animated Title on Hover --- */
+.section-title {
+    display: inline-block; /* Ensures underline fits the text width */
+    position: relative;
+    cursor: default; /* Keeps the cursor normal since it's not a link */
+    transition: color 0.3s ease-out;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -5px; /* Adjust for space between text and line */
+    left: 0;
+    background-color: var(--button-default-blue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+}
+
+.section-title:hover {
+    color: var(--button-default-blue);
+}
+
+.section-title:hover::after {
+    transform: scaleX(1);
+}
+
+/* --- NEW: Centering for Animated Titles --- */
+.title-wrapper {
+    text-align: center;
+}
