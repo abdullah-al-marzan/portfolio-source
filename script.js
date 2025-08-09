@@ -180,8 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-});
-
     // --- NEW: Button Click Sound ---
     const clickSound = document.getElementById('click-sound');
     const buttons = document.querySelectorAll('.btn'); // This targets ALL buttons with the 'btn' class
@@ -194,5 +192,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+
+});
+
+
 
 
