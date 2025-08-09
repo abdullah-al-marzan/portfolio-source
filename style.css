@@ -638,4 +638,51 @@ body.is-resizing .main-nav {
     }
 }
 
+/* --- NEW: Footer Call to Action --- */
+.cta-text {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Base style for the premium button */
+.cta-btn {
+    display: flex; /* Changed to flex to align text and icon */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px !important;
+    font-weight: 600 !important;
+    background-color: var(--light-color) !important;
+    color: var(--dark-color) !important;
+    border: 2px solid var(--dark-color) !important;
+    position: relative; /* Needed for the icon positioning */
+    overflow: hidden; /* Hides the icon initially */
+    transition: all 0.4s ease !important;
+}
+
+/* Add an arrow icon using a pseudo-element */
+.cta-btn::after {
+    content: '\f061'; /* Font Awesome arrow-right icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: -50px; /* Start the icon off-screen to the right */
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+/* Premium hover animation */
+.cta-btn:hover {
+    background-color: var(--dark-color) !important;
+    color: var(--light-color) !important;
+    transform: translateY(-3px); /* Add a slight lift */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Animate the arrow icon into view on hover */
+.cta-btn:hover::after {
+    right: 20px; /* Move the icon into place */
+    opacity: 1;
+}
 

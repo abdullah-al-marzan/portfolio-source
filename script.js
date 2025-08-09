@@ -182,3 +182,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+    // --- NEW: Button Click Sound ---
+    const clickSound = document.getElementById('click-sound');
+    const buttons = document.querySelectorAll('.btn'); // This targets ALL buttons with the 'btn' class
+
+    if (clickSound) {
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                clickSound.currentTime = 0; // Rewind to the start
+                clickSound.play();
+            });
+        });
+    }
+
+
