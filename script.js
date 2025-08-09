@@ -212,56 +212,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// --- NEW: Advanced Welcome Animation Sequence ---
+// --- NEW: Simple & Reliable Welcome Animation ---
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     const body = document.body;
 
-    const welcomeText = document.getElementById('welcome-text');
-    const favicon = document.getElementById('favicon-container');
-    const nameText = document.getElementById('name-text');
-    const exploreText = document.getElementById('explore-text');
-
     if (preloader) {
-        // Start the sequence after a brief moment
+        // Step 1: Add a class to start the CSS animations
+        preloader.classList.add('start-animation');
+
+        // Step 2: Set a single timer to hide everything when the animation is over
+        // The total animation is 8 seconds (4 items * 2s each)
         setTimeout(() => {
-            // Step 1: "Welcome :)" appears
-            welcomeText.classList.add('fade-in');
-
-            setTimeout(() => {
-                // Step 2: "Welcome :)" vanishes
-                welcomeText.classList.remove('fade-in');
-                welcomeText.classList.add('fade-out');
-
-                setTimeout(() => {
-                    // Step 3: Favicon appears
-                    favicon.classList.add('fade-in');
-
-                    setTimeout(() => {
-                        // Step 4: Favicon vanishes
-                        favicon.classList.remove('fade-in');
-                        favicon.classList.add('fade-out');
-
-                        setTimeout(() => {
-                            // Step 5: Your name appears
-                            nameText.classList.add('fade-in-name');
-
-                            setTimeout(() => {
-                                // Step 6: "Let's Explore" appears
-                                exploreText.classList.add('fade-in');
-
-                                setTimeout(() => {
-                                    // Step 7: Everything vanishes and site loads
-                                    preloader.classList.add('hidden');
-                                    body.classList.add('loaded');
-                                }, 1500); // Wait 1.5s before showing site
-                            }, 1000); // Wait 1s
-                        }, 500); // Wait 0.5s
-                    }, 1500); // Wait 1.5s
-                }, 1000); // Wait 1s
-            }, 1500); // Wait 1.5s
-        }, 500); // Initial delay
+            preloader.classList.add('hidden');
+            body.classList.add('loaded');
+        }, 11000); // 11000ms = 11 seconds
+    } else {
+        // If there is no preloader, just load the site
+        body.classList.add('loaded');
     }
 });
-
 

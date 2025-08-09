@@ -686,9 +686,8 @@ body.is-resizing .main-nav {
     opacity: 1;
 }
 
-/* --- NEW: Advanced Welcome Animation --- */
 
-/* The main preloader screen */
+/* --- NEW: CSS-Only Welcome Animation --- */
 #preloader {
     position: fixed;
     top: 0;
@@ -697,11 +696,8 @@ body.is-resizing .main-nav {
     height: 100%;
     background-color: #000000;
     z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
+    /* This transition handles the final fade-out */
+    transition: opacity 1s ease, visibility 1s ease;
 }
 
 #preloader.hidden {
@@ -709,46 +705,46 @@ body.is-resizing .main-nav {
     visibility: hidden;
 }
 
-.preloader-content {
-    text-align: center;
-    color: var(--light-color);
-}
-
-/* Base state for all animated items */
+/* This is the container for our animated items */
 .preloader-item {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0;
+    color: white;
     font-weight: 600;
+    opacity: 0; /* All items start completely invisible */
 }
 
-/* Specific styles for each element */
-#welcome-text { font-size: 2rem; }
-#favicon-container img { width: 80px; }
-#name-text { font-size: 2.5rem; }
-#explore-text { font-size: 1.2rem; letter-spacing: 3px; text-transform: uppercase; }
+/* Specific styles for each item */
+#anim-welcome { font-size: 3.5rem; }
+#anim-favicon img { width: 200px; }
+#anim-name { font-size: 3.5rem; }
+#anim-explore { font-size: 3.2rem; letter-spacing: 3px; text-transform: uppercase; }
 
-/* Animation classes to be added by JavaScript */
-.fade-in { animation: fadeIn 1s ease-out forwards; }
-.fade-out { animation: fadeOut 1s ease-out forwards; }
-.fade-in-name { animation: fadeInName 1.5s ease-out forwards; }
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* The new animation sequence using keyframes */
+#preloader.start-animation #anim-welcome {
+    animation: fadeInOut 2.5s ease-in-out forwards;
 }
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
+#preloader.start-animation #anim-favicon {
+    animation: fadeInOut 2.5s ease-in-out 2.5s forwards; /* Starts after 2s */
 }
-@keyframes fadeInName {
-    from { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
-    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+#preloader.start-animation #anim-name {
+    animation: fadeInOut 2.5s ease-in-out 5s forwards; /* Starts after 4s */
+}
+#preloader.start-animation #anim-explore {
+    animation: fadeInOut 2.5s ease-in-out 7.5s forwards; /* Starts after 6s */
 }
 
-/* By default, hide the main content until the preloader is done */
+/* A single keyframe for fading in and out */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* By default, hide the main content */
 #main-header, main, #main-footer {
     opacity: 0;
 }
@@ -756,5 +752,5 @@ body.loaded #main-header,
 body.loaded main,
 body.loaded #main-footer {
     opacity: 1;
-    transition: opacity 0.8s ease-out;
+    transition: opacity 1s ease;
 }
