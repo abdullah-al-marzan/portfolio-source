@@ -156,11 +156,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- FLICKER-FIX SCRIPT (Your working code) ---
     let resizeTimer;
     window.addEventListener('resize', () => {
-        body.classList.add('is-resizing');
+        document.body.classList.add('is-resizing');
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-            body.classList.remove('is-resizing');
+            document.body.classList.remove('is-resizing');
         }, 100);
     });
 
+    // --- NEW: Scroll Animation for Homepage Sections ---
+    const animatedSections = document.querySelectorAll('.animated-section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.05 // Trigger when 15% of the section is visible
+    });
+
+    animatedSections.forEach(section => {
+        observer.observe(section);
+    });
+
 });
+
