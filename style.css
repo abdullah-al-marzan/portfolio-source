@@ -770,4 +770,10 @@ body.loaded #main-footer {
     opacity: 1;
     transition: opacity 1s ease;
 }
+@media (min-width: 1380px) {
+    /* This rule ensures the logo is pulled to the absolute left edge */
+    .header-container .logo {
+        margin-left: -90px; /* This cancels out the container's default padding */
+    }
+}
 
