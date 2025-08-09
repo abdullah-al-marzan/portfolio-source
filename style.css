@@ -387,7 +387,11 @@ h2.section-title a:hover::after {
     transform: scale(1.15);  /* Makes the icon slightly bigger */
 }
 
-.footer-bottom { text-align: center; padding: 20px 0; border-top: 1px solid var(--mobile-border-color); }
+.footer-bottom {
+    text-align: center !important; /* This forces the text to be centered */
+    padding: 20px 0;
+    border-top: 1px solid var(--mobile-border-color);
+}
 
 /* This class is added by JavaScript during resize to prevent flickering */
 body.is-resizing .main-nav {
@@ -523,6 +527,11 @@ body.is-resizing .main-nav {
         text-align: justify;
     }
 
+    /* This new rule specifically targets the paragraph in the footer bottom */
+    .footer-bottom p {
+        text-align: center;
+    }
+
 /* --- NEW: Active Menu Highlighting & Underlines --- */
 
 /* 2. Highlights the parent dropdown menu (e.g., "Research") when a submenu item is active */
@@ -617,4 +626,4 @@ body.is-resizing .main-nav {
     }
 }
 
-    
+
