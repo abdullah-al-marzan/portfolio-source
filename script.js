@@ -212,23 +212,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// --- NEW: Simple & Reliable Welcome Animation ---
+// --- NEW: Conditional Welcome Animation ---
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     const body = document.body;
+
+    // Check if the animation has already been played in this session
+    if (sessionStorage.getItem('animationPlayed')) {
+        // If it has been played, hide the preloader and show the site immediately
+        if (preloader) {
+            preloader.style.display = 'none';
+        }
+        body.classList.add('loaded');
+        return; // Stop the function here
+    }
+
+    // If the animation has NOT been played, run the sequence
+    const welcomeText = document.getElementById('welcome-text');
+    const identity = document.getElementById('identity-container');
+    const exploreText = document.getElementById('explore-text');
 
     if (preloader) {
         // Step 1: Add a class to start the CSS animations
         preloader.classList.add('start-animation');
 
-        // Step 2: Set a single timer to hide everything when the animation is over
-        // The total animation is 8 seconds (4 items * 2s each)
+        // Step 2: Set a timer to hide everything when the animation is over
         setTimeout(() => {
             preloader.classList.add('hidden');
             body.classList.add('loaded');
+            
+            // Step 3: Set a flag to remember the animation has played
+            sessionStorage.setItem('animationPlayed', 'true');
         }, 11000); // 11000ms = 11 seconds
     } else {
-        // If there is no preloader, just load the site
         body.classList.add('loaded');
     }
 });
