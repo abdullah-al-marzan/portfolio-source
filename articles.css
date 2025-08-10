@@ -1,6 +1,6 @@
 /* --- STYLES FOR ARTICLES PAGE --- */
 .articles-cover {
-    height: 50vh;
+    height: 46vh;
     width: auto; 
     background-image: url('media/articles/cover (cropped).jpg'); /* You can change this image path later */
     background-size: cover;

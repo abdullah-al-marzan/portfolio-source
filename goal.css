@@ -2,7 +2,7 @@
 
 /* CORRECTED: Added the cover section from the interests page */
 .goal-cover {
-    height: 55vh;
+    height: 45vh;
     width: auto; 
     background-image: url('media/goal/cover (cropped).jpg'); /* You can change this image path later */
     background-size: cover;

@@ -1,6 +1,6 @@
 /* === Previous Page Specific Styles === */
 .previous-cover {
-    height: 50vh;
+    height: 45vh;
     width: auto; 
     background-image: url('media/previous/cover (cropped).jpg'); /* You can change this image path later */
     background-size: cover;
