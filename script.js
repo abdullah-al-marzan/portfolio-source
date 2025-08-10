@@ -100,44 +100,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- VIDEO PLAYER (Your working code) ---
-    const videoWrappers = document.querySelectorAll('.video-wrapper');
-    videoWrappers.forEach(wrapper => {
-        const youtubeSrc = wrapper.getAttribute('data-youtube-embed-src');
-        const linkedinSrc = wrapper.getAttribute('data-linkedin-embed-src');
-        if (youtubeSrc || linkedinSrc) {
-            const playButton = document.createElement('div');
-            playButton.innerHTML = '<i class="fas fa-play"></i>';
-            playButton.className = 'video-play-button';
-            if (wrapper.querySelector('.video-thumbnail')) {
-                wrapper.appendChild(playButton);
-            } else {
-                wrapper.appendChild(playButton);
-            }
-            wrapper.addEventListener('click', () => {
-                let iframe;
-                if (youtubeSrc) {
-                    iframe = document.createElement('iframe');
-                    iframe.setAttribute('src', `${youtubeSrc}?autoplay=1`);
-                    iframe.setAttribute('frameborder', '0');
-                    iframe.setAttribute('allowfullscreen', '');
-                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-                } else if (linkedinSrc) {
-                    iframe = document.createElement('iframe');
-                    iframe.setAttribute('src', linkedinSrc);
-                    iframe.setAttribute('height', '100%');
-                    iframe.setAttribute('width', '100%');
-                    iframe.setAttribute('frameborder', '0');
-                    iframe.setAttribute('allowfullscreen', '');
-                    iframe.setAttribute('title', 'Embedded post');
-                }
-                if (iframe) {
-                    wrapper.innerHTML = '';
-                    wrapper.appendChild(iframe);
-                }
-            }, { once: true });
-        }
-    });
+// --- VIDEO PLAYER (Corrected for Single-Click Play) ---
+const videoWrappers = document.querySelectorAll('.video-wrapper');
+
+videoWrappers.forEach(wrapper => {
+    const youtubeSrc = wrapper.getAttribute('data-youtube-embed-src');
+    if (youtubeSrc) {
+        const playButton = document.createElement('div');
+        playButton.innerHTML = '<i class="fas fa-play"></i>';
+        playButton.className = 'video-play-button';
+        wrapper.appendChild(playButton);
+
+        wrapper.addEventListener('click', () => {
+            const iframe = document.createElement('iframe');
+            
+            // This new logic checks if the URL already has parameters
+            const autoplayUrl = youtubeSrc.includes('?') 
+                ? `${youtubeSrc}&autoplay=1` 
+                : `${youtubeSrc}?autoplay=1`;
+
+            iframe.setAttribute('src', autoplayUrl);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+            
+            wrapper.innerHTML = '';
+            wrapper.appendChild(iframe);
+        }, { once: true });
+    }
+});
 
     // --- NEWSLETTER FORM (Your working code) ---
     const newsletterForm = document.getElementById('newsletter-form');

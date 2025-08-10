@@ -276,3 +276,32 @@
         color: #444;
     }
 }
+
+/* --- NEW: Controller for Video Spacing --- */
+
+/* This rule specifically targets the title above your video on this page */
+.video-wrapper-container .section-title {
+    margin-bottom: 20px; /* The default is 50px. Adjust this value to increase or decrease the gap. */
+}
+
+/* --- NEW: Video Title Styling --- */
+
+/* This rule centers the title and makes it bold */
+.video-wrapper-container .section-title {
+    text-align: center;
+    font-weight: 700; /* This makes the font bold */
+    display: block; /* Ensures the text-align works correctly */
+    margin-bottom: 20px;
+}
+
+/* This keeps the underline animation centered */
+.video-wrapper-container .section-title a {
+    display: inline-block;
+}
+
+/* --- NEW: Fix for Double Underline on Video Title --- */
+
+/* This rule removes the unwanted, full-width underline */
+.video-wrapper-container .section-title::after {
+    display: none;
+}
