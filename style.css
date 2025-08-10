@@ -760,6 +760,7 @@ body.is-resizing .main-nav {
     100% { opacity: 0; }
 }
 
+
 /* By default, hide the main content */
 #main-header, main, #main-footer {
     opacity: 0;
