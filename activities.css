@@ -1,0 +1,96 @@
+/* --- STYLES FOR EXTRA CURRICULAR PAGE --- */
+
+/* Cover Photo Section */
+.extra-curricular-cover {
+    height: 45vh;
+    background-image: url('media/page_covers/extra_curricular.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.text-container {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+.text-container h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+.text-container p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Video Grid for Performing Arts */
+.video-grid {
+    display: flex; /* Changed to flexbox */
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers the items horizontally */
+    gap: 30px;
+}
+
+.video-item {
+    width: 60%; /* CORRECTED: Changed from 40% to 50% of the screen width */
+}}
+
+.video-item h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+/* CORRECTED #1 & #2: Main video container styles */
+.video-wrapper {
+    width: 60%; /* Set width to 60% of the container */
+    margin: 20px auto; /* Center the video */
+    aspect-ratio: 16 / 9; /* Automatically sets the height */
+}
+
+/* Visual Arts Section */
+.gallery-placeholder {
+    background-color: var(--gray-bg);
+    border: 2px dashed var(--border-color);
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 40px auto;
+    color: #888;
+    font-size: 1.2rem;
+}
+.video-showcase .video-wrapper {
+    width: 100%; /* Make this specific video larger */
+    max-width: 800px;
+}
+
+/* Education and Gaming Section */
+.two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+.grid-item {
+    text-align: center;
+}
+.grid-item p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.grid-item .video-wrapper {
+    width: 100%; /* Make videos in this section fill their column */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .two-column-grid {
+        grid-template-columns: 1fr;
+    }
+    .extra-curricular-cover {
+        background-attachment: scroll;
+    }
+    .video-wrapper {
+        width: 100%; /* Make videos full-width on mobile */
+    }
+}
