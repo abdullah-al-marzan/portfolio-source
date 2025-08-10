@@ -3,9 +3,9 @@
 /* Cover Photo Section */
 .extra-curricular-cover {
     height: 45vh;
-    background-image: url('media/page_covers/extra_curricular.jpg');
+    background-image: url('media/activities/cover (cropped).jpg');
     background-size: cover;
-    background-position: center;
+    background-position: absolute center;
     background-attachment: fixed;
 }
 
