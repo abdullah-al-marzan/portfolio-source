@@ -1,6 +1,6 @@
 /* --- STYLES FOR CERTIFICATIONS PAGE --- */
 .certifications-cover {
-    height: 45vh;
+    height: 55vh;
     width: auto; 
     background-image: url('media/certifications/image/cover (cropped).jpg'); /* You can change this image path later */
     background-size: cover;
