@@ -749,7 +749,7 @@ body.is-resizing .main-nav {
     animation: fadeInOut 2.5s ease-in-out 5s forwards; /* Starts after 4s */
 }
 #preloader.start-animation #anim-explore {
-    animation: fadeInOut 4.5s ease-in-out 7.5s forwards; /* Starts after 6s */
+    animation: fadeInOut 2.5s ease-in-out 7.5s forwards; /* Starts after 6s */
 }
 
 /* A single keyframe for fading in and out */
