@@ -88,18 +88,17 @@
     .two-column-grid {
         grid-template-columns: 1fr;
     }
-    .extra-curricular-cover {
-        background-attachment: scroll;
-    }
+    
     .video-wrapper {
         width: 100%; /* Make videos full-width on mobile */
     }
 
     .extra-curricular-cover {
-        height: 50vh;
-        background-image: url('media/activities/Group Photo (cropped).jpg');
+        width:100%
+
+        background-image: url('media/activities/Dance Performance.jpg');
         background-size: cover;
-        background-position: absolute center;
+        background-position: center;
         background-attachment: fixed;
     }
     .video-item {
