@@ -96,11 +96,19 @@
     }
 
     .extra-curricular-cover {
-    height: 40vh;
-    width: 100%;        
-    background-position: center;
-    background-size: cover;
-    background-image: url('media/activities/Group Photo (cropped).jpg');
-    background-attachment: fixed;
+        height: 50vh;
+        background-image: url('media/activities/Group Photo (cropped).jpg');
+        background-size: cover;
+        background-position: absolute center;
+        background-attachment: fixed;
     }
+    .video-item {
+        width: 100%; /* Make video items full-width on mobile */
+    }
+    .text-container h1 {
+        font-size: 2.2rem; /* Adjust heading size for smaller screens */
+    }
+    .text-container p {
+        font-size: 1rem; /* Adjust paragraph size for smaller screens */
+    }   
 }

@@ -13,7 +13,7 @@
     color: var(--light-color);
     
     /* CORRECTED #1: The path now correctly goes "up" one folder */
-    background-image: url('../media/academics/cover (cropped).jpg');
+    background-image: url('/media/academics/cover (cropped).jpg');
     
     background-size: cover;
     
@@ -31,7 +31,7 @@
     width: 100%;
     height: 100%;
     /* This dark overlay makes the text on top more readable */
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(29, 29, 29, 0.5); 
     z-index: 1;
 }
 
@@ -93,4 +93,39 @@
 /* Active Menu Style */
 .active-submenu {
     color: #a8cfff !important;
+}
+
+@media (max-width: 768px) {
+
+    .acknowledgment-cover {
+    height: auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-color);
+    
+    /* CORRECTED #1: The path now correctly goes "up" one folder */
+    background-image: url('/media/academics/cover.jpg');
+    
+    background-size: cover;
+    
+    /* CORRECTED #2: "absolute" is not a valid value here */
+    background-position: center; 
+    
+    background-attachment: fixed;
+}
+
+    .ack-card {
+        padding: 20px 30px; /* Reduced padding for smaller screens */
+    }
+    .ack-card h2 {
+        font-size: 1.5rem; /* Smaller title font size */
+    }
+    .card-icon {
+        font-size: 2rem; /* Smaller icon size */
+    }
+    
 }
