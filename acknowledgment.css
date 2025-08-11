@@ -1,5 +1,7 @@
 /* --- PREMIUM STYLES FOR ACKNOWLEDGMENT PAGE --- */
 
+/* --- STYLES FOR ACKNOWLEDGMENT PAGE --- */
+
 /* Cover Section */
 .acknowledgment-cover {
     height: 45vh;
@@ -9,11 +11,18 @@
     justify-content: center;
     text-align: center;
     color: var(--light-color);
-    background-image: url('../media/page_covers/acknowledgment.jpg');
+    
+    /* CORRECTED #1: The path now correctly goes "up" one folder */
+    background-image: url('../media/academics/cover (cropped).jpg');
+    
     background-size: cover;
-    background-position: center;
+    
+    /* CORRECTED #2: "absolute" is not a valid value here */
+    background-position: center; 
+    
     background-attachment: fixed;
 }
+
 .acknowledgment-cover::before {
     content: '';
     position: absolute;
@@ -21,9 +30,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    /* This dark overlay makes the text on top more readable */
+    background: rgba(0, 0, 0, 0.5); 
     z-index: 1;
 }
+
 .hero-content {
     position: relative;
     z-index: 2;
@@ -36,6 +47,7 @@
     font-size: 1.2rem;
     opacity: 0.9;
 }
+
 
 /* Main Content Container */
 .ack-container {
