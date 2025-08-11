@@ -98,8 +98,8 @@
 @media (max-width: 768px) {
 
     .acknowledgment-cover {
-    height: auto;
-    width: 100%;
+    height: 35vh; /* Reduced height for smaller screens */
+    width: auto;
     position: relative;
     display: flex;
     align-items: center;
@@ -108,7 +108,7 @@
     color: var(--light-color);
     
     /* CORRECTED #1: The path now correctly goes "up" one folder */
-    background-image: url('/media/academics/cover.jpg');
+    background-image: url('/media/academics/cover (cropped).jpg');
     
     background-size: cover;
     
