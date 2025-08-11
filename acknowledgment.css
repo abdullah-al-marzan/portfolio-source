@@ -123,11 +123,11 @@
     z-index: 2;
     }
     .hero-content h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: 700;
     }
     .hero-content p {
-        font-size: 1rem;
+        font-size: 0.9rem;
         opacity: 0.9;
         text-align: center; /* Center text on smaller screens */
     }
@@ -140,7 +140,7 @@
         font-size: 1.3rem; /* Smaller title font size */
     }
     .card-icon {
-        font-size: 3.5rem; /* Smaller icon size */
+        font-size: 3rem; /* Smaller icon size */
     }
     
 }
