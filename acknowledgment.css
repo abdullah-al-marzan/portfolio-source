@@ -13,7 +13,7 @@
     color: var(--light-color);
     
     /* CORRECTED #1: The path now correctly goes "up" one folder */
-    background-image: url('/media/academics/cover (cropped).jpg');
+    background-image: url('/media/acknowledgment/cover (cropped).jpg');
     
     background-size: cover;
     
@@ -108,7 +108,7 @@
     color: var(--light-color);
     
     /* CORRECTED #1: The path now correctly goes "up" one folder */
-    background-image: url('/media/academics/cover (cropped).jpg');
+    background-image: url('/media/acknowledgment/cover (mobile).jpg');
     
     background-size: cover;
     
@@ -116,16 +116,31 @@
     background-position: center; 
     
     background-attachment: fixed;
-}
+    }
+
+    .hero-content {
+    position: relative;
+    z-index: 2;
+    }
+    .hero-content h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+    .hero-content p {
+        font-size: 1rem;
+        opacity: 0.9;
+        text-align: center; /* Center text on smaller screens */
+    }
+
 
     .ack-card {
         padding: 20px 30px; /* Reduced padding for smaller screens */
     }
     .ack-card h2 {
-        font-size: 1.5rem; /* Smaller title font size */
+        font-size: 1.3rem; /* Smaller title font size */
     }
     .card-icon {
-        font-size: 2rem; /* Smaller icon size */
+        font-size: 3.5rem; /* Smaller icon size */
     }
     
 }
