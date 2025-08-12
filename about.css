@@ -70,13 +70,23 @@
 }
 
 /* --- RESPONSIVE STYLES FOR ABOUT PAGE --- */
-@media (max-width: 400px) {
+@media (max-width: 768px) {
     /* CORRECTED: This now applies to all mobile devices */
     .about-cover {
-        height: auto;
+        height: auto; /* Let the aspect ratio control the height */
         aspect-ratio: 16 / 9; /* Sets the exact 16:9 ratio */
-        background-attachment: scroll; /* Parallax effect doesn't work well on mobile */
+        background-attachment: scroll; /* Parallax is disabled on mobile for performance */
     }
+
+    .about-me-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        position: static;
+        margin-bottom: 30px;
+    }
+}
     
     .about-container {
         max-width: 90%;
