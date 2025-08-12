@@ -94,7 +94,7 @@ h2.section-title a:hover::after {
     width: 100%;
     height: 2cm;
     /* This new rule adds the edge padding directly to the header */
-    padding: 0 20px;
+    padding: 0 5px;
 }
 
 .header-container {
