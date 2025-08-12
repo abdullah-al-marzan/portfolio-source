@@ -450,7 +450,7 @@ body.is-resizing .main-nav {
         grid-template-columns: 1fr 1fr;
         gap: 0 10px;
         align-content: start;
-        padding: 10px;
+        padding: 5px;
     }
     
     .main-nav > ul > li {
@@ -458,12 +458,13 @@ body.is-resizing .main-nav {
     }
 
     .main-nav li a, .has-submenu > a {
-        padding: 15px;
+        padding: 15px 10px;
         height: auto;
         line-height: 1.5;
         width: 100%;
         color: var(--dark-color);
         border-bottom: none;
+        font-size: 0.8rem;
     }
 
     .main-nav li a.active {
