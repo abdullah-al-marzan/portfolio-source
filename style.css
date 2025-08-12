@@ -425,8 +425,8 @@ body.is-resizing .main-nav {
         position: fixed;
         top: 2cm;
         right: 0;
-        width: 350px;
-        max-width: 80%;
+        width: 400px;
+        max-width: 90%;
         height: calc(100% - 2cm);
         background-color: var(--light-color);
         overflow-y: auto;
@@ -589,12 +589,25 @@ body.is-resizing .main-nav {
 }
 
 @media (max-width: 768px) {
-    /* CORRECTED #2: Slider height on mobile */
     
+    .main-nav.active > ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 0px; /* CORRECTED: Reduced the gap between columns */
+        align-content: start;
+        padding: 10px;
+    }
 
     .main-nav li a, .has-submenu > a {
-    font-size: 0.7rem; /* Adjust this value if needed */
+        padding: 10px; /* CORRECTED: Reduced side padding */
+        height: auto;
+        line-height: 1.5;
+        width: 100%;
+        color: var(--dark-color);
+        border-bottom: none;
     }
+
+    /* CORRECTED #2: Slider height on mobile */
     .hero-slider {
         height: 30vh; /* Sets the slider to 40% of the mobile screen height */
         aspect-ratio: auto; /* Overrides the desktop aspect ratio */
