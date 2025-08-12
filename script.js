@@ -251,7 +251,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.025 // CORRECTED: Lowered threshold for earlier triggering on mobile
+    threshold: 0.005 // CORRECTED: Lowered threshold for earlier triggering on mobile
 });
 
 animatedElements.forEach(element => {
