@@ -125,7 +125,7 @@ h2.section-title a:hover::after {
     height: 2cm;
     line-height: 2cm;
     font-weight: 600;
-    font-size: 0.9rem;
+
     text-transform: uppercase;
     display: block;
     position: relative;
@@ -426,7 +426,7 @@ body.is-resizing .main-nav {
         top: 2cm;
         right: 0;
         width: 400px;
-        max-width: 95%;
+        max-width: 100%;
         height: calc(100% - 2cm);
         background-color: var(--light-color);
         overflow-y: auto;
@@ -562,9 +562,7 @@ body.is-resizing .main-nav {
 /* 3. Adds a static black underline to the active MOBILE menu item */
 @media (max-width: 1100px) {
 
-    .main-nav li a, .has-submenu > a {
-    font-size: 0.9rem; /* Adjust this value if needed */
-    }
+
     
     .main-nav li a.active {
         position: relative;
