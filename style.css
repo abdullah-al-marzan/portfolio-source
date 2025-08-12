@@ -425,7 +425,7 @@ body.is-resizing .main-nav {
         position: fixed;
         top: 2cm;
         right: 0;
-        width: 300px;
+        width: 350px;
         max-width: 80%;
         height: calc(100% - 2cm);
         background-color: var(--light-color);
@@ -450,7 +450,7 @@ body.is-resizing .main-nav {
         grid-template-columns: 1fr 1fr;
         gap: 0 10px;
         align-content: start;
-        padding: 5px;
+        padding: 10px;
     }
     
     .main-nav > ul > li {
@@ -458,13 +458,12 @@ body.is-resizing .main-nav {
     }
 
     .main-nav li a, .has-submenu > a {
-        padding: 15px 10px;
+        padding: 15px;
         height: auto;
         line-height: 1.5;
         width: 100%;
         color: var(--dark-color);
         border-bottom: none;
-        font-size: 0.8rem;
     }
 
     .main-nav li a.active {
@@ -562,6 +561,11 @@ body.is-resizing .main-nav {
 
 /* 3. Adds a static black underline to the active MOBILE menu item */
 @media (max-width: 1100px) {
+
+    .main-nav li a, .has-submenu > a {
+    font-size: 0.8rem; /* Adjust this value if needed */
+    }
+    
     .main-nav li a.active {
         position: relative;
         background-color: #123456; /* Remove the blue background */
@@ -584,8 +588,13 @@ body.is-resizing .main-nav {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 768px) {
     /* CORRECTED #2: Slider height on mobile */
+    
+
+    .main-nav li a, .has-submenu > a {
+    font-size: 0.7rem; /* Adjust this value if needed */
+    }
     .hero-slider {
         height: 30vh; /* Sets the slider to 40% of the mobile screen height */
         aspect-ratio: auto; /* Overrides the desktop aspect ratio */
