@@ -613,6 +613,21 @@ body.is-resizing .main-nav {
         aspect-ratio: auto; /* Overrides the desktop aspect ratio */
     }
 
+    .slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; /* No background */
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 1.5rem; /* smaller size */
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
     .two-column-layout {
         flex-direction: column;
     }
