@@ -169,7 +169,8 @@
     }
     .contact-info-panel, .contact-form-panel {
         grid-column: 1 / -1;
-        padding-right: 0;
+        padding-right: 15px;
+        padding-left: 15px;
     }
     .contact-info-panel { text-align: center; }
     .info-item {
@@ -196,5 +197,10 @@
     }
     .form-container h2 {
         font-size: 1.8rem; /* Smaller form title */
+    }
+    .title-wrapper h2{
+        text-align: center; /* Center align titles on smaller screens */
+        font-size: 1.5rem; /* Smaller title size */ 
+        
     }
 }

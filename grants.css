@@ -113,4 +113,9 @@
         font-size: 1.5rem;
     }
     
+    .grant-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+    }
 }

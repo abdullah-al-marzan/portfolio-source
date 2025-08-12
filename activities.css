@@ -123,4 +123,15 @@
         margin-bottom: 10px;
         font-size: 1.2rem;
     }
+    .title-wrapper h2{
+        text-align: center; /* Center align titles on smaller screens */
+        font-size: 1.5rem; /* Smaller title size */
+        margin-bottom: 20px; /* Add some space below the title */
+        
+    }
+    .section-wrapper {
+        font-size: 1.5rem; /* Adjust section title size for smaller screens */
+        margin-bottom: 20px;
+        text-align: center; /* Center the section title */
+    }   
 }

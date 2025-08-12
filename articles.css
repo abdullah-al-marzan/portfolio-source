@@ -129,10 +129,11 @@
     .publication-entry, .poster-entry {
         flex-direction: column;
     }
+
     .publication-image, .poster-image {
         flex-basis: auto;
-        width: 50%;
-        margin: 0 auto;
+        width: 100%; /* CORRECTED: Changed from 50% to 95% */
+        margin: 0 auto 20px auto; /* Adds a little space below the image */
     }
 }
 
