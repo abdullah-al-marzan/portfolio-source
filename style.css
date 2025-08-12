@@ -426,7 +426,7 @@ body.is-resizing .main-nav {
         top: 2cm;
         right: 0;
         width: 400px;
-        max-width: 90%;
+        max-width: 95%;
         height: calc(100% - 2cm);
         background-color: var(--light-color);
         overflow-y: auto;
@@ -563,7 +563,7 @@ body.is-resizing .main-nav {
 @media (max-width: 1100px) {
 
     .main-nav li a, .has-submenu > a {
-    font-size: 0.8rem; /* Adjust this value if needed */
+    font-size: 0.9rem; /* Adjust this value if needed */
     }
     
     .main-nav li a.active {
