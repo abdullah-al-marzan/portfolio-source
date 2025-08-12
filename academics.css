@@ -177,8 +177,9 @@
     .academics-cover {
         /* CORRECTED: This sets the new background image specifically for mobile */
         background-image: url('media/academics/cover.jpg');
-        height: 40vh; /* Sets the height to 30% of the mobile screen */
-        background-attachment: scroll; /* Disables parallax for better mobile performance */
+        height: auto; /* Let the aspect ratio control the height */
+        aspect-ratio: 16 / 9; /* Sets the exact 16:9 ratio */
+        background-attachment: scroll;
     }
     
     .academics-container {

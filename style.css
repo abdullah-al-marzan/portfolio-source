@@ -458,12 +458,17 @@ body.is-resizing .main-nav {
     }
 
     .main-nav li a, .has-submenu > a {
-        padding: 15px;
-        height: auto;
-        line-height: 1.5;
-        width: 100%;
-        color: var(--dark-color);
-        border-bottom: none;
+    padding: 15px 10px;
+    height: auto;
+    line-height: 1.5;
+    width: 100%;
+    color: var(--dark-color);
+    border-bottom: none;
+    font-size: 0.8rem;
+    /* These new lines use Flexbox to align the text and arrow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     }
 
     .main-nav li a.active {
@@ -516,11 +521,10 @@ body.is-resizing .main-nav {
     }
 
     .has-submenu > a::after {
-        content: ' \25BC';
-        float: right;
-        display: inline-block;
-        transition: transform 0.3s;
-        color: var(--dark-color);
+    content: ' \25BC';
+    transition: transform 0.3s;
+    color: var(--dark-color);
+    /* We no longer need float or display */
     }
 
     .has-submenu.open > a::after {
