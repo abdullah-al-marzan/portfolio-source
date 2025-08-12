@@ -251,7 +251,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.1 // Trigger when 10% of the element is visible
+    threshold: 0.025 // CORRECTED: Lowered threshold for earlier triggering on mobile
 });
 
 animatedElements.forEach(element => {
