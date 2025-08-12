@@ -864,7 +864,7 @@ body.loaded #main-footer {
 .animate-on-scroll {
     opacity: 0; /* Start invisible */
     transform: translateY(60px); /* Start slightly lower */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 /* The final, visible state of the animated element */
