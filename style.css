@@ -857,3 +857,18 @@ body.loaded #main-footer {
     display: inline-block;
     margin: 10px;
 }
+
+/* --- NEW: Universal Scroll Animation --- */
+
+/* The starting state for any element you want to animate */
+.animate-on-scroll {
+    opacity: 0; /* Start invisible */
+    transform: translateY(100px); /* Start slightly lower */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* The final, visible state of the animated element */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
