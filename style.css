@@ -863,7 +863,7 @@ body.loaded #main-footer {
 /* The starting state for any element you want to animate */
 .animate-on-scroll {
     opacity: 0; /* Start invisible */
-    transform: translateY(100px); /* Start slightly lower */
+    transform: translateY(60px); /* Start slightly lower */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
