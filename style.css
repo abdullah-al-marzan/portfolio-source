@@ -873,12 +873,4 @@ body.loaded #main-footer {
     transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-    /* ... (keep your other mobile styles) ... */
 
-    /* NEW: This rule adjusts the header padding on mobile */
-    #main-header .header-container {
-        padding-left: 0.1cm; /* Sets the small gap from the left edge */
-        padding-right: 0.1cm; /* Sets the same gap on the right for balance */
-    }
-}
