@@ -8,7 +8,7 @@
     background-attachment: fixed;
 }
 
-.ongoing-intro h1 {
+.previous-intro h1 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
@@ -16,7 +16,7 @@
 }
 
 
-.ongoing-intro p {
+.previous-intro p {
     text-align: justify;
     max-width: 800px;
     margin: 0 auto;
