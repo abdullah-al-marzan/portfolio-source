@@ -64,10 +64,7 @@
     margin-top: 40px; /* Adds space between the two button groups */
 }
 
-/* Style for the active menu item */
-.main-nav li a.active {
-    /* The main ../style.css handles the .active class, but you can override here if needed */
-}
+
 
 @media (max-width: 768px) {
 
