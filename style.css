@@ -628,7 +628,7 @@ body.is-resizing .main-nav {
     cursor: pointer;
     z-index: 10;
     transition: transform 0.3s ease;
-}
+    }
 
     .two-column-layout {
         flex-direction: column;
