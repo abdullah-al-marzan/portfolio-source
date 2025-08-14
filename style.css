@@ -401,8 +401,9 @@ h2.section-title a:hover::after {
 }
 
 .footer-social-links .icon {
-  width: 0.9em;    /* matches fa-icon size */
-  height: 0.9em;
+  width: 1em;    /* matches fa-icon size */
+  height: 1em;
+  vertical-align: -0.125em;
 }
 
 
