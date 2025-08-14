@@ -387,6 +387,10 @@ h2.section-title a:hover::after {
     padding-top: 20px;
     border-top: 1px solid var(--mobile-border-color);
     text-align: center;
+    /* NEW: Set a max-width to control the number of icons per row */
+    max-width: 380px; 
+    margin-left: auto;
+    margin-right: auto;
 }
 .footer-social-links a {
     font-size: 1.9rem;
@@ -395,6 +399,12 @@ h2.section-title a:hover::after {
     display: inline-block; /* This is the crucial missing property */
     transition: transform 0.3s ease; /* Simplified transition */
 }
+
+.footer-social-links .icon {
+  width: 0.9em;    /* matches fa-icon size */
+  height: 0.9em;
+}
+
 
 .footer-social-links a:hover {
     color: var(--light-color); /* Keeps the color the same */
