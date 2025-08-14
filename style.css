@@ -924,4 +924,8 @@ body.loaded #main-footer {
     transform: translateY(0);
 }
 
-
+/* --- NEW: Fix for Active Submenu Highlight --- */
+.submenu a.active-submenu {
+    color: #a8cfff !important; /* Sky blue highlight */
+    font-weight: bold;
+}
