@@ -107,9 +107,10 @@
             <div class="contact-form-panel">
                 <div class="form-container">
                     <div class="title-wrapper">
-                    <h2>Send a Direct Message</h2>
+                        <h2>Send a Direct Message</h2>
                     </div>
-                    <form action="https://formspree.io/f/xpwloeab" method="POST">
+                    <form name="contact" method="POST" netlify>
+                        <input type="hidden" name="form-name" value="contact" />
                         <div class="form-group">
                             <input type="text" name="name" id="name" required>
                             <label for="name">Your Name</label>
@@ -131,7 +132,7 @@
                             <i class="fas fa-arrow-right"></i>
                         </button>
                     </form>
-                </div>
+                    </div>
             </div>
         </div>
 
