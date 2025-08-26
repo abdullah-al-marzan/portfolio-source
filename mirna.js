@@ -34,7 +34,7 @@ document.getElementById('prediction-form').addEventListener('submit', async func
     if (competitorFile) formData.append('competitor_3d_file', competitorFile);
 
     // --- IMPORTANT: Replace this with your actual Hugging Face API URL ---
-    const API_URL = 'https://aamarzan-mirna-affinity.hf.space'; 
+    const API_URL = 'https://aamarzan-mirna-affinity.hf.space/predict';
 
     try {
         const response = await fetch(API_URL, {
