@@ -192,3 +192,27 @@ tbody tr:nth-child(even) {
     background: #1565c0;
     transform: translateY(-2px);
 }
+
+/* --- Force footer solid black on miRNA page --- */
+#main-footer {
+    background: #000 !important;  /* Override gradient bleed */
+    color: #ccc;
+}
+
+#main-footer .container {
+    background: none !important;  /* Remove glassmorphism inside footer */
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+/* Footer container should not use glassmorphism spacing */
+#main-footer .container {
+    max-width: 1200px;   /* matches your other pages */
+    margin: 0 auto;
+    padding: 20px;       /* reduced padding like homepage */
+    background: none;    /* remove glass background */
+    border-radius: 0;    /* remove rounded corners */
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
