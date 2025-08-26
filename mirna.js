@@ -38,7 +38,7 @@ document.getElementById('prediction-form').addEventListener('submit', async func
     if (competitorFile) formData.append('competitor_3d_file', competitorFile);
 
     // --- THIS IS THE CORRECTED URL WITH THE /predict ENDPOINT ---
-    const API_URL = 'https://aamarzan-mirna-affinity.hf.space/predict'; 
+    const API_URL = 'https://aamarzan-miRNA-affinity.hf.space/predict'; 
 
     try {
         const response = await fetch(API_URL, {
