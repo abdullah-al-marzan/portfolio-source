@@ -1,4 +1,4 @@
-// script.js
+// script.js (Final Corrected Version)
 
 // Global variable to hold results for the download function
 let predictionResults = [];
@@ -6,8 +6,12 @@ let predictionResults = [];
 document.getElementById('prediction-form').addEventListener('submit', async function(event) {
     event.preventDefault();
 
+    // UI elements
     const loader = document.getElementById('loader');
     const resultsContainer = document.getElementById('results-container');
+    
+    // Switch to the results tab to show the loader
+    openTab(document.querySelector('button[onclick*="results-tab"]'), 'results-tab'); 
     
     loader.classList.remove('hidden');
     resultsContainer.innerHTML = '';
@@ -33,14 +37,12 @@ document.getElementById('prediction-form').addEventListener('submit', async func
     if (targetFile) formData.append('target_3d_file', targetFile);
     if (competitorFile) formData.append('competitor_3d_file', competitorFile);
 
-    // --- IMPORTANT: Replace this with your actual Hugging Face API URL ---
-    const API_URL = 'https://aamarzan-mirna-affinity.hf.space/predict';
+    // --- THIS IS THE CORRECTED URL WITH THE /predict ENDPOINT ---
+    const API_URL = 'https://aamarzan-mirna-affinity.hf.space/predict'; 
 
     try {
         const response = await fetch(API_URL, {
             method: 'POST',
-            // NOTE: Do NOT set the 'Content-Type' header yourself when using FormData.
-            // The browser automatically sets it to 'multipart/form-data' with the correct boundary.
             body: formData 
         });
 
@@ -61,7 +63,6 @@ document.getElementById('prediction-form').addEventListener('submit', async func
 });
 
 function displayResults(results) {
-    openTab('results-tab');
     const container = document.getElementById('results-container');
     if (!results || results.length === 0) {
         container.innerHTML = '<p>No results to display.</p>';
@@ -112,36 +113,10 @@ function downloadCSV() {
     document.body.removeChild(a);
 }
 
-// Tabs function
-function openTab(tabId) {
+// Tabs function (Corrected to accept the button element itself)
+function openTab(element, tabId) {
     document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
-    event.target.classList.add('active');
-}
-
-// Auto-switch to results tab after prediction
-function displayResults(results) {
-    openTab('results-tab');
-    const container = document.getElementById('results-container');
-    if (!results || results.length === 0) {
-        container.innerHTML = '<p>No results to display.</p>';
-        return;
-    }
-
-    let table = '<table><thead><tr><th>miRNA ID</th><th>Score (with Competitor)</th><th>Baseline Score</th><th>Competitive Effect</th></tr></thead><tbody>';
-    results.forEach(item => {
-        table += `<tr>
-            <td>${item.mirna_id}</td>
-            <td>${item.score_with_competitor.toFixed(4)}</td>
-            <td>${item.baseline_score.toFixed(4)}</td>
-            <td>${item.competitive_effect.toFixed(4)}</td>
-        </tr>`;
-    });
-    table += '</tbody></table>';
-
-    const downloadButton = '<button id="download-btn">Download Results as CSV</button>';
-    container.innerHTML = table + downloadButton;
-
-    document.getElementById('download-btn').addEventListener('click', downloadCSV);
+    element.classList.add('active');
 }
